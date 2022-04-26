@@ -47,7 +47,7 @@ export default function Graphic() {
   return (
     <>
     <Flex justifyContent='center'>
-    <Box h='450px' justifyContent='center'>
+    <Box w='500px' h='450px' justifyContent='center'>
       <Bar 
     data={data} options={options} />
     
