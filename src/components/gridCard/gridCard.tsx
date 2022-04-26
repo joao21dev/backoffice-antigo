@@ -8,6 +8,7 @@ import { Box, Grid, GridItem, Text, Menu,
     MenuDivider,} from '@chakra-ui/react'
 import Chart from '../graphicAccount/graphic';
 import Graphic from '../graphicTransact/graphic';
+// import GraphicTeste from '../graphicTransact/graphicTeste';
 import {
     
     FiChevronDown,
@@ -73,6 +74,7 @@ const GridCard = () => {
 
                 <Box>
                     <Graphic/>
+                    {/* <GraphicTeste/> */}
                 </Box>
 
             </GridItem>
