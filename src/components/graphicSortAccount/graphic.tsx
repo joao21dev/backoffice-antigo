@@ -7,24 +7,31 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
+export const options = {
+    plugins: {
+        legend: {
+            position: 'bottom' as const,
+            labels: {
+                padding: 32
+              }
+          },
+    },
+  };
+
 export const data = {
-  labels: ['Ativa', 'Pendente', 'Bloqueada', 'Desativada'],
+  labels: ['Pessoa', 'Empresarial'],
   datasets: [
     {
       label: '# of Votes',
-      data: [12, 19, 3,5],
+      data: [12, 19],
       backgroundColor: [
-        '#73A3FA',
-        '#FFD66C',
-        '#FE8F6B',
-        '#D4D4D8',
+        '#1D54E1',
+        '#54C5EB',
         
       ],
       borderColor: [
-        '#73A3FA',
-        '#FFD66C',
-        '#FE8F6B',
-        '#D4D4D8',
+        '#1D54E1',
+        '#54C5EB',
         
       ],
       borderWidth: 1,
@@ -43,13 +50,13 @@ export default function Graphic() {
   return (
     <>
     <Box m='2'>   
-       <Text textAlign='center'fontSize='25px' fontWeight='bold' >Contas por status</Text>
+       <Text textAlign='center'fontSize='25px' fontWeight='bold' >Contas por tipo</Text>
     </Box>
 
     <Flex justifyContent='center'>
     <Box h='450px' justifyContent='center'>
       <Doughnut 
-    data={data} />
+    data={data} options={options} />
     
     </Box>
     </Flex>
