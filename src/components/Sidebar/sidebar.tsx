@@ -47,8 +47,15 @@ interface LinkItemProps {
 }
 const LinkItems: Array<LinkItemProps> = [
   { name: 'Home', icon: FiHome, routh: "home" },
-  { name: 'Bankline', icon: FiBox, routh: "bank" },
   { name: 'Contas', icon: FiUser, routh: "accounts" },
+  { name: 'Boletos', icon: FiUser, routh: "accounts" },
+  { name: 'Cartões', icon: FiUser, routh: "accounts" },
+  { name: 'Compras', icon: FiUser, routh: "accounts" },
+  { name: 'Saques', icon: FiUser, routh: "accounts" },
+  { name: 'Pagamentos', icon: FiUser, routh: "accounts" },
+  { name: 'Transferência Pix', icon: FiUser, routh: "accounts" },
+  { name: 'Transferência P2P', icon: FiUser, routh: "accounts" },
+  { name: 'Transferência TED', icon: FiUser, routh: "accounts" },
   { name: 'Planos', icon: FiClipboard, routh: "plan" },
   { name: 'Agências', icon: FiBriefcase, routh: "agency" },
   { name: 'Suporte', icon: FiMessageCircle, routh: "support" },

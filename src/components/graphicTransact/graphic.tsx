@@ -66,7 +66,7 @@ export const data = {
       data: [12, 12, 22, 30, 25, 9, 15, 30, 40, 35, 39, 28],
       backgroundColor: 'F2EFFF',
       hoverBackgroundColor: ['#5932EA'],
-
+     
     },
   ],
 };
@@ -80,11 +80,18 @@ export default function Graphic() {
   return (
     <>
     
-    <Flex justifyContent='center'>
+    {/* <Flex justifyContent='center'>
     <Box w='500px' h='450px' justifyContent='center'>
       <Bar 
     data={data} options={options} onClick={onClick} ref={chartRef} />
     
+    </Box>
+    </Flex> */}
+    <Flex justifyContent='center'>
+    <Box w='70%'  justifyContent='center'>
+
+    <Bar 
+    data={data} options={options} onClick={onClick} ref={chartRef} />
     </Box>
     </Flex>
     </>

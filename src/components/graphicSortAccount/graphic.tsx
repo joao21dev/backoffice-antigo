@@ -29,11 +29,6 @@ export const data = {
         '#54C5EB',
         
       ],
-      borderColor: [
-        '#1D54E1',
-        '#54C5EB',
-        
-      ],
       borderWidth: 1,
     },
   ],
