@@ -1,28 +1,13 @@
 import {
-  Box,
   Grid,
   GridItem,
-  Text,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
-  MenuDivider,
-  Center,
-  StatGroup,
-  Stat,
-  StatLabel,
-  StatNumber,
-  StatHelpText,
-  StatArrow,
+
   useMediaQuery,
 } from "@chakra-ui/react";
 import ChartStatus from "../graphicStatusAccount/graphic";
 import ChartSort from "../graphicSortAccount/graphic";
-import ChartTotalCards from "../graphicTotalAccounts/graphic";
+import ChartTotalAccounts from "../graphicTotalAccounts/graphic";
+import ChartTotalCards from "../graphicTotalCards/graphic";
 
 import CardPix from "../cardPix/cardPix";
 import CardTed from "../cardTed/cardTed";
@@ -35,11 +20,11 @@ import { FiChevronDown, FiDollarSign } from "react-icons/fi";
 
 const GridCard = () => {
   const data = [{ name: "Page A", uv: 400, pv: 2400, amt: 2400 }];
-  const [isLargerThan380] = useMediaQuery("(min-width: 1280px)");
+  const [isLargerThan1280] = useMediaQuery("(min-width: 1280px)");
 
   return (
     <>
- {isLargerThan380 ? <Grid
+ {isLargerThan1280 ? <Grid
         m="15"
         h="750px"
         templateRows="repeat(3, 1fr)"
@@ -82,7 +67,7 @@ const GridCard = () => {
           borderRadius="15px"
           boxShadow="lg"
         >
-          <CardTed />
+          <CardP2P />
         </GridItem>
         <GridItem
           colSpan={1}
@@ -91,7 +76,8 @@ const GridCard = () => {
           borderRadius="15px"
           boxShadow="lg"
         >
-          <CardP2P />
+           <CardTed />
+         
         </GridItem>
         <GridItem
           colSpan={1}
@@ -113,7 +99,7 @@ const GridCard = () => {
           <ChartSort />
         </GridItem>
         <GridItem colSpan={2} bg="white" borderRadius="15px" boxShadow="lg">
-          <ChartTotalCards />
+        <ChartTotalAccounts />
         </GridItem>
         <GridItem colSpan={2} bg="white" borderRadius="15px" boxShadow="lg">
           <ChartTotalCards />
@@ -194,7 +180,7 @@ const GridCard = () => {
         <ChartSort />
       </GridItem>
       <GridItem colSpan={2} bg="white" borderRadius="15px" boxShadow="lg">
-        <ChartTotalCards />
+        <ChartTotalAccounts />
       </GridItem>
       <GridItem colSpan={2} bg="white" borderRadius="15px" boxShadow="lg">
         <ChartTotalCards />

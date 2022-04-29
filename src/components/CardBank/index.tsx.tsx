@@ -26,7 +26,7 @@ const Cardbank = () => {
 
   return (
     <>
-      <Flex color="black" h="130px" m="15" boxShadow='lg' borderRadius="15px">
+      <Flex  color="black" h="130px" m="15" boxShadow='lg' borderRadius="15px">
         
         <Center w="50%" bg="white" borderLeftRadius="15px">
           <Box
@@ -57,20 +57,20 @@ const Cardbank = () => {
         </Center>
 
         <Center>
-          <Divider orientation="vertical" />
+          <Divider  orientation="vertical" />
         </Center>
 
         <Center w="50%" bg="white">
           <Box
             display="flex"
-            bg="blue.200"
+            bg="#C4B0FF"
             h="50%"
             w="25%"
             justifyContent="center"
             alignItems="center"
             borderRadius="35px"
           >
-            <FiUser fontSize="35px" color="blue" display="flex" />
+            <FiUser fontSize="35px" color="#5932EA" display="flex" />
           </Box>
 
           <Box ml="3">
@@ -94,14 +94,14 @@ const Cardbank = () => {
         <Center w="50%" bg="white" borderRightRadius="15px">
           <Box
             display="flex"
-            bg="pink.200"
+            bg="#FCB6A4"
             h="50%"
             w="25%"
             justifyContent="center"
             alignItems="center"
             borderRadius="35px"
           >
-            <FiUserCheck fontSize="35px" color="red" display="flex" />
+            <FiUserCheck fontSize="35px" color="#FF0000" display="flex" />
           </Box>
 
           <Box ml="3">

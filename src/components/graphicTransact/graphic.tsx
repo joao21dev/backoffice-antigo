@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import { Box, Flex, Text, useControllableState } from "@chakra-ui/react";
+import React from "react";
+import { Box, useMediaQuery,} from "@chakra-ui/react";
 import "chartjs-plugin-style";
 
 import {
@@ -76,14 +76,17 @@ export const data = {
 };
 
 export default function Graphic() {
+  const [isLargerThan1280] = useMediaQuery("(min-width: 1280px)");
   return (
     <>
-
-      
-        <Box w="65%" ml='20%'>
+    {isLargerThan1280 ?  <Box w="65%" mt='8%' ml='18%'>
           <Bar data={data} options={options} />
-        </Box>
-     
+        </Box> : 
+         <Box w="65%" mt='3%' ml='18%'>
+         <Bar data={data} options={options} />
+       </Box>
+        }
+       
     </>
   );
 }

@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 
-import Cardbank from '../cardBank/cardBank';
+import Cardbank from '../CardBank/index.tsx';
 import Graphic from '../graphicTransact/graphic';
 import GridCard from '../gridCard/gridCard';
 

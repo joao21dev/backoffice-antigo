@@ -3,15 +3,9 @@ import {
   Center,
   Text,
   Stack,
-  List,
-  ListItem,
-  ListIcon,
-  Button,
-  useColorModeValue,
 } from "@chakra-ui/react";
-import { CheckIcon } from "@chakra-ui/icons";
-import { FiDollarSign } from "react-icons/fi";
-import { FaRegMoneyBillAlt } from "react-icons/fa";
+import { FiShoppingCart } from "react-icons/fi";
+
 
 export default function Pricing() {
   return (
@@ -20,14 +14,14 @@ export default function Pricing() {
         <Stack textAlign={"center"} p={6} align={"center"}>
           <Box
             display="flex"
-            bg="#ebf1ff"
+            bg="#cfdcf9"
             h="80px"
             w="80px"
             justifyContent="center"
             alignItems="center"
             borderRadius="20px"
           >
-            <FaRegMoneyBillAlt fontSize="35px" color="#32BCAD" display="flex" />
+            <FiShoppingCart fontSize="35px" color="#3575FF" display="flex" />
           </Box>
           <Stack direction={"row"} align={"center"} justify={"center"}>
             <Text mt="3" fontSize={"md"}>

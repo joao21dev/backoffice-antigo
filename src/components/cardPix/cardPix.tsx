@@ -20,14 +20,14 @@ export default function Pricing() {
         <Stack textAlign={"center"} p={6} align={"center"}>
           <Box
             display="flex"
-            bg="#ebf1ff"
+            bg="#9AE6B4"
             h="80px"
             w="80px"
             justifyContent="center"
             alignItems="center"
             borderRadius="20px"
           >
-            <FaRegMoneyBillAlt fontSize="35px" color="#32BCAD" display="flex" />
+            <FaRegMoneyBillAlt fontSize="35px" color="green" display="flex" />
           </Box>
           <Stack direction={"row"} align={"center"} justify={"center"}>
             <Text mt="3" fontSize={"md"}>

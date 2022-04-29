@@ -3,16 +3,10 @@ import {
   Center,
   Text,
   Stack,
-  List,
-  ListItem,
-  ListIcon,
-  Button,
-  useColorModeValue,
-  Image,
 } from "@chakra-ui/react";
-import { CheckIcon } from "@chakra-ui/icons";
-import { FiDollarSign } from "react-icons/fi";
-import { FaRegMoneyBillAlt } from "react-icons/fa";
+
+import { RiBankLine } from "react-icons/ri";
+
 
 export default function Pricing() {
   return (
@@ -21,14 +15,14 @@ export default function Pricing() {
         <Stack textAlign={"center"} p={6} align={"center"}>
           <Box
             display="flex"
-            bg="#ebf1ff"
+            bg="#fcb6a4"
             h="80px"
             w="80px"
             justifyContent="center"
             alignItems="center"
             borderRadius="20px"
           >
-            <Image src="./logoPix.eps" color="#32BCAD" display="flex" />
+            <RiBankLine fontSize="35px" color="#FF0000" display="flex" />
           </Box>
           <Stack direction={"row"} align={"center"} justify={"center"}>
             <Text mt="3" fontSize={"md"}>

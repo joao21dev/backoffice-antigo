@@ -34,8 +34,8 @@ export const data = {
     {
       label: "# of Votes",
       data: [12, 19, 30, 40],
-      backgroundColor: ["#73A3FA", "#FFD66C", "#FE8F6B", "#D4D4D8"],
-      borderColor: ["#73A3FA", "#FFD66C", "#FE8F6B", "#D4D4D8"],
+      backgroundColor: ["#B34B39", "#B187FF", "#FF816B", "#27B377"],
+
 
       borderWidth: 1,
     },
@@ -48,12 +48,9 @@ export default function Graphic() {
       
         <Box display="flex" >
           <Box m='2'>
-            <Text  fontSize="18px" fontWeight="light">
-              Contas por agência
-            </Text>
-            <Text fontSize="18px" fontWeight="bold">
-              530
-            </Text>
+          <Text  fontSize="18px" fontWeight="light">
+                Cartões por agência
+              </Text>
           </Box>
 
           <Box w="55%">
