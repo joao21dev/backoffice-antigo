@@ -12,7 +12,7 @@ export const options = {
       legend: {
           position: 'bottom' as const,
           labels: {
-            padding: 16
+            padding: 28
           }
         },
         

@@ -18,6 +18,7 @@ import {
   StatNumber,
   StatHelpText,
   StatArrow,
+  useMediaQuery,
 } from "@chakra-ui/react";
 import ChartStatus from "../graphicStatusAccount/graphic";
 import ChartSort from "../graphicSortAccount/graphic";
@@ -34,73 +35,176 @@ import { FiChevronDown, FiDollarSign } from "react-icons/fi";
 
 const GridCard = () => {
   const data = [{ name: "Page A", uv: 400, pv: 2400, amt: 2400 }];
+  const [isLargerThan380] = useMediaQuery("(min-width: 1280px)");
 
   return (
     <>
-      {/* <Grid
-        templateRows="repeat(4, 1fr)"
-        templateColumns="repeat(6, 1fr)"
-        gap={4}
+ {isLargerThan380 ? <Grid
         m="15"
+        h="750px"
+        templateRows="repeat(3, 1fr)"
+        templateColumns="repeat(6, 1fr)"
+        gap={5}
       >
+        {" "}
         <GridItem
           colSpan={4}
+          h="370px"
           bg="white"
-        
           borderRadius="15px"
+          boxShadow="lg"
         >
-          <Box display="flex" justifyContent="space-between" m="15px">
-            <Box m="2">
-              <Text fontWeight="bold" fontSize="25px">
-                Transações
-              </Text>
-              <Text fontWeight="light">Volume Anual</Text>
-            </Box>
-          </Box>
-
-          <Graphic />
-         
+          {" "}
+          <Graphic />{" "}
         </GridItem>
         <GridItem
           colSpan={2}
-          
+          h="370px"
           bg="white"
           borderRadius="15px"
+          boxShadow="lg"
         >
           <ChartStatus />
         </GridItem>
-      </Grid>
-      
+        <GridItem
+          colSpan={1}
+          h="235px"
+          bg="white"
+          borderRadius="15px"
+          boxShadow="lg"
+        >
+          <CardPix />
+        </GridItem>
+        <GridItem
+          colSpan={1}
+          h="235px"
+          bg="white"
+          borderRadius="15px"
+          boxShadow="lg"
+        >
+          <CardTed />
+        </GridItem>
+        <GridItem
+          colSpan={1}
+          h="235px"
+          bg="white"
+          borderRadius="15px"
+          boxShadow="lg"
+        >
+          <CardP2P />
+        </GridItem>
+        <GridItem
+          colSpan={1}
+          h="235px"
+          bg="white"
+          borderRadius="15px"
+          boxShadow="lg"
+        >
+          <CardCompras />
+        </GridItem>
+        <GridItem
+          colSpan={2}
+          rowSpan={2}
+          bg="white"
+          borderRadius="15px"
+          boxShadow="lg"
+        >
+          
+          <ChartSort />
+        </GridItem>
+        <GridItem colSpan={2} bg="white" borderRadius="15px" boxShadow="lg">
+          <ChartTotalCards />
+        </GridItem>
+        <GridItem colSpan={2} bg="white" borderRadius="15px" boxShadow="lg">
+          <ChartTotalCards />
+        </GridItem>
+      </Grid> 
+      :
       <Grid
-        h="200px"
-        templateRows="repeat(2, 1fr)"
-        templateColumns="repeat(5, 1fr)"
-        gap={4}
+      w="100%"
+      m="15"
+      h="750px"
+      templateRows="repeat(7, 1fr)"
+      templateColumns="repeat(2, 1fr)"
+      gap={5}
+    >
+      {" "}
+      <GridItem
+        colSpan={2}
+        h="150px"
+        bg="white"
+        borderRadius="15px"
+        boxShadow="lg"
       >
-        <GridItem rowSpan={2} colSpan={1} bg="tomato" />
-        <GridItem colSpan={2} bg="papayawhip" />
-        <GridItem colSpan={2} bg="papayawhip" />
-        <GridItem colSpan={4} bg="tomato" />
-      </Grid> */}
+        {" "}
+        <Graphic />{" "}
+      </GridItem>
+      <GridItem
+        colSpan={2}
+        h="370px"
+        bg="white"
+        borderRadius="15px"
+        boxShadow="lg"
+      >
+        <ChartStatus />
+      </GridItem>
+      <GridItem
+        colSpan={1}
+        h="235px"
+        bg="white"
+        borderRadius="15px"
+        boxShadow="lg"
+      >
+        <CardPix />
+      </GridItem>
+      <GridItem
+        colSpan={1}
+        h="235px"
+        bg="white"
+        borderRadius="15px"
+        boxShadow="lg"
+      >
+        <CardTed />
+      </GridItem>
+      <GridItem
+        colSpan={1}
+        h="235px"
+        bg="white"
+        borderRadius="15px"
+        boxShadow="lg"
+      >
+        <CardP2P />
+      </GridItem>
+      <GridItem
+        colSpan={1}
+        h="235px"
+        bg="white"
+        borderRadius="15px"
+        boxShadow="lg"
+      >
+        <CardCompras />
+      </GridItem>
+      <GridItem
+        colSpan={2}
+       
+        bg="white"
+        borderRadius="15px"
+        boxShadow="lg"
+      >
+        <ChartSort />
+      </GridItem>
+      <GridItem colSpan={2} bg="white" borderRadius="15px" boxShadow="lg">
+        <ChartTotalCards />
+      </GridItem>
+      <GridItem colSpan={2} bg="white" borderRadius="15px" boxShadow="lg">
+        <ChartTotalCards />
+      </GridItem>
+    </Grid>
+    }
+     
 
-      <Grid
-      m='15'
-        h='755px'
-        templateRows="repeat(3, 1fr)"
-        templateColumns="repeat(6, 1fr)"
-        gap={4}
-      >
-        <GridItem colSpan={4} h='370px' bg="tomato" /> <GridItem colSpan={2} h='370px' bg="tomato" /> 
-        <GridItem colSpan={1} h='220px' bg="tomato" /> <GridItem colSpan={1} h='220px' bg="tomato" /> <GridItem colSpan={1} h='220px' bg="tomato" /> <GridItem colSpan={1} h='220px' bg="tomato" /> <GridItem colSpan={2} h='370px'  rowSpan={2} bg="tomato" />
-        <GridItem colSpan={2} h='120px' bg="tomato" /> <GridItem colSpan={2} h='120px' bg="tomato" />
-        
-        
-        
-        
-        
-        
-        
-      </Grid>
+      
+      
     </>
   );
 };

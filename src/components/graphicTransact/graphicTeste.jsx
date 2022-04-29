@@ -1,100 +1,80 @@
-import React, { PureComponent } from 'react';
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-
-import { Box, Flex, Text } from "@chakra-ui/react";
-
-
-const data = [
-  {
-    month: 'Jan',
-    quantidade: 2400,
-
-  },
-  {
-    month: 'Fev',
-    quantidade: 1398,
-
-  },
-  {
-    month: 'Mar',
-    quantidade: 9800,
-
-  },
-  {
-    month: 'Apr',
-    quantidade: 3908,
-
-  },
-  {
-    month: 'May',
-    quantidade: 4800,
-
-  },
-  {
-    month: 'Jun',
-    quantidade: 3800,
-
-  },
-  {
-    month: 'Jul',
-    quantidade: 4300,
-
-  },
-  {
-    month: 'Ago',
-    quantidade: 4300,
-
-  },
-  {
-    month: 'Sep',
-    quantidade: 4300,
-
-  },
-  {
-    month: 'Oct',
-    quantidade: 4300,
-
-  },
-  {
-    month: 'Nov',
-    quantidade: 4300,
-
-  },
-  {
-    month: 'Dec',
-    quantidade: 4300,
-
-  },
-];
-
-export default function Graphic() {
-
-
-    return (
-      <>
-      <Flex justifyContent='center'>
-      <Box h='450px' justifyContent='center'>
-        <BarChart
-          width={500}
-          height={300}
-          data={data}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
+<Grid
+          w="100%"
+          m="15"
+          h="750px"
+          templateRows="repeat(7, 1fr)"
+          templateColumns="repeat(2, 1fr)"
+          gap={5}
         >
-         
-          <XAxis dataKey="month" />
-          
-          <Tooltip />
-          <Legend />
-          <Bar dataKey="quantidade" fill="#5932EA" />
-        </BarChart>
-        </Box>
-    </Flex>
-    </>
-    
-    );
-}
+          {" "}
+          <GridItem
+            colSpan={2}
+            h="150px"
+            bg="white"
+            borderRadius="15px"
+            boxShadow="lg"
+          >
+            {" "}
+            <Graphic />{" "}
+          </GridItem>
+          <GridItem
+            colSpan={2}
+            h="370px"
+            bg="white"
+            borderRadius="15px"
+            boxShadow="lg"
+          >
+            <ChartStatus />
+          </GridItem>
+          <GridItem
+            colSpan={1}
+            h="235px"
+            bg="white"
+            borderRadius="15px"
+            boxShadow="lg"
+          >
+            <CardPix />
+          </GridItem>
+          <GridItem
+            colSpan={1}
+            h="235px"
+            bg="white"
+            borderRadius="15px"
+            boxShadow="lg"
+          >
+            <CardTed />
+          </GridItem>
+          <GridItem
+            colSpan={1}
+            h="235px"
+            bg="white"
+            borderRadius="15px"
+            boxShadow="lg"
+          >
+            <CardP2P />
+          </GridItem>
+          <GridItem
+            colSpan={1}
+            h="235px"
+            bg="white"
+            borderRadius="15px"
+            boxShadow="lg"
+          >
+            <CardCompras />
+          </GridItem>
+          <GridItem
+            colSpan={2}
+           
+            bg="white"
+            borderRadius="15px"
+            boxShadow="lg"
+          >
+            <ChartSort />
+          </GridItem>
+          <GridItem colSpan={2} bg="white" borderRadius="15px" boxShadow="lg">
+            <ChartTotalCards />
+          </GridItem>
+          <GridItem colSpan={2} bg="white" borderRadius="15px" boxShadow="lg">
+            <ChartTotalCards />
+          </GridItem>
+        </Grid>

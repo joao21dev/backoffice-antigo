@@ -12,7 +12,7 @@ export const options = {
         legend: {
             position: 'bottom' as const,
             labels: {
-                padding: 32
+                padding: 20
               }
           },
     },
@@ -44,7 +44,7 @@ export default function Graphic() {
 
   return (
     <>
-    <Box m='2'>   
+    <Box m='10'>   
        <Text textAlign='center'fontSize='25px' fontWeight='bold' >Contas por tipo</Text>
     </Box>
 

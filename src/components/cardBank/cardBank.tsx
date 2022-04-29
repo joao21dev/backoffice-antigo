@@ -26,7 +26,8 @@ const Cardbank = () => {
 
   return (
     <>
-      <Flex color="black" h="130px" m="15">
+      <Flex color="black" h="130px" m="15" boxShadow='lg' borderRadius="15px">
+        
         <Center w="50%" bg="white" borderLeftRadius="15px">
           <Box
             display="flex"
@@ -36,6 +37,7 @@ const Cardbank = () => {
             justifyContent="center"
             alignItems="center"
             borderRadius="35px"
+            
           >
             <FiDollarSign fontSize="35px" color="green" display="flex" />
           </Box>

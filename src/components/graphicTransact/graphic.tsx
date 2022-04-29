@@ -1,8 +1,6 @@
-import React, { useRef } from 'react';
+import React, { useRef } from "react";
 import { Box, Flex, Text, useControllableState } from "@chakra-ui/react";
-import 'chartjs-plugin-style';
-
-
+import "chartjs-plugin-style";
 
 import {
   Chart as ChartJS,
@@ -12,11 +10,8 @@ import {
   Title,
   Tooltip,
   Legend,
- 
-  
-  
-} from 'chart.js';
-import { Bar} from 'react-chartjs-2';
+} from "chart.js";
+import { Bar } from "react-chartjs-2";
 
 ChartJS.register(
   CategoryScale,
@@ -24,76 +19,71 @@ ChartJS.register(
   BarElement,
   Title,
   Tooltip,
-  Legend, 
-  
+  Legend
 );
 
 export const options = {
   scales: {
     x: {
       grid: {
-        display: false
-      }
+        display: false,
+      },
     },
     y: {
       grid: {
-        display: false
-      }
-    }
+        display: false,
+      },
+    },
   },
-  
+
   borderWidth: 2,
-      borderRadius: 8,
-      borderSkipped: false,
+  borderRadius: 8,
+  borderSkipped: false,
   responsive: true,
   plugins: {
     legend: {
-      
-      display: false
+      display: false,
     },
   },
-  
 };
 
-const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dez'];
-
+const labels = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "June",
+  "Jul",
+  "Ago",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dez",
+];
 
 export const data = {
   labels,
   datasets: [
     {
-      label: '',
+      label: "",
       data: [12, 12, 22, 30, 25, 9, 15, 30, 40, 35, 39, 28],
-      backgroundColor: 'F2EFFF',
-      hoverBackgroundColor: ['#5932EA'],
-     
+      backgroundColor: "#5932EA",
+      hoverBackgroundColor: "#2c09bb",
+      mode: "dataset",
     },
   ],
 };
 
 export default function Graphic() {
-  
-  const chartRef = useRef();
-  const onClick = (event: any) => {
-    console.log(event);
-  }
   return (
     <>
-    
-    {/* <Flex justifyContent='center'>
-    <Box w='500px' h='450px' justifyContent='center'>
-      <Bar 
-    data={data} options={options} onClick={onClick} ref={chartRef} />
-    
-    </Box>
-    </Flex> */}
-    <Flex justifyContent='center'>
-    <Box w='70%'  justifyContent='center'>
 
-    <Bar 
-    data={data} options={options} onClick={onClick} ref={chartRef} />
-    </Box>
-    </Flex>
+      
+        <Box w="65%" ml='20%'>
+          <Bar data={data} options={options} />
+        </Box>
+     
     </>
-      );
+  );
 }
