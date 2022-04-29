@@ -37,19 +37,18 @@ const GridCard = () => {
 
   return (
     <>
-    
-      <Grid
-      
-        // h="370px"
+      {/* <Grid
         templateRows="repeat(4, 1fr)"
         templateColumns="repeat(6, 1fr)"
         gap={4}
         m="15"
-        
       >
-        <GridItem colSpan={4} bg="white"
-        //  h="370px" w="100%" 
-         borderRadius="15px">
+        <GridItem
+          colSpan={4}
+          bg="white"
+        
+          borderRadius="15px"
+        >
           <Box display="flex" justifyContent="space-between" m="15px">
             <Box m="2">
               <Text fontWeight="bold" fontSize="25px">
@@ -59,93 +58,49 @@ const GridCard = () => {
             </Box>
           </Box>
 
-          
-            <Graphic />
-            {/* <GraphicTeste/> */}
-          
+          <Graphic />
+         
         </GridItem>
-        <GridItem colSpan={2}
-        // h='370px'
-        bg="white" borderRadius="15px">
+        <GridItem
+          colSpan={2}
+          
+          bg="white"
+          borderRadius="15px"
+        >
           <ChartStatus />
         </GridItem>
-
-        
-
-        </Grid>
-
-        <Grid
- 
-  templateRows='repeat(2, 1fr)'
-  templateColumns='repeat(5, 1fr)'
-  gap={4}
->
-  <GridItem rowSpan={2} colSpan={1} bg='tomato' />
-  <GridItem colSpan={2} bg='papayawhip' />
-  <GridItem colSpan={2} bg='papayawhip' />
-  <GridItem colSpan={4} bg='tomato' />
-</Grid>
-    
-   
-        
+      </Grid>
       
+      <Grid
+        h="200px"
+        templateRows="repeat(2, 1fr)"
+        templateColumns="repeat(5, 1fr)"
+        gap={4}
+      >
+        <GridItem rowSpan={2} colSpan={1} bg="tomato" />
+        <GridItem colSpan={2} bg="papayawhip" />
+        <GridItem colSpan={2} bg="papayawhip" />
+        <GridItem colSpan={4} bg="tomato" />
+      </Grid> */}
 
+      <Grid
+      m='15'
+        h='755px'
+        templateRows="repeat(3, 1fr)"
+        templateColumns="repeat(6, 1fr)"
+        gap={4}
+      >
+        <GridItem colSpan={4} h='370px' bg="tomato" /> <GridItem colSpan={2} h='370px' bg="tomato" /> 
+        <GridItem colSpan={1} h='220px' bg="tomato" /> <GridItem colSpan={1} h='220px' bg="tomato" /> <GridItem colSpan={1} h='220px' bg="tomato" /> <GridItem colSpan={1} h='220px' bg="tomato" /> <GridItem colSpan={2} h='370px'  rowSpan={2} bg="tomato" />
+        <GridItem colSpan={2} h='120px' bg="tomato" /> <GridItem colSpan={2} h='120px' bg="tomato" />
         
-
-        {/* <GridItem colSpan={3} h="370px" bg="#EDF2F7" borderRadius="15px">
-          <Grid
-            h="200px"
-            templateRows="repeat(2, 1fr)"
-            templateColumns="repeat(4, 1fr)"
-            gap={4}
-          >
-
-            
-            <GridItem colSpan={1} h="250px" bg="white" borderRadius="15px">
-              <CardPix />
-            </GridItem>
-            <GridItem colSpan={1} h="250px" bg="white" borderRadius="15px">
-              <CardTed />
-            </GridItem>
-            <GridItem colSpan={1} h="250px" bg="white" borderRadius="15px">
-              <CardP2P />
-            </GridItem>
-            <GridItem colSpan={1} h="250px" bg="white" borderRadius="15px">
-              <CardCompras />
-            </GridItem>
-
-
-            <GridItem colSpan={2} h="110px" bg="orange" borderRadius="15px"> */}
-              {/* <Box w='50%' display="flex" justifyContent="space-between" m="15px">
-                <Box m="2">
-                  <Text fontWeight="light">Total de contas</Text>
-                  <Text fontWeight="bold" fontSize="25px">
-                    4582
-                  </Text>
-                </Box>
-              </Box> */}
-              {/* <ChartTotalCards />
-            </GridItem>
-
-
-            <GridItem colSpan={2} h="120px" bg="orange" borderRadius="15px">
-              <Box display="flex" justifyContent="space-between" m="15px">
-                <Box m="2">
-                  <Text fontWeight="light">Total de cartões ativos</Text>
-                  <Text fontWeight="bold" fontSize="25px">
-                    4582
-                  </Text>
-                  <Box></Box>
-                </Box>
-              </Box>
-            </GridItem>
-          </Grid>
-        </GridItem>
-
-        <GridItem colSpan={2} h="370px" bg="white" borderRadius="15px">
-          <ChartSort />
-        </GridItem> */}
-      
+        
+        
+        
+        
+        
+        
+      </Grid>
     </>
   );
 };
