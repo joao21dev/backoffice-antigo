@@ -1,6 +1,4 @@
-import { Grid, GridItem, useMediaQuery } from "@chakra-ui/react";
-import ChartStatus from "../graphicStatusAccount/graphic";
-import ChartSort from "../graphicSortAccount/graphic";
+import { Box, Grid, GridItem, useMediaQuery } from "@chakra-ui/react";
 import ChartTotalAccounts from "../graphicTotalAccounts/graphic";
 import ChartTotalCards from "../graphicTotalCards/graphic";
 import Graphic from "../graphicTransact/graphic";
@@ -11,6 +9,8 @@ import { FiShoppingCart as Compras } from "react-icons/fi";
 import { RiBankLine as Ted } from "react-icons/ri";
 import { BiTransfer as P2P } from "react-icons/bi";
 import GridCardMobile from "../GridCardMobile";
+import ChartAccounts from "../ChartAccounts";
+import { dataSortAccount, dataStatusAccount } from "../ChartAccounts/data";
 
 const GridCard = () => {
   const data = [{ name: "Page A", uv: 400, pv: 2400, amt: 2400 }];
@@ -44,7 +44,10 @@ const GridCard = () => {
             borderRadius="15px"
             boxShadow="lg"
           >
-            <ChartStatus />
+            <ChartAccounts
+              name={"Contas por status"}
+              data={dataStatusAccount}
+            />
           </GridItem>
           <GridItem
             colSpan={1}
@@ -117,7 +120,9 @@ const GridCard = () => {
             borderRadius="15px"
             boxShadow="lg"
           >
-            <ChartSort />
+            <Box mt="10%">
+              <ChartAccounts name={"Contas por tipo"} data={dataSortAccount} />
+            </Box>
           </GridItem>
           <GridItem colSpan={2} bg="white" borderRadius="15px" boxShadow="lg">
             <ChartTotalAccounts />
