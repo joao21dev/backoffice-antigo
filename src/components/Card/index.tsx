@@ -1,47 +1,49 @@
-import {
-  Box,
-  Center,
-  Text,
-  Stack,
-} from "@chakra-ui/react";
+import React from "react";
 
-import { RiBankLine } from "react-icons/ri";
+import { Box, Center, Text, Stack, Icon } from "@chakra-ui/react";
+import { link } from "fs";
+import { IconType } from "react-icons";
 
-
-export default function Pricing() {
+const Card = (props: any) => {
   return (
     <Center>
       <Box w={"full"}>
         <Stack textAlign={"center"} p={6} align={"center"}>
           <Box
             display="flex"
-            bg="#fcb6a4"
+            bg={props.bgColor}
             h="80px"
             w="80px"
             justifyContent="center"
             alignItems="center"
             borderRadius="20px"
           >
-            <RiBankLine fontSize="35px" color="#FF0000" display="flex" />
+            <Icon
+              as={props.icon}
+              fontSize="35px"
+              color={props.color}
+              display="flex"
+            />
           </Box>
           <Stack direction={"row"} align={"center"} justify={"center"}>
             <Text mt="3" fontSize={"md"}>
-              TED
+              {props.name}
             </Text>
           </Stack>
           <Stack direction={"row"}>
-            <Text fontSize={"xl"} fontWeight={600}>R$</Text>
+
             <Text fontSize={"xl"} fontWeight={600}>
-              87.2K
+              R$
+              {props.amount}k
             </Text>
           </Stack>
-          <Stack >
-            <Text fontSize={"sm"}  >
-              +47%
-            </Text>
+          <Stack>
+            <Text fontSize={"sm"}>{props.percent}</Text>
           </Stack>
         </Stack>
       </Box>
     </Center>
   );
-}
+};
+
+export default Card;
