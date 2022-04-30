@@ -79,7 +79,7 @@ export default function Graphic() {
   const [isLargerThan1280] = useMediaQuery("(min-width: 1280px)");
   return (
     <>
-    {isLargerThan1280 ?  <Box w="65%" mt='8%' ml='18%'>
+    {isLargerThan1280 ?  <Box w="52%" mt='8%' ml='24%'>
           <Bar data={data} options={options} />
         </Box> : 
          <Box w="65%" mt='3%' ml='18%'>
