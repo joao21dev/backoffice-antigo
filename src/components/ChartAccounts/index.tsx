@@ -4,8 +4,7 @@ import { Doughnut } from "react-chartjs-2";
 
 
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import { options } from "./data";
-
+import { optionsAccounts } from "../../chartData";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 
@@ -13,7 +12,7 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 const ChartAccounts = (props: any) => {
   return (
     <>
-      <Box m="2">
+      <Box m="1" mb={props.mb}>
         <Text textAlign="center" fontSize="25px" fontWeight="bold">
           {props.name}
         </Text>
@@ -21,7 +20,7 @@ const ChartAccounts = (props: any) => {
 
       <Flex justifyContent="center">
         <Box h="450px" justifyContent="center">
-          <Doughnut data={props.data} options={options} />
+          <Doughnut data={props.data} options={optionsAccounts} />
         </Box>
       </Flex>
     </>
