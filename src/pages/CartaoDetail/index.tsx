@@ -1,15 +1,17 @@
 import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import React, { useState } from "react";
 
-import Endereco from "../../components/Endereco";
+
 
 import SidebarWithHeader from "../../components/Sidebar/sidebar";
 import NavAccount from "../../components/NavAccount";
 
 import FormDadosPEssoais from "../../components/FormDadosPessoais";
 import FormCartao from "../../components/FormCartao";
+import FormEnderecoEntrega from "../../components/FormEnderecoEntrega";
 
 const DadosPessoais = () => {
+
   return (
     <>
       <SidebarWithHeader>
@@ -30,7 +32,7 @@ const DadosPessoais = () => {
         </Box>
 
         <FormCartao />
-        <Endereco />
+        <FormEnderecoEntrega />
       </SidebarWithHeader>
     </>
   );

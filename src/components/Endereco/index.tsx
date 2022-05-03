@@ -30,7 +30,7 @@ const Endereco = () => {
       >
         <Flex>
           <Text w="90%" fontWeight="semibold">
-            Dados pessoais
+            Endereço
           </Text>
           <Button
             bg="#F29339"

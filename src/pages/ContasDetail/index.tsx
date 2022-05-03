@@ -6,7 +6,7 @@ import Endereco from "../../components/Endereco";
 import SidebarWithHeader from "../../components/Sidebar/sidebar";
 import NavAccount from "../../components/NavAccount";
 
-import FormDadosPEssoais from "../../components/FormDadosPessoais";
+import FormDadosPessoais from "../../components/FormDadosPessoais";
 import FormCartao from "../../components/FormCartao";
 
 const DadosPessoais = () => {
@@ -29,7 +29,7 @@ const DadosPessoais = () => {
           <Text m="2">Data de última atualização</Text>
         </Box>
 
-        <FormCartao />
+        <FormDadosPessoais />
         <Endereco />
       </SidebarWithHeader>
     </>

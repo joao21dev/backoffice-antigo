@@ -49,7 +49,7 @@ const FormCartao = () => {
           <Text m="2">Número:</Text>
           <Text m="2">Status:</Text>
           <Text m="2">Tipo:</Text>
-          <Text m="2">Código de rastreio de Nascimento:</Text>
+          <Text m="2">Código de rastreio:</Text>
         </Box>
       </>
     );
