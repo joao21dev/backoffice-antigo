@@ -47,7 +47,7 @@ interface LinkItemProps {
 }
 const LinkItems: Array<LinkItemProps> = [
   { name: 'Home', icon: FiHome, routh: "home" },
-  { name: 'Contas', icon: FiUser, routh: "" },
+  { name: 'Contas', icon: FiUser, routh: "accounts" },
   { name: 'Boletos', icon: FiUser, routh: "accounts" },
   { name: 'Cartões', icon: FiUser, routh: "accounts" },
   { name: 'Compras', icon: FiUser, routh: "accounts" },

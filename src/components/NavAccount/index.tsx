@@ -21,7 +21,9 @@ import SidebarWithHeader from "../Sidebar/sidebar";
 
 const NavAccount = () => {
   return (
-   <> <Box justifyContent="flex-end" display="flex">
+    <>
+      {" "}
+      <Box justifyContent="flex-end" display="flex">
         <Flex
           bg="white"
           w="224px"
@@ -31,18 +33,16 @@ const NavAccount = () => {
           borderRadius="15px"
         >
           <Center mx="1" borderLeftRadius="15px">
-            
-              <StatGroup>
-                <Stat>
-                  <StatLabel color="#F29339" fontWeight="normal">
-                    Agência Digital
-                  </StatLabel>
-                  <StatHelpText fontWeight="bold" textAlign="center">
-                    1001
-                  </StatHelpText>
-                </Stat>
-              </StatGroup>
-           
+            <StatGroup>
+              <Stat>
+                <StatLabel color="#F29339" fontWeight="normal">
+                  Agência Digital
+                </StatLabel>
+                <StatHelpText fontWeight="bold" textAlign="center">
+                  1001
+                </StatHelpText>
+              </Stat>
+            </StatGroup>
           </Center>
 
           <Center>
@@ -50,22 +50,19 @@ const NavAccount = () => {
           </Center>
 
           <Center mx="1" borderRightRadius="15px">
-            
-              <StatGroup>
-                <Stat>
-                  <StatLabel color="#5B93FF" fontWeight="normal">
-                    Saldo disponível
-                  </StatLabel>
-                  <StatHelpText fontWeight="bold" textAlign="center">
-                    R$ 1.120,00
-                  </StatHelpText>
-                </Stat>
-              </StatGroup>
-         
+            <StatGroup>
+              <Stat>
+                <StatLabel color="#5B93FF" fontWeight="normal">
+                  Saldo disponível
+                </StatLabel>
+                <StatHelpText fontWeight="bold" textAlign="center">
+                  R$ 1.120,00
+                </StatHelpText>
+              </Stat>
+            </StatGroup>
           </Center>
         </Flex>
       </Box>
-
       <Grid
         borderRadius="15px"
         h="51px"
@@ -73,17 +70,16 @@ const NavAccount = () => {
         templateColumns="repeat(8, 1fr)"
         boxShadow="md"
       >
-        <NavAccountItem to={"dados-pessoais"} name={"Dados Pesoais"} />
-        <NavAccountItem to={"documentos"} name={"Documentos"} />
-        <NavAccountItem to={"cartao"} name={"Cartao"} />
-        <NavAccountItem to={"transacoes"} name={"Transações"} />
-        <NavAccountItem to={"conta-bancaria"} name={"Conta Bancária"} />
-        <NavAccountItem to={"dispositivos"} name={"Dispositivos"} />
-        <NavAccountItem to={"atividade"} name={"Atividades"} />
-        <NavAccountItem to={"socios"} name={"Sócios"} />
-      </Grid></>
-     
-   
+        <NavAccountItem to={"account-detail"} name={"Dados Pesoais"} />
+        <NavAccountItem to={"documents"} name={"Documentos"} />
+        <NavAccountItem to={"cards"} name={"Cartao"} />
+        <NavAccountItem to={"transactions"} name={"Transações"} />
+        <NavAccountItem to={"bank-account"} name={"Conta Bancária"} />
+        <NavAccountItem to={"devices"} name={"Dispositivos"} />
+        <NavAccountItem to={"activities"} name={"Atividades"} />
+        <NavAccountItem to={"partners"} name={"Sócios"} />
+      </Grid>
+    </>
   );
 };
 

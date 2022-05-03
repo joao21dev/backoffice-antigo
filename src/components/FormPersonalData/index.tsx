@@ -11,12 +11,12 @@ import {
 import { FiEdit2, FiSave } from "react-icons/fi";
 import React, { useState } from "react";
 
-const FormDadosPEssoais = () => {
-  const [dadosPessoais, setDadosPessoais] = useState(true);
-  const handleEditDadosPessoais = () => {
-    setDadosPessoais(!dadosPessoais);
+const FormPersonalData = () => {
+  const [personalData, setPersonalData] = useState(true);
+  const handleEditPersonalData = () => {
+    setPersonalData(!personalData);
   };
-  if (dadosPessoais) {
+  if (personalData) {
     return (
       <Box
         fontWeight="medium"
@@ -38,7 +38,7 @@ const FormDadosPEssoais = () => {
             color="white"
             fontSize="12px"
             fontWeight="semibold"
-            onClick={handleEditDadosPessoais}
+            onClick={handleEditPersonalData}
             rightIcon={<FiEdit2 />}
           >
             Edtar
@@ -81,7 +81,7 @@ const FormDadosPEssoais = () => {
           color="white"
           fontSize="12px"
           fontWeight="semibold"
-          onClick={handleEditDadosPessoais}
+          onClick={handleEditPersonalData}
           colorScheme="green"
           rightIcon={<FiSave />}
         >
@@ -136,4 +136,4 @@ const FormDadosPEssoais = () => {
   );
 };
 
-export default FormDadosPEssoais;
+export default FormPersonalData;

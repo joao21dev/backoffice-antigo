@@ -40,7 +40,6 @@ function CustomTable({ columns, data }) {
 
   return (
     <>
-      <Link to="/accounts/account-detail">Detalhe da conta</Link>
       <Table {...getTableProps()}>
         <Thead>
           {headerGroups.map((headerGroup) => (
@@ -93,7 +92,7 @@ function CustomTable({ columns, data }) {
   );
 }
 
-export default function Accounts() {
+export default function Devices() {
   const columns = React.useMemo(
     () => [
       {
@@ -167,8 +166,8 @@ export default function Accounts() {
   ];
   return (
     <>
-      <NavAccount />
       <SidebarWithHeader>
+        <NavAccount />
         <Flex>
           <Box m={15} mt="10%">
             <Stack>

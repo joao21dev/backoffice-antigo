@@ -11,12 +11,12 @@ import {
 import { FiEdit2, FiSave } from "react-icons/fi";
 import React, { useState } from "react";
 
-const Endereco = () => {
-  const [endereco, setEndereco] = useState(true);
-  const handleEditEndereco = () => {
-    setEndereco(!endereco);
+const FormAddress = (props: any) => {
+  const [address, setAddress] = useState(true);
+  const handleEditAddress = () => {
+    setAddress(!address);
   };
-  if (endereco) {
+  if (address) {
     return (
       <Box
         fontWeight="medium"
@@ -30,7 +30,7 @@ const Endereco = () => {
       >
         <Flex>
           <Text w="90%" fontWeight="semibold">
-            Endereço
+            {props.name}
           </Text>
           <Button
             bg="#F29339"
@@ -38,7 +38,7 @@ const Endereco = () => {
             color="white"
             fontSize="12px"
             fontWeight="semibold"
-            onClick={handleEditEndereco}
+            onClick={handleEditAddress}
             rightIcon={<FiEdit2 />}
           >
             Edtar
@@ -67,14 +67,14 @@ const Endereco = () => {
     >
       <Flex>
         <Text w="90%" fontWeight="semibold">
-          Dados pessoais
+          {props.name}
         </Text>
         <Button
           bg="green"
           color="white"
           fontSize="12px"
           fontWeight="semibold"
-          onClick={handleEditEndereco}
+          onClick={handleEditAddress}
           colorScheme="green"
           rightIcon={<FiSave />}
         >
@@ -111,4 +111,4 @@ const Endereco = () => {
   );
 };
 
-export default Endereco;
+export default FormAddress;
