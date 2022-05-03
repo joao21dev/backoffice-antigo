@@ -167,7 +167,7 @@ export default function Accounts() {
   ];
   return (
     <>
-      <NavAccount />
+   
       <SidebarWithHeader>
         <Flex>
           <Box m={15} mt="10%">

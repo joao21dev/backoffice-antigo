@@ -13,7 +13,7 @@ const ChartAccounts = (props: any) => {
   return (
     <>
       <Box m="1" mb={props.mb}>
-        <Text textAlign="center" fontSize="25px" fontWeight="bold">
+        <Text textAlign="center" fontSize="25px" fontWeight="medium">
           {props.name}
         </Text>
       </Box>

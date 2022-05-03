@@ -10,13 +10,11 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 const ChartCards = (props: any) => {
   return (
     <>
-      <Box ml="8%" mt="3%" display="flex">
-        <Text fontSize="18px" fontWeight="light">
-          {props.name}
-        </Text>
-      </Box>
+      <Text ml="8%" mt="3%" fontSize="18px" fontWeight="medium">
+        {props.name}
+      </Text>
 
-      <Box w="55%" ml="20%">
+      <Box w="70%" ml="15%">
         <Doughnut data={props.data} options={optionsCards} />
       </Box>
     </>

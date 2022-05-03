@@ -14,7 +14,7 @@ import { dataAgencyCard, dataSortAccount, dataStatusAccount, dataStatusCard } fr
 
 const GridCardMobile = () => {
   const data = [{ name: "Page A", uv: 400, pv: 2400, amt: 2400 }];
-  const [isLargerThan1280] = useMediaQuery("(min-width: 1280px)");
+  const [isLargerThan1280] = useMediaQuery("(min-width: 600px)");
 
   return (
     <>
@@ -29,7 +29,7 @@ const GridCardMobile = () => {
         {" "}
         <GridItem
           colSpan={2}
-          h="150px"
+          h="350px"
           bg="white"
           borderRadius="15px"
           boxShadow="lg"

@@ -14,7 +14,7 @@ import { dataAgencyCard, dataSortAccount, dataStatusAccount, dataStatusCard } fr
 
 const GridCard = () => {
   const data = [{ name: "Page A", uv: 400, pv: 2400, amt: 2400 }];
-  const [isLargerThan1280] = useMediaQuery("(min-width: 1280px)");
+  const [isLargerThan1280] = useMediaQuery("(min-width: 700px)");
 
   return (
     <>
