@@ -17,6 +17,7 @@
     "@types/react-dom": "^16.9.14",
     "@types/react-table": "^7.7.11",
     "anychart-react": "^1.4.1",
+    "chakra-react-select": "^3.3.1",
     "chart.js": "^3.7.1",
     "chartjs-plugin-style": "^0.5.0",
     "framer-motion": "^6.2.8",

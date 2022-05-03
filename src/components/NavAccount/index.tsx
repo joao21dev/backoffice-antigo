@@ -15,11 +15,53 @@ import {
   StatNumber,
   Text,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
+import AccountDetail from "../../pages/AccountDetail";
+import Activities from "../../pages/Activities";
+import BankAccount from "../../pages/BankAccount";
+import CardDetail from "../../pages/CardDetail";
+import Cards from "../../pages/Cards";
+import Devices from "../../pages/Devices";
+import Documents from "../../pages/Documents";
+import Partners from "../../pages/Partners";
+import Transactions from "../../pages/Transactions";
 import NavAccountItem from "../NavAccountItems";
+import NavItemWrapper from "../NavItemWrapper";
 import SidebarWithHeader from "../Sidebar/sidebar";
 
 const NavAccount = () => {
+  const [personalData, setPersonalData] = useState(false);
+  const handlePersonalData = () => {
+    setPersonalData(true);
+  };
+  const [documents, setDocuments] = useState(false);
+  const handleDocuments = () => {
+    setDocuments(true);
+  };
+  const [cartões, setCartões] = useState(false);
+  const handleCartões = () => {
+    setCartões(true);
+  };
+  const [transações, setTransações] = useState(false);
+  const handleTransações = () => {
+    setTransações(true);
+  };
+  const [bankAccount, setBankAccount] = useState(false);
+  const handleBankAccount = () => {
+    setBankAccount(true);
+  };
+  const [devices, setDevices] = useState(false);
+  const handleDevices = () => {
+    setDevices(true);
+  };
+  const [atividades, setAtividades] = useState(false);
+  const handleAtividades = () => {
+    setAtividades(true);
+  };
+  const [socios, setSocios] = useState(false);
+  const handleSocios = () => {
+    setSocios(true);
+  };
   return (
     <>
       {" "}
@@ -70,16 +112,40 @@ const NavAccount = () => {
         templateColumns="repeat(8, 1fr)"
         boxShadow="md"
       >
-        <NavAccountItem to={"account-detail"} name={"Dados Pesoais"} />
-        <NavAccountItem to={"documents"} name={"Documentos"} />
-        <NavAccountItem to={"cards"} name={"Cartao"} />
-        <NavAccountItem to={"transactions"} name={"Transações"} />
-        <NavAccountItem to={"bank-account"} name={"Conta Bancária"} />
-        <NavAccountItem to={"devices"} name={"Dispositivos"} />
-        <NavAccountItem to={"activities"} name={"Atividades"} />
-        <NavAccountItem to={"partners"} name={"Sócios"} />
+        <GridItem onClick={handlePersonalData} w="100%" borderRadius="15px">
+          <NavItemWrapper name="Dados Pessoais" />
+        </GridItem>
+        <GridItem onClick={handleDocuments} w="100%" borderRadius="15px">
+          <NavItemWrapper name="Documentos" />
+        </GridItem>
+        <GridItem onClick={handleCartões} w="100%" borderRadius="15px">
+          <NavItemWrapper name="Cartões" />
+        </GridItem>
+        <GridItem onClick={handleTransações} w="100%" borderRadius="15px">
+          <NavItemWrapper name="Transações" />
+        </GridItem>
+        <GridItem onClick={handleBankAccount} w="100%" borderRadius="15px">
+          <NavItemWrapper name="Conta Bancária" />
+        </GridItem>
+        <GridItem onClick={handleDevices} w="100%" borderRadius="15px">
+          <NavItemWrapper name="Dispositivos" />
+        </GridItem>
+        <GridItem onClick={handleAtividades} w="100%" borderRadius="15px">
+          <NavItemWrapper name="Atividades" />
+        </GridItem>
+        <GridItem onClick={handleSocios} w="100%" borderRadius="15px">
+          <NavItemWrapper name="Sócios" />
+        </GridItem>
       </Grid>
-    </>
+      {personalData ? <AccountDetail  /> : <CardDetail /> }
+      {/* {documents ? <Documents /> : <Contas />}
+      {cartões ? <Cards /> : <Contas />}
+      {transações ? <Transactions /> : <Contas />}
+      {bankAccount ? <BankAccount /> : <Contas />}
+      {devices ? <Devices /> : <Contas />}
+      {atividades ? <Activities /> : <Contas />}
+      {socios ? <Partners /> : <Contas />} */}
+    </> 
   );
 };
 
