@@ -1,19 +1,14 @@
 import {
   Box,
-  Button,
   Center,
   Divider,
   Flex,
   Grid,
   GridItem,
-  HStack,
   Stat,
-  StatArrow,
   StatGroup,
   StatHelpText,
   StatLabel,
-  StatNumber,
-  Text,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import AccountDetail from "../../pages/AccountDetail";
@@ -32,35 +27,35 @@ import SidebarWithHeader from "../Sidebar/sidebar";
 const NavAccount = () => {
   const [personalData, setPersonalData] = useState(false);
   const handlePersonalData = () => {
-    setPersonalData(true);
+    personalData === true ? setPersonalData(false) : setPersonalData(true);
   };
   const [documents, setDocuments] = useState(false);
   const handleDocuments = () => {
-    setDocuments(true);
+    documents === true ? setDocuments(false) : setDocuments(true);
   };
   const [cartões, setCartões] = useState(false);
   const handleCartões = () => {
-    setCartões(true);
+    cartões === true ? setCartões(false) : setCartões(true);
   };
   const [transações, setTransações] = useState(false);
   const handleTransações = () => {
-    setTransações(true);
+    transações === true ? setTransações(false) : setTransações(true);
   };
   const [bankAccount, setBankAccount] = useState(false);
   const handleBankAccount = () => {
-    setBankAccount(true);
+    bankAccount === true ? setBankAccount(false) : setBankAccount(true);
   };
   const [devices, setDevices] = useState(false);
   const handleDevices = () => {
-    setDevices(true);
+    devices === true ? setDevices(false) : setDevices(true);
   };
   const [atividades, setAtividades] = useState(false);
   const handleAtividades = () => {
-    setAtividades(true);
+    atividades === true ? setAtividades(false) : setAtividades(true);
   };
   const [socios, setSocios] = useState(false);
   const handleSocios = () => {
-    setSocios(true);
+    socios === true ? setSocios(false) : setSocios(true);
   };
   return (
     <>
@@ -137,15 +132,15 @@ const NavAccount = () => {
           <NavItemWrapper name="Sócios" />
         </GridItem>
       </Grid>
-      {personalData ? <AccountDetail  /> : <CardDetail /> }
-      {/* {documents ? <Documents /> : <Contas />}
-      {cartões ? <Cards /> : <Contas />}
-      {transações ? <Transactions /> : <Contas />}
-      {bankAccount ? <BankAccount /> : <Contas />}
-      {devices ? <Devices /> : <Contas />}
-      {atividades ? <Activities /> : <Contas />}
-      {socios ? <Partners /> : <Contas />} */}
-    </> 
+      {personalData && <AccountDetail />}
+      {documents && <Documents />}
+      {cartões && <Cards />}
+      {transações && <Transactions />}
+      {bankAccount && <BankAccount />}
+      {devices && <Devices />}
+      {atividades && <Activities />}
+      {socios && <AccountDetail />}
+    </>
   );
 };
 
