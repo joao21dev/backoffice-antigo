@@ -96,48 +96,31 @@ export default function Transactions() {
   const columns = React.useMemo(
     () => [
       {
-        Header: "Contas",
+        Header: "Transações",
         columns: [
           {
-            Header: <Checkbox></Checkbox>,
+            Header: "Selecionar",
             accessor: "box",
           },
           {
-            Header: "ID Conta",
-            accessor: "id",
-          },
-        ],
-      },
-      {
-        Header: "Info",
-        columns: [
-          {
-            Header: "Nome",
-            accessor: "name",
+            Header: "Detalhe",
+            accessor: "detail",
           },
           {
-            Header: "E-mail",
-            accessor: "email",
+            Header: "Tipo da Transação",
+            accessor: "typeTransaction",
           },
           {
-            Header: "Documento",
-            accessor: "document",
+            Header: "Tipo",
+            accessor: "type",
           },
           {
-            Header: "Saldo",
+            Header: "Valor",
             accessor: "money",
-          },
-          {
-            Header: "Data",
-            accessor: "date",
           },
           {
             Header: "Status",
             accessor: "status",
-          },
-          {
-            Header: <FiTrash></FiTrash>,
-            accessor: "trash",
           },
         ],
       },
@@ -148,20 +131,31 @@ export default function Transactions() {
   const data = [
     {
       box: <Checkbox></Checkbox>,
-      id: "1",
-      name: "Test",
-      email: "text@test.com",
-      document: "text",
-      money: 0,
-      date: "17/03/2022",
-      status: (
-        <Box borderRadius={15} bg="green">
-          <Text color={"white"} textAlign="center">
-            Ativo
+      detail: "123423423423749878",
+      typeTransaction: (
+        <Box borderRadius={15} textAlign="center" bg="#E8EEFC">
+          <Text color="#1D54E1" >
+            PIX RECEBIDO
+          </Text>
+        </Box>
+        
+      ),
+      type: (
+        <Box borderRadius={15}  w="60%" bg="#e5f7ed">
+          <Text color={"red"} textAlign="center">
+            DÉBITO
           </Text>
         </Box>
       ),
-      trash: <SettingsIcon color={"gray"} />,
+      money: "R$ 100,00",
+      time: "17/03/2022 15:12:00",
+      status: (
+        <Box borderRadius={15}   bg="#e5f7ed">
+          <Text color={"green"} textAlign="center">
+            PROCESSADA
+          </Text>
+        </Box>
+      ),
     },
   ];
   return (
@@ -169,7 +163,7 @@ export default function Transactions() {
       <SidebarWithHeader>
         <NavAccount />
         <Flex>
-          <Box m={15} mt="10%">
+          <Box m={15} mt="5%">
             <Stack>
               <InputGroup>
                 <InputLeftElement
@@ -192,8 +186,8 @@ export default function Transactions() {
             borderRadius="15px"
             justifyContent="center"
             alignItems="center"
-            m={15}
-            w="150vh"
+            m={4}
+            w="150vw"
           >
             <ChakraProvider>
               <CustomTable columns={columns} data={data} />

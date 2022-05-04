@@ -15,7 +15,8 @@ import {
   Td,
 } from "@chakra-ui/react";
 import React from "react";
-import { FiSearch, FiTrash } from "react-icons/fi";
+import { FiSearch } from "react-icons/fi";
+import { AiFillEye } from "react-icons/ai";
 import { ChevronUpIcon, ChevronDownIcon, SettingsIcon } from "@chakra-ui/icons";
 import { useTable, useSortBy } from "react-table";
 
@@ -96,48 +97,27 @@ export default function Devices() {
   const columns = React.useMemo(
     () => [
       {
-        Header: "Contas",
+        Header: "Dispositivos",
         columns: [
           {
-            Header: <Checkbox></Checkbox>,
-            accessor: "box",
-          },
-          {
-            Header: "ID Conta",
+            Header: "ID Dispositivo",
             accessor: "id",
           },
-        ],
-      },
-      {
-        Header: "Info",
-        columns: [
           {
-            Header: "Nome",
-            accessor: "name",
+            Header: "Verificado",
+            accessor: "verified",
           },
           {
-            Header: "E-mail",
-            accessor: "email",
+            Header: "Tipo",
+            accessor: "type",
           },
           {
-            Header: "Documento",
-            accessor: "document",
+            Header: "Fabricante",
+            accessor: "fabricante",
           },
           {
-            Header: "Saldo",
-            accessor: "money",
-          },
-          {
-            Header: "Data",
-            accessor: "date",
-          },
-          {
-            Header: "Status",
-            accessor: "status",
-          },
-          {
-            Header: <FiTrash></FiTrash>,
-            accessor: "trash",
+            Header: "Modelo",
+            accessor: "model",
           },
         ],
       },
@@ -148,20 +128,30 @@ export default function Devices() {
   const data = [
     {
       box: <Checkbox></Checkbox>,
-      id: "1",
-      name: "Test",
-      email: "text@test.com",
-      document: "text",
-      money: 0,
-      date: "17/03/2022",
-      status: (
-        <Box borderRadius={15} bg="green">
-          <Text color={"white"} textAlign="center">
-            Ativo
-          </Text>
+      id: "123423423423749878",
+      verified: (
+        <Box
+          borderRadius={15}
+          w="60%"
+          textAlign="center"
+          color="#1D54E1"
+          bg="#E8EEFC"
+        >
+          SIM
         </Box>
       ),
-      trash: <SettingsIcon color={"gray"} />,
+      type: "IOS",
+
+      fabricante: <Box>Apple</Box>,
+      model: 'Iphone',
+
+      open: (
+        <Link to="/account-detail">
+          <Box ml="10px">
+            <AiFillEye color={"gray"} fontSize="22px" />
+          </Box>
+        </Link>
+      ),
     },
   ];
   return (
@@ -169,7 +159,7 @@ export default function Devices() {
       <SidebarWithHeader>
         <NavAccount />
         <Flex>
-          <Box m={15} mt="10%">
+          <Box m={15} mt="5%">
             <Stack>
               <InputGroup>
                 <InputLeftElement
@@ -192,8 +182,8 @@ export default function Devices() {
             borderRadius="15px"
             justifyContent="center"
             alignItems="center"
-            m={15}
-            w="150vh"
+            m={4}
+            w="150vw"
           >
             <ChakraProvider>
               <CustomTable columns={columns} data={data} />

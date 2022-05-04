@@ -15,8 +15,9 @@ import {
   Td,
 } from "@chakra-ui/react";
 import React from "react";
-import { FiSearch, FiTrash } from "react-icons/fi";
-import { ChevronUpIcon, ChevronDownIcon, SettingsIcon } from "@chakra-ui/icons";
+import { FiSearch } from "react-icons/fi";
+import { AiFillEye } from "react-icons/ai";
+import { ChevronUpIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { useTable, useSortBy } from "react-table";
 
 import { Checkbox } from "@chakra-ui/react";
@@ -40,7 +41,6 @@ function CustomTable({ columns, data }) {
 
   return (
     <>
-      <Link to="/accounts/partner-detail">Detalhe do Sócio</Link>
       <Table {...getTableProps()}>
         <Thead>
           {headerGroups.map((headerGroup) => (
@@ -93,24 +93,11 @@ function CustomTable({ columns, data }) {
   );
 }
 
-export default function Partners() {
+export default function Activities() {
   const columns = React.useMemo(
     () => [
       {
-        Header: "Contas",
-        columns: [
-          {
-            Header: <Checkbox></Checkbox>,
-            accessor: "box",
-          },
-          {
-            Header: "ID Conta",
-            accessor: "id",
-          },
-        ],
-      },
-      {
-        Header: "Info",
+        Header: "Sócios",
         columns: [
           {
             Header: "Nome",
@@ -125,20 +112,16 @@ export default function Partners() {
             accessor: "document",
           },
           {
-            Header: "Saldo",
-            accessor: "money",
+            Header: "Relacionamento",
+            accessor: "relationship",
           },
           {
-            Header: "Data",
-            accessor: "date",
+            Header: "Data e Hora",
+            accessor: "time",
           },
           {
-            Header: "Status",
-            accessor: "status",
-          },
-          {
-            Header: <FiTrash></FiTrash>,
-            accessor: "trash",
+            Header: "Visualizar",
+            accessor: "open",
           },
         ],
       },
@@ -149,20 +132,18 @@ export default function Partners() {
   const data = [
     {
       box: <Checkbox></Checkbox>,
-      id: "1",
-      name: "Test",
-      email: "text@test.com",
-      document: "text",
-      money: 0,
-      date: "17/03/2022",
-      status: (
-        <Box borderRadius={15} bg="green">
-          <Text color={"white"} textAlign="center">
-            Ativo
-          </Text>
-        </Box>
+      name: "Conta: Carlos Ivan",
+      email: "carlosivan@gmail.com",
+      document: "1233829732",
+      relationship: "Administrador",
+      time: "17/03/2022 16:10:58",
+      open: (
+        <Link to="/partner-detail">
+          <Box ml="10px">
+            <AiFillEye color={"gray"} fontSize="22px" />
+          </Box>
+        </Link>
       ),
-      trash: <SettingsIcon color={"gray"} />,
     },
   ];
   return (
@@ -170,7 +151,7 @@ export default function Partners() {
       <SidebarWithHeader>
         <NavAccount />
         <Flex>
-          <Box m={15} mt="10%">
+          <Box m={15} mt="5%">
             <Stack>
               <InputGroup>
                 <InputLeftElement
@@ -193,8 +174,8 @@ export default function Partners() {
             borderRadius="15px"
             justifyContent="center"
             alignItems="center"
-            m={15}
-            w="150vh"
+            m={4}
+            w="150vw"
           >
             <ChakraProvider>
               <CustomTable columns={columns} data={data} />

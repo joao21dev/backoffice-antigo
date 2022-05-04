@@ -20,17 +20,17 @@ export const App = () => (
     <BrowserRouter>
       <Routes>
         <Route path="/home" element={<Home />} />
-        <Route path="/accounts" element={<NavAccount />} />
-        <Route path="/accounts/documents" element={<Documents />} />
-        <Route path="/accounts/cards" element={<Cards />} />
-        <Route path="/accounts/transactions" element={<Transactions />} />
-        <Route path="/accounts/devices" element={<Devices />} />
-        <Route path="/accounts/partners" element={<Partners />} />
-        <Route path="/accounts/activities" element={<Activities />} />
-        <Route path="/accounts/account-detail" element={<AccountDetail />} />
-        <Route path="/accounts/partner-detail" element={<PartnerDetail />} />
-        <Route path="/accounts/bank-account" element={<BankAccount />} />
-        <Route path="/accounts/card-detail" element={<CardDetail />} />
+        <Route path="/accounts" element={<Accounts />} />
+        <Route path="/documents" element={<Documents />} />
+        <Route path="/cards" element={<Cards />} />
+        <Route path="/transactions" element={<Transactions />} />
+        <Route path="/devices" element={<Devices />} />
+        <Route path="/partners" element={<Partners />} />
+        <Route path="/activities" element={<Activities />} />
+        <Route path="/account-detail" element={<AccountDetail />} />
+        <Route path="/partner-detail" element={<PartnerDetail />} />
+        <Route path="/bank-account" element={<BankAccount />} />
+        <Route path="/card-detail" element={<CardDetail />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/" element={<Login />} />
         

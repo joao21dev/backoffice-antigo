@@ -138,7 +138,7 @@ export default function Documents() {
       format: "Imagem",
       date: "17/03/2022",
       status: (
-        <Box borderRadius={15} w="40%" bg="green">
+        <Box borderRadius={15} w="60%" bg="green">
           <Text color={"white"} textAlign="center">
             Ativo
           </Text>
@@ -147,7 +147,9 @@ export default function Documents() {
       trash: <SettingsIcon color={"gray"} />,
       open: (
         <Link to="/accounts/account-detail">
-          <AiFillEye color={"gray"} />
+          <Box ml="26px">
+            <AiFillEye color={"gray"} fontSize="22px" />
+          </Box>
         </Link>
       ),
     },
@@ -174,17 +176,7 @@ export default function Documents() {
                     borderRadius="15px"
                   />
                 </InputGroup>
-                <Button
-                  colorScheme=""
-                  ml="900"
-                  w="100%"
-                  bg="#5A32EA"
-                  color="white"
-                  fontSize="12px"
-                  fontWeight="semibold"
-                >
-                  Importar Contas
-                </Button>
+
               </Flex>
             </Stack>
           </Box>
@@ -195,7 +187,7 @@ export default function Documents() {
             borderRadius="15px"
             justifyContent="center"
             alignItems="center"
-            m={15}
+            m={4}
             w="150vw"
           >
             <ChakraProvider>

@@ -128,7 +128,7 @@ const GridCard = () => {
             <ChartCards name={"Cartões por status"} data={dataStatusCard} />
           </GridItem>
           <GridItem colSpan={2} bg="white" borderRadius="15px" boxShadow="lg">
-            <ChartCards name={"Cartões por agência"} data={dataAgencyCard} />
+            <ChartCards name={"Contas por agência"} data={dataAgencyCard} />
           </GridItem>
         </Grid>
       ) : (

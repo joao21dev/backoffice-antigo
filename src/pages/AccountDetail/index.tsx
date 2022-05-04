@@ -13,12 +13,12 @@ import FormCartao from "../../components/FormCartao";
 const AccountDetail = () => {
   return (
     <>
-     
-       
+      <SidebarWithHeader>
+        <NavAccount />
         <AccountInfo />
         <FormDadosPessoais />
         <Endereco name="Endereço" />
-    
+      </SidebarWithHeader>
     </>
   );
 };

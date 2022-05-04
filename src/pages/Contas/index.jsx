@@ -19,6 +19,7 @@ import React from "react";
 import { FiSearch } from "react-icons/fi";
 import { FaTrashAlt } from "react-icons/fa";
 import { AiFillEye } from "react-icons/ai";
+import { RiEditFill } from "react-icons/ri";
 import { ChevronUpIcon, ChevronDownIcon, SettingsIcon } from "@chakra-ui/icons";
 import { useTable, useSortBy } from "react-table";
 
@@ -138,8 +139,8 @@ export default function Accounts() {
             accessor: "open",
           },
           {
-            Header: "Excluir",
-            accessor: "delete",
+            Header: "Excluir/Editar",
+            accessor: "change",
           },
         ],
       },
@@ -157,7 +158,7 @@ export default function Accounts() {
       money: 0,
       date: "17/03/2022",
       status: (
-        <Box borderRadius={15} bg="green">
+        <Box borderRadius={15}  bg="green">
           <Text color={"white"} textAlign="center">
             Ativo
           </Text>
@@ -165,14 +166,17 @@ export default function Accounts() {
       ),
       trash: <SettingsIcon color={"gray"} />,
       open: (
-        <Link to="/accounts/account-detail">
-          <AiFillEye color={"gray"} />
+        <Link to="/account-detail">
+          <Box ml='10px'>
+            <AiFillEye color={"gray"} fontSize='22px' />
+          </Box>
         </Link>
       ),
-      delete: (
-        <Link to="/accounts/account-detail">
+      change: (
+        <Box display="flex" justifyContent="space-around">
           <FaTrashAlt color={"gray"} />
-        </Link>
+          <RiEditFill color={"gray"}  />
+        </Box>
       ),
     },
   ];
@@ -218,7 +222,7 @@ export default function Accounts() {
             borderRadius="15px"
             justifyContent="center"
             alignItems="center"
-            m={15}
+            m={4}
             w="150vw"
           >
             <ChakraProvider>
