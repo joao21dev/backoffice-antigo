@@ -15,10 +15,14 @@ import NavAccount from "../../components/accounts/NavAccount";
 import { Checkbox } from "@chakra-ui/react";
 import SidebarWithHeader from "../../components/Sidebar/sidebar";
 import { CustomTable } from "../../components/Table";
-import { columnsActivities, dataActivities } from "../../dataTables";
+import {
+  columnsActivities,
+  dataAccountActivities,
+  dataActivities,
+} from "../../dataTables";
 import TableWrapper from "../../components/tableWrapper";
 
-export default function Activities() {
+export default function AccountActivities() {
   const columns = React.useMemo(
     () => [
       {
@@ -46,15 +50,13 @@ export default function Activities() {
     []
   );
   return (
-    <>
-      <SidebarWithHeader>
-        <NavAccount />
-        <TableWrapper>
-          <ChakraProvider>
-            <CustomTable columns={columns} data={dataActivities} />
-          </ChakraProvider>
-        </TableWrapper>
-      </SidebarWithHeader>
-    </>
+    <SidebarWithHeader>
+      <NavAccount />
+      <TableWrapper>
+        <ChakraProvider>
+          <CustomTable columns={columns} data={dataAccountActivities} />
+        </ChakraProvider>
+      </TableWrapper>
+    </SidebarWithHeader>
   );
 }

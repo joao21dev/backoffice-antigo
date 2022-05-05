@@ -6,7 +6,7 @@ import { FaTrashAlt } from "react-icons/fa";
 import { RiEditFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
-export const dataDocuments = [
+export const dataAccountDocuments = [
   {
     box: <Checkbox></Checkbox>,
     documentType: "Carteira de Identidade - Frente",
@@ -63,7 +63,7 @@ export const dataAccounts = [
   },
 ];
 
-export const dataDevices = [
+export const dataAccountDevices = [
   {
     box: <Checkbox></Checkbox>,
     id: "123423423423749878",
@@ -93,7 +93,7 @@ export const dataDevices = [
   },
 ];
 
-export const dataActivities = [
+export const dataAccountActivities = [
   {
     box: <Checkbox></Checkbox>,
     user: "Conta: Carlos Ivan",
@@ -103,7 +103,7 @@ export const dataActivities = [
   },
 ];
 
-export const dataPartners = [
+export const dataAccountPartners = [
   {
     box: <Checkbox></Checkbox>,
     name: "Conta: Carlos Ivan",
@@ -121,7 +121,7 @@ export const dataPartners = [
   },
 ];
 
-export const dataCards = [
+export const dataAccountCards = [
   {
     box: <Checkbox></Checkbox>,
     number: "4766**********4623",
@@ -145,7 +145,7 @@ export const dataCards = [
   },
 ];
 
-export const dataTransactions = [
+export const dataAccountTransactions = [
   {
     box: <Checkbox></Checkbox>,
     detail: "123423423423749878",
@@ -169,6 +169,34 @@ export const dataTransactions = [
           PROCESSADA
         </Text>
       </Box>
+    ),
+  },
+];
+
+export const dataBanklineBoletos = [
+  {
+    box: <Checkbox></Checkbox>,
+    account: "123423423423749878",
+    typeTransaction: (
+      <Box borderRadius={15} textAlign="center" bg="#E8EEFC">
+        <Text color="#1D54E1">BOLETO COBRANÇA</Text>
+      </Box>
+    ),
+    money: "R$ 100,00",
+    time: "17/03/2022 15:12:00",
+    status: (
+      <Box borderRadius={15} bg="#e5f7ed">
+        <Text color={"green"} textAlign="center">
+          PROCESSADA
+        </Text>
+      </Box>
+    ),
+    open: (
+      <Link to="/boleto-detail">
+        <Box ml="10px">
+          <AiFillEye color={"gray"} fontSize="22px" />
+        </Box>
+      </Link>
     ),
   },
 ];

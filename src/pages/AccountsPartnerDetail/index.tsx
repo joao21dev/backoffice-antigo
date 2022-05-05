@@ -3,11 +3,11 @@ import React, { useState } from "react";
 
 import SidebarWithHeader from "../../components/Sidebar/sidebar";
 import NavAccount from "../../components/accounts/NavAccount";
-import FormPersonalData from "../../components/accounts/FormPersonalData";
+import FormPersonalData from "../../components/accounts/AccountsFormPersonalData";
 import AccountInfo from "../../components/accounts/AccountInfo";
-import FormAddress from "../../components/accounts/FormAddress";
+import FormAddress from "../../components/accounts/AccountsFormAddress";
 
-const PartnerDetail = () => {
+const AccountsPartnerDetail = () => {
   return (
     <>
       <SidebarWithHeader>
@@ -21,4 +21,4 @@ const PartnerDetail = () => {
   );
 };
 
-export default PartnerDetail;
+export default AccountsPartnerDetail;

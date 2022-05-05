@@ -4,11 +4,11 @@ import React, { useState } from "react";
 import SidebarWithHeader from "../../components/Sidebar/sidebar";
 import NavAccount from "../../components/accounts/NavAccount";
 
-import FormCartao from "../../components/accounts/FormCartao";
-import FormAddress from "../../components/accounts/FormAddress";
+import FormCartao from "../../components/accounts/AccountsFormCard";
+import FormAddress from "../../components/accounts/AccountsFormAddress";
 import AccountInfo from "../../components/accounts/AccountInfo";
 
-const CardDetail = () => {
+const AccountCardDetail = () => {
   return (
     <>
       <SidebarWithHeader>
@@ -22,4 +22,4 @@ const CardDetail = () => {
   );
 };
 
-export default CardDetail;
+export default AccountCardDetail;

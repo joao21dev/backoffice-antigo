@@ -18,10 +18,10 @@ import SidebarWithHeader from "../../components/Sidebar/sidebar";
 
 import NavAccount from "../../components/accounts/NavAccount";
 import { CustomTable } from "../../components/Table";
-import { dataDocuments } from "../../dataTables";
+import { dataAccountDocuments, dataDocuments } from "../../dataTables";
 import TableWrapper from "../../components/tableWrapper";
 
-export default function Documents() {
+export default function AccountDocuments() {
   const columns = React.useMemo(
     () => [
       {
@@ -62,7 +62,7 @@ export default function Documents() {
         <NavAccount />
         <TableWrapper>
           <ChakraProvider>
-            <CustomTable columns={columns} data={dataDocuments} />
+            <CustomTable columns={columns} data={dataAccountDocuments} />
           </ChakraProvider>
         </TableWrapper>
       </SidebarWithHeader>

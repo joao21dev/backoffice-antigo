@@ -11,7 +11,7 @@ import {
 import { FiEdit2, FiSave } from "react-icons/fi";
 import React, { useState } from "react";
 
-const FormPersonalData = () => {
+const AccountsFormPersonalData = () => {
   const [personalData, setPersonalData] = useState(true);
   const handleEditPersonalData = () => {
     setPersonalData(!personalData);
@@ -136,4 +136,4 @@ const FormPersonalData = () => {
   );
 };
 
-export default FormPersonalData;
+export default AccountsFormPersonalData;

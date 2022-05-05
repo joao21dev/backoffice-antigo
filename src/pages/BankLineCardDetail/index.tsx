@@ -3,20 +3,20 @@ import React, { useState } from "react";
 
 import SidebarWithHeader from "../../components/Sidebar/sidebar";
 import NavAccount from "../../components/accounts/NavAccount";
-import FormBankAccount from "../../components/accounts/FormBankAccount";
+
+import FormCartao from "../../components/accounts/AccountsFormCard";
+import FormAddress from "../../components/accounts/AccountsFormAddress";
 import AccountInfo from "../../components/accounts/AccountInfo";
 
-const BankAccount = () => {
+const BankLineCardDetail = () => {
   return (
     <>
       <SidebarWithHeader>
-        <NavAccount></NavAccount>
-        <AccountInfo />
-
-        <FormBankAccount />
+        <FormCartao />
+        <FormAddress name="Endereço de Entrega" />
       </SidebarWithHeader>
     </>
   );
 };
 
-export default BankAccount;
+export default BankLineCardDetail;

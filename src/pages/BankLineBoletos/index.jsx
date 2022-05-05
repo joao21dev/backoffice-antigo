@@ -1,6 +1,7 @@
 import {
   Flex,
   Box,
+  Text,
   Stack,
   InputGroup,
   InputLeftElement,
@@ -9,46 +10,45 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { FiSearch } from "react-icons/fi";
-import { AiFillEye } from "react-icons/ai";
+import NavAccount from "../../components/accounts/NavAccount";
 
 import { Checkbox } from "@chakra-ui/react";
 import SidebarWithHeader from "../../components/Sidebar/sidebar";
-import { Link } from "react-router-dom";
-import NavAccount from "../../components/accounts/NavAccount";
 import { CustomTable } from "../../components/Table";
 import {
   columnsActivities,
-  columnsPartners,
   dataActivities,
-  dataPartners,
+  dataBanklineBoletos,
+  dataBoletos,
 } from "../../dataTables";
 import TableWrapper from "../../components/tableWrapper";
 
-export default function Partners() {
+export default function BankLineBoletos() {
   const columns = React.useMemo(
     () => [
       {
-        Header: "Sócios",
+        Header: "Boletos",
         columns: [
           {
-            Header: "Nome",
-            accessor: "name",
+            Header: "Conta",
+            accessor: "account",
           },
           {
-            Header: "E-mail",
-            accessor: "email",
+            Header: "Tipo da Transação",
+            accessor: "typeTransaction",
           },
           {
-            Header: "Documento",
-            accessor: "document",
+            Header: "Valor",
+            accessor: "money",
           },
-          {
-            Header: "Relacionamento",
-            accessor: "relationship",
-          },
+
           {
             Header: "Data e Hora",
             accessor: "time",
+          },
+          {
+            Header: "Status",
+            accessor: "status",
           },
           {
             Header: "Visualizar",
@@ -60,14 +60,13 @@ export default function Partners() {
     []
   );
   return (
-    <>
-      <SidebarWithHeader>
-        <TableWrapper>
-          <ChakraProvider>
-            <CustomTable columns={columns} data={dataPartners} />
-          </ChakraProvider>
-        </TableWrapper>
-      </SidebarWithHeader>
-    </>
+    <SidebarWithHeader>
+     
+      <TableWrapper>
+        <ChakraProvider>
+          <CustomTable columns={columns} data={dataBanklineBoletos} />
+        </ChakraProvider>
+      </TableWrapper>
+    </SidebarWithHeader>
   );
 }

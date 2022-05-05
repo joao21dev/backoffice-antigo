@@ -11,7 +11,7 @@ import {
 import { FiEdit2, FiSave } from "react-icons/fi";
 import React, { useState } from "react";
 
-const FormAddress = (props: any) => {
+const AccountsFormAddress = (props: any) => {
   const [address, setAddress] = useState(true);
   const handleEditAddress = () => {
     setAddress(!address);
@@ -111,4 +111,4 @@ const FormAddress = (props: any) => {
   );
 };
 
-export default FormAddress;
+export default AccountsFormAddress;

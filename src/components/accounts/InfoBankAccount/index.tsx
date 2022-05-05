@@ -1,16 +1,6 @@
-import {
-  Box,
-  Button,
-  Flex,
-  FormControl,
-  FormLabel,
-  Input,
-  Text,
-} from "@chakra-ui/react";
-import React, { useState } from "react";
-import { FiEdit2, FiSave } from "react-icons/fi";
+import { Box, Text } from "@chakra-ui/react";
 
-const FormBankAccount = () => {
+const InfoBankAccount = () => {
   return (
     <>
       {" "}
@@ -36,4 +26,4 @@ const FormBankAccount = () => {
   );
 };
 
-export default FormBankAccount;
+export default InfoBankAccount;

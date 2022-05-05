@@ -7,63 +7,60 @@ import {
   InputLeftElement,
   Input,
   ChakraProvider,
-  Table,
-  Thead,
-  Tbody,
-  Tr,
-  Th,
-  Td,
 } from "@chakra-ui/react";
 import React from "react";
 import { FiSearch } from "react-icons/fi";
-import { AiFillEye } from "react-icons/ai";
 
 import { Checkbox } from "@chakra-ui/react";
 import SidebarWithHeader from "../../components/Sidebar/sidebar";
-import { Link } from "react-router-dom";
 import NavAccount from "../../components/accounts/NavAccount";
 import { CustomTable } from "../../components/Table";
-import { columnsDevices, dataDevices } from "../../dataTables";
 import TableWrapper from "../../components/tableWrapper";
+import { dataAccountTransactions, dataTransactions } from "../../dataTables";
 
-export default function Devices() {
+export default function AccountTransactions() {
   const columns = React.useMemo(
     () => [
       {
-        Header: "Dispositivos",
+        Header: "Transações",
         columns: [
           {
-            Header: "ID Dispositivo",
-            accessor: "id",
+            Header: "Selecionar",
+            accessor: "box",
           },
           {
-            Header: "Verificado",
-            accessor: "verified",
+            Header: "Detalhe",
+            accessor: "detail",
+          },
+          {
+            Header: "Tipo da Transação",
+            accessor: "typeTransaction",
           },
           {
             Header: "Tipo",
             accessor: "type",
           },
           {
-            Header: "Fabricante",
-            accessor: "fabricante",
+            Header: "Valor",
+            accessor: "money",
           },
           {
-            Header: "Modelo",
-            accessor: "model",
+            Header: "Status",
+            accessor: "status",
           },
         ],
       },
     ],
     []
   );
+
   return (
     <>
       <SidebarWithHeader>
         <NavAccount />
         <TableWrapper>
           <ChakraProvider>
-            <CustomTable columns={columns} data={dataDevices} />
+            <CustomTable columns={columns} data={dataAccountTransactions} />
           </ChakraProvider>
         </TableWrapper>
       </SidebarWithHeader>

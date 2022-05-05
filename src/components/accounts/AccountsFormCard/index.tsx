@@ -10,7 +10,7 @@ import {
 import React, { useState } from "react";
 import { FiEdit2, FiSave } from "react-icons/fi";
 
-const FormCartao = () => {
+const AccountsFormCard = () => {
   const [cartao, setCartao] = useState(true);
   const handleEditCartao = () => {
     setCartao(!cartao);
@@ -104,4 +104,4 @@ const FormCartao = () => {
   }
 };
 
-export default FormCartao;
+export default AccountsFormCard;
