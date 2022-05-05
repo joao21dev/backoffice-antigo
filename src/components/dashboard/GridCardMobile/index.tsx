@@ -10,7 +10,7 @@ import { BiTransfer as P2P } from "react-icons/bi";
 import ChartAccounts from "../ChartAccounts";
 
 import ChartCards from "../ChartCards";
-import { dataAgencyCard, dataSortAccount, dataStatusAccount, dataStatusCard } from "../../chartData";
+import { dataAgencyCard, dataSortAccount, dataStatusAccount, dataStatusCard } from "../../../chartData";
 
 const GridCardMobile = () => {
   const data = [{ name: "Page A", uv: 400, pv: 2400, amt: 2400 }];

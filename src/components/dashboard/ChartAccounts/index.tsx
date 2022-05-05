@@ -4,7 +4,7 @@ import { Doughnut } from "react-chartjs-2";
 
 
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import { optionsAccounts } from "../../chartData";
+import { optionsAccounts } from "../../../chartData";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 

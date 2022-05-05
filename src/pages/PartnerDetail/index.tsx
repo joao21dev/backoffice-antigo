@@ -2,10 +2,10 @@ import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import React, { useState } from "react";
 
 import SidebarWithHeader from "../../components/Sidebar/sidebar";
-import NavAccount from "../../components/NavAccount";
-import FormPersonalData from "../../components/FormPersonalData";
-import AccountInfo from "../../components/AccountInfo";
-import FormAddress from "../../components/FormAddress";
+import NavAccount from "../../components/accounts/NavAccount";
+import FormPersonalData from "../../components/accounts/FormPersonalData";
+import AccountInfo from "../../components/accounts/AccountInfo";
+import FormAddress from "../../components/accounts/FormAddress";
 
 const PartnerDetail = () => {
   return (

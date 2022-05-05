@@ -1,23 +1,18 @@
 import {
   Box,
-  Button,
   Center,
   Divider,
   Flex,
   Grid,
-  GridItem,
-  HStack,
   Stat,
-  StatArrow,
   StatGroup,
   StatHelpText,
   StatLabel,
-  StatNumber,
-  Text,
 } from "@chakra-ui/react";
 import React from "react";
 import NavAccountItem from "../NavAccountItems";
-import SidebarWithHeader from "../Sidebar/sidebar";
+
+
 
 const NavAccount = () => {
   return (
@@ -65,7 +60,7 @@ const NavAccount = () => {
       </Box>
       <Grid
         borderRadius="15px"
-        h="51px"
+        h="55px"
         bg="white"
         templateColumns="repeat(8, 1fr)"
         boxShadow="md"

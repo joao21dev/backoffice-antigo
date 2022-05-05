@@ -10,7 +10,7 @@ import GridCardMobile from "../GridCardMobile";
 import ChartAccounts from "../ChartAccounts";
 
 import ChartCards from "../ChartCards";
-import { dataAgencyCard, dataSortAccount, dataStatusAccount, dataStatusCard } from "../../chartData";
+import { dataAgencyCard, dataSortAccount, dataStatusAccount, dataStatusCard } from "../../../chartData";
 
 const GridCard = () => {
   const data = [{ name: "Page A", uv: 400, pv: 2400, amt: 2400 }];

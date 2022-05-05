@@ -2,11 +2,11 @@ import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import React, { useState } from "react";
 
 import SidebarWithHeader from "../../components/Sidebar/sidebar";
-import NavAccount from "../../components/NavAccount";
+import NavAccount from "../../components/accounts/NavAccount";
 
-import FormCartao from "../../components/FormCartao";
-import FormAddress from "../../components/FormAddress";
-import AccountInfo from "../../components/AccountInfo";
+import FormCartao from "../../components/accounts/FormCartao";
+import FormAddress from "../../components/accounts/FormAddress";
+import AccountInfo from "../../components/accounts/AccountInfo";
 
 const CardDetail = () => {
   return (

@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import CardDetail from "./pages/CardDetail";
+
 import BankAccount from "./pages/BankAccount";
 import AccountDetail from "./pages/AccountDetail";
 import Accounts from "./pages/Contas";
@@ -13,7 +13,8 @@ import Partners from "./pages/Partners";
 import Activities from "./pages/Activities";
 import Devices from "./pages/Devices";
 import PartnerDetail from "./pages/PartnerDetail";
-import NavAccount from "./components/NavAccount";
+import NavAccount from "./components/accounts/NavAccount";
+import CardDetail from "./pages/CardDetail";
 
 export const App = () => (
   <>
