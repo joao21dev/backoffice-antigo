@@ -10,7 +10,7 @@ import {
 import { FiSearch } from "react-icons/fi";
 import SidebarWithHeader from "../../components/Sidebar/sidebar";
 
-const BankLineBoletosDetail = () => {
+const BankLineBoletoDetail = () => {
   return (
     <>
       {" "}
@@ -37,26 +37,22 @@ const BankLineBoletosDetail = () => {
             </Stack>
           </Box>
         </Flex>
-        <Text fontSize="20px" fontWeight="semibold">
-          Detalhes do Boleto
-        </Text>
         <Box
           fontWeight="medium"
           p="2"
           boxShadow="md"
           borderRadius="15px"
-          mt="15px"
+          m="15px"
           bg="white"
           h="50%"
           color="black"
         >
-          <Text mb="5"                       w="90%" fontWeight="semibold">
+          <Text mb="5" w="90%" fontWeight="semibold">
             Detalhes do Boleto
           </Text>
           <Text m="2">ID Conta:</Text>
           <Text m="2">Tipo:</Text>
-          <Text m="2">Valor da Agência:</Text>
-          <Text m="2">Conta:</Text>
+          <Text m="2">Valor:</Text>
           <Text m="2">Código de Barras:</Text>
           <Text m="2">Status:</Text>
           <Text m="2">Data de Emissão:</Text>
@@ -67,4 +63,4 @@ const BankLineBoletosDetail = () => {
   );
 };
 
-export default BankLineBoletosDetail;
+export default BankLineBoletoDetail;

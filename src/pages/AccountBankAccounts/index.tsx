@@ -1,5 +1,4 @@
-import { Box, Button, Flex, Text } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React from "react";
 
 import SidebarWithHeader from "../../components/Sidebar/sidebar";
 import NavAccount from "../../components/accounts/NavAccount";

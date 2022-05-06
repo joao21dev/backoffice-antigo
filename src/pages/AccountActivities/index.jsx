@@ -1,25 +1,11 @@
-import {
-  Flex,
-  Box,
-  Text,
-  Stack,
-  InputGroup,
-  InputLeftElement,
-  Input,
-  ChakraProvider,
-} from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
 import React from "react";
-import { FiSearch } from "react-icons/fi";
+
 import NavAccount from "../../components/accounts/NavAccount";
 
-import { Checkbox } from "@chakra-ui/react";
 import SidebarWithHeader from "../../components/Sidebar/sidebar";
 import { CustomTable } from "../../components/Table";
-import {
-  columnsActivities,
-  dataAccountActivities,
-  dataActivities,
-} from "../../dataTables";
+import { dataAccountActivities } from "../../dataTables";
 import TableWrapper from "../../components/tableWrapper";
 
 export default function AccountActivities() {

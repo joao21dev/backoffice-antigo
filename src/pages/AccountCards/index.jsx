@@ -4,7 +4,7 @@ import SidebarWithHeader from "../../components/Sidebar/sidebar";
 import NavAccount from "../../components/accounts/NavAccount";
 import { CustomTable } from "../../components/Table";
 import TableWrapper from "../../components/tableWrapper";
-import { dataAccountCard, dataAccountCards } from "../../dataTables";
+import {  dataAccountCards } from "../../dataTables";
 
 export default function AccountCards() {
   const columns = React.useMemo(

@@ -21,8 +21,8 @@ export const dataAccountDocuments = [
     ),
     trash: <SettingsIcon color={"gray"} />,
     open: (
-      <Link to="/accounts/account-detail">
-        <Box ml="26px">
+      <Link to="/accounts-account-detail">
+        <Box ml="20%">
           <AiFillEye color={"gray"} fontSize="22px" />
         </Box>
       </Link>
@@ -48,8 +48,8 @@ export const dataAccounts = [
     ),
     trash: <SettingsIcon color={"gray"} />,
     open: (
-      <Link to="/account-detail">
-        <Box ml="10px">
+      <Link to="/accounts-account-detail">
+        <Box ml="25%">
           <AiFillEye color={"gray"} fontSize="22px" />
         </Box>
       </Link>
@@ -85,7 +85,7 @@ export const dataAccountDevices = [
 
     open: (
       <Link to="/account-detail">
-        <Box ml="10px">
+        <Box ml="20%">
           <AiFillEye color={"gray"} fontSize="22px" />
         </Box>
       </Link>
@@ -112,8 +112,8 @@ export const dataAccountPartners = [
     relationship: "Administrador",
     time: "17/03/2022 16:10:58",
     open: (
-      <Link to="/partner-detail">
-        <Box ml="10px">
+      <Link to="/account-partner-detail">
+        <Box ml="25%">
           <AiFillEye color={"gray"} fontSize="22px" />
         </Box>
       </Link>
@@ -135,8 +135,8 @@ export const dataAccountCards = [
       </Box>
     ),
     open: (
-      <Link to="/card-detail">
-        <Box ml="10px">
+      <Link to="/account-card-detail">
+        <Box ml="20%">
           <AiFillEye color={"gray"} fontSize="22px" />
         </Box>
       </Link>
@@ -192,7 +192,30 @@ export const dataBanklineBoletos = [
       </Box>
     ),
     open: (
-      <Link to="/boleto-detail">
+      <Link to="/bankline-boleto-detail">
+        <Box ml="25%">
+          <AiFillEye color={"gray"} fontSize="22px" />
+        </Box>
+      </Link>
+    ),
+  },
+];
+export const dataBanklineCards = [
+  {
+    box: <Checkbox></Checkbox>,
+    number: "4766**********4623",
+    titular: "Carlos Ivan",
+    type: "Físico",
+    date: "12/01/2022",
+    status: (
+      <Box borderRadius={15} bg="green">
+        <Text color={"white"} textAlign="center">
+          Ativo
+        </Text>
+      </Box>
+    ),
+    open: (
+      <Link to="/bankline-card-detail">
         <Box ml="10px">
           <AiFillEye color={"gray"} fontSize="22px" />
         </Box>
@@ -200,3 +223,169 @@ export const dataBanklineBoletos = [
     ),
   },
 ];
+export const dataBanklineCompras = [
+  {
+    box: <Checkbox></Checkbox>,
+    number: "4766**********4623",
+    titular: "Carlos Ivan",
+    money: "R$ 100,00",
+    type: "Físico",
+    date: "12/01/2022",
+    status: (
+      <Box borderRadius={15} bg="green">
+        <Text color={"white"} textAlign="center">
+          Autorizada
+        </Text>
+      </Box>
+    ),
+    open: (
+      <Link to="/bankline-card-detail">
+        <Box ml="10px">
+          <AiFillEye color={"gray"} fontSize="22px" />
+        </Box>
+      </Link>
+    ),
+  },
+];
+export const dataBanklineCashouts = [
+  {
+    box: <Checkbox></Checkbox>,
+    account: "Carlos Ivan",
+    money: "R$ 50,00",
+    description: "Loja",
+    number: "4766**********4623",
+    date: "12/01/2022",
+    status: (
+      <Box borderRadius={15} bg="green">
+        <Text color={"white"} textAlign="center">
+          Autorizada
+        </Text>
+      </Box>
+    ),
+    open: (
+      <Link to="/bankline-card-detail">
+        <Box ml="10px">
+          <AiFillEye color={"gray"} fontSize="22px" />
+        </Box>
+      </Link>
+    ),
+  },
+];
+export const dataBanklinePayments = [
+  {
+    box: <Checkbox></Checkbox>,
+    account: "Carlos Ivan",
+    money: "R$ 100,00",
+    type: "Físico",
+
+    date: "12/01/2022",
+    status: (
+      <Box borderRadius={15} bg="#e5818a">
+        <Text color={"red"} textAlign="center">
+          Recusada
+        </Text>
+      </Box>
+    ),
+    open: (
+      <Link to="/bankline-payment-detail">
+        <Box ml="10px">
+          <AiFillEye color={"gray"} fontSize="22px" />
+        </Box>
+      </Link>
+    ),
+  },
+];
+export const dataBanklineP2P = [
+  {
+    box: <Checkbox></Checkbox>,
+    accountFrom: "Carlos Ivan",
+    accountTo: "João Pedro",
+    type: (
+      <Box borderRadius={15} textAlign="center" bg="#E8EEFC">
+        <Text color="#1D54E1">TARIFA</Text>
+      </Box>
+    ),
+    money: "R$ 100,00",
+    time: "17/03/2022 15:12:00",
+    status: (
+      <Box borderRadius={15} bg="#e5f7ed">
+        <Text color={"green"} textAlign="center">
+          PROCESSADA
+        </Text>
+      </Box>
+    ),
+  },
+];
+export const dataBanklinePix = [
+  {
+    box: <Checkbox></Checkbox>,
+    account: "Carlos Ivan",
+    payer: "João Pedro",
+    bankAccount: "AG: 0001, Conta: 11302518-2",
+    typeTransaction: (
+      <Box borderRadius={15} textAlign="center" bg="#E8EEFC">
+        <Text color="#1D54E1">ENTRADA</Text>
+      </Box>
+    ),
+    direction: (
+      <Box borderRadius={15} textAlign="center" bg="#E8EEFC">
+        <Text color="#1D54E1">CRÉDITO</Text>
+      </Box>
+    ),
+    money: "R$ 60,00",
+    time: "17/03/2022 15:12:00",
+    status: (
+      <Box borderRadius={15} bg="#e5f7ed">
+        <Text color={"green"} textAlign="center">
+          PROCESSADA
+        </Text>
+      </Box>
+    ),
+  },
+];
+export const dataBanklineTed = [
+  {
+    box: <Checkbox></Checkbox>,
+    account: "Carlos Ivan",
+    payer: "João Pedro",
+    bankAccount: "AG: 0001, Conta: 11302518-2",
+    type: (
+      <Box borderRadius={15} textAlign="center" bg="#E8EEFC">
+        <Text color="#1D54E1">ENTRADA</Text>
+      </Box>
+    ),
+    money: "R$ 60,00",
+    time: "17/03/2022 15:12:00",
+    status: (
+      <Box borderRadius={15} bg="#e5f7ed">
+        <Text color={"green"} textAlign="center">
+          PROCESSADA
+        </Text>
+      </Box>
+    ),
+  },
+];
+// export const dataBankLineCards = [
+//   {
+//     box: <Checkbox></Checkbox>,
+//     number: "4766**********4623",
+//     titular: "Carlos Ivan",
+//     type: "Físico",
+//     date: "12/01/2022",
+//     status: (
+//       <Box borderRadius={15} w="60%" bg="green">
+//         <Text color={"white"} textAlign="center">
+//           Ativo
+//         </Text>
+//       </Box>
+//     ),
+//     open: (
+//       <Link to="bankline-card-detail">
+//         <Box ml="10px">
+//           <AiFillEye color={"gray"} fontSize="22px" />
+//         </Box>
+//       </Link>
+//     ),
+//     change: <SettingsIcon color={"gray"} />,
+//   },
+// ];

@@ -1,4 +1,3 @@
-import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import React, { useState } from "react";
 
 import Endereco from "../../components/accounts/AccountsFormAddress";
@@ -10,7 +9,7 @@ import FormDadosPessoais from "../../components/accounts/AccountsFormPersonalDat
 import AccountInfo from "../../components/accounts/AccountInfo";
 import FormCartao from "../../components/accounts/AccountsFormCard";
 
-const AccountDetail = () => {
+const AccountsAccountDetail = () => {
   return (
     <>
       <SidebarWithHeader>
@@ -23,4 +22,4 @@ const AccountDetail = () => {
   );
 };
 
-export default AccountDetail;
+export default AccountsAccountDetail;

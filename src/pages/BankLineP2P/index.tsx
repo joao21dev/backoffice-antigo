@@ -5,25 +5,21 @@ import SidebarWithHeader from "../../components/Sidebar/sidebar";
 import NavAccount from "../../components/accounts/NavAccount";
 import { CustomTable } from "../../components/Table";
 import TableWrapper from "../../components/tableWrapper";
-import { dataAccountTransactions } from "../../dataTables";
+import { dataAccountTransactions, dataBanklineP2P } from "../../dataTables";
 
-export default function AccountTransactions() {
+export default function BankLineP2P() {
   const columns = React.useMemo(
     () => [
       {
-        Header: "Transações",
+        Header: "Transferência P2P",
         columns: [
           {
-            Header: "Selecionar",
-            accessor: "box",
+            Header: "Conta de Origem",
+            accessor: "accountFrom",
           },
           {
-            Header: "Detalhe",
-            accessor: "detail",
-          },
-          {
-            Header: "Tipo da Transação",
-            accessor: "typeTransaction",
+            Header: "Conta de Destino",
+            accessor: "accountTo",
           },
           {
             Header: "Tipo",
@@ -32,6 +28,10 @@ export default function AccountTransactions() {
           {
             Header: "Valor",
             accessor: "money",
+          },
+          {
+            Header: "Data e Hora",
+            accessor: "time",
           },
           {
             Header: "Status",
@@ -46,10 +46,10 @@ export default function AccountTransactions() {
   return (
     <>
       <SidebarWithHeader>
-        <NavAccount />
+        {" "}
         <TableWrapper>
           <ChakraProvider>
-            <CustomTable columns={columns} data={dataAccountTransactions} />
+            <CustomTable columns={columns} data={dataBanklineP2P} />
           </ChakraProvider>
         </TableWrapper>
       </SidebarWithHeader>

@@ -2,21 +2,28 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-
-import BankAccount from "./pages/AccountBankAccounts";
-import AccountDetail from "./pages/AccountDetail";
 import Accounts from "./pages/Accounts";
-import Documents from "./pages/AccountDocuments";
-import Cards from "./pages/AccountCards";
-import Transactions from "./pages/AccountTransactions";
-import Partners from "./pages/AccountPartners";
-import Activities from "./pages/AccountActivities";
-import Devices from "./pages/AccountDevices";
-import PartnerDetail from "./pages/AccountsPartnerDetail";
-import NavAccount from "./components/accounts/NavAccount";
-import CardDetail from "./pages/AccountCardDetail";
-import Boletos from "./pages/BankLineBoletos";
-import BoletoDetail from "./pages/BankLineBoletosDetail";
+import BankLineBoletos from "./pages/BankLineBoletos";
+import BankLineCompras from "./pages/BankLineCompras";
+import AccountDocuments from "./pages/AccountDocuments";
+import AccountCards from "./pages/AccountCards";
+import AccountTransactions from "./pages/AccountTransactions";
+import AccountDevices from "./pages/AccountDevices";
+import AccountPartners from "./pages/AccountPartners";
+import AccountActivities from "./pages/AccountActivities";
+import AccountsPartnerDetail from "./pages/AccountsPartnerDetail";
+import AccountsAccountDetail from "./pages/AccountDetail";
+import BankLineBoletosDetail from "./pages/BankLineBoletoDetail";
+import AccountBankAccounts from "./pages/AccountBankAccounts";
+import AccountCardDetail from "./pages/AccountCardDetail";
+import BankLineCardDetail from "./pages/BankLineCardDetail";
+import BanklineCards from "./pages/BankLineCards";
+import BankLineCashouts from "./pages/BanklineCashouts";
+import BankLinePayments from "./pages/BankLinePayments";
+import BankLinePaymentDetail from "./pages/BankLinePaymentDetail";
+import BankLineP2P from "./pages/BankLineP2P";
+import BankLinePix from "./pages/BankLinePix";
+import BankLineTed from "./pages/BankLineTed";
 
 export const App = () => (
   <>
@@ -24,18 +31,42 @@ export const App = () => (
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/accounts" element={<Accounts />} />
-        <Route path="/boletos" element={<Boletos />} />
-        <Route path="/documents" element={<Documents />} />
-        <Route path="/cards" element={<Cards />} />
-        <Route path="/transactions" element={<Transactions />} />
-        <Route path="/devices" element={<Devices />} />
-        <Route path="/partners" element={<Partners />} />
-        <Route path="/activities" element={<Activities />} />
-        <Route path="/account-detail" element={<AccountDetail />} />
-        <Route path="/partner-detail" element={<PartnerDetail />} />
-        <Route path="/boleto-detail" element={<BoletoDetail />} />
-        <Route path="/bank-account" element={<BankAccount />} />
-        <Route path="/card-detail" element={<CardDetail />} />
+        <Route path="/account-documents" element={<AccountDocuments />} />
+        <Route path="/account-cards" element={<AccountCards />} />
+        <Route path="/account-transactions" element={<AccountTransactions />} />
+        <Route path="/account-devices" element={<AccountDevices />} />
+        <Route path="/account-partners" element={<AccountPartners />} />
+        <Route
+          path="/account-activities"
+          element={<AccountActivities />}
+        />{" "}
+        <Route path="/account-card-detail" element={<AccountCardDetail />} />
+        <Route
+          path="/accounts-account-detail"
+          element={<AccountsAccountDetail />}
+        />
+        <Route
+          path="/account-partner-detail"
+          element={<AccountsPartnerDetail />}
+        />{" "}
+        <Route path="/account-bank-account" element={<AccountBankAccounts />} />{" "}
+        <Route path="/bankline-boletos" element={<BankLineBoletos />} />
+        <Route
+          path="/bankline-boleto-detail"
+          element={<BankLineBoletosDetail />}
+        />
+        <Route path="/bankline-cards" element={<BanklineCards />} />
+        <Route path="/bankline-pix" element={<BankLinePix />} />
+        <Route path="/bankline-ted" element={<BankLineTed />} />
+        <Route path="/bankline-p2p" element={<BankLineP2P />} />
+        <Route path="/bankline-compras" element={<BankLineCompras />} />
+        <Route path="/bankline-cashouts" element={<BankLineCashouts />} />
+        <Route path="/bankline-payments" element={<BankLinePayments />} />
+        <Route
+          path="/bankline-payment-detail"
+          element={<BankLinePaymentDetail />}
+        />
+        <Route path="/bankline-card-detail" element={<BankLineCardDetail />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/" element={<Login />} />
       </Routes>

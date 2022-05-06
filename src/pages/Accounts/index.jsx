@@ -1,26 +1,9 @@
-import {
-  Flex,
-  Box,
-  Text,
-  Stack,
-  InputGroup,
-  InputLeftElement,
-  Input,
-  ChakraProvider,
-  Button,
-} from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
 import React from "react";
-import { FiSearch } from "react-icons/fi";
-import { FaTrashAlt } from "react-icons/fa";
-import { AiFillEye } from "react-icons/ai";
-import { RiEditFill } from "react-icons/ri";
-import { SettingsIcon } from "@chakra-ui/icons";
 
-import { Checkbox } from "@chakra-ui/react";
 import SidebarWithHeader from "../../components/Sidebar/sidebar";
-import { Link } from "react-router-dom";
 import { CustomTable } from "../../components/Table";
-import { columnsAccounts, dataAccounts } from "../../dataTables";
+import { dataAccounts } from "../../dataTables";
 import TableWrapper from "../../components/tableWrapper";
 
 export default function Accounts() {

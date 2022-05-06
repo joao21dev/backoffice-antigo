@@ -1,4 +1,3 @@
-import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import React, { useState } from "react";
 
 import SidebarWithHeader from "../../components/Sidebar/sidebar";

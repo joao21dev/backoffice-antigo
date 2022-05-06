@@ -1,19 +1,18 @@
-import { Box, Button, Flex, Text } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React from "react";
 
 import SidebarWithHeader from "../../components/Sidebar/sidebar";
-import NavAccount from "../../components/accounts/NavAccount";
 
 import FormCartao from "../../components/accounts/AccountsFormCard";
 import FormAddress from "../../components/accounts/AccountsFormAddress";
-import AccountInfo from "../../components/accounts/AccountInfo";
+import BankLineFormCard from "../../components/BankLine/BankLineFormCard";
+import BankLineFormAddress from "../../components/BankLine/BankLineFormAddress";
 
 const BankLineCardDetail = () => {
   return (
     <>
       <SidebarWithHeader>
-        <FormCartao />
-        <FormAddress name="Endereço de Entrega" />
+        <BankLineFormCard />
+        <BankLineFormAddress name="Endereço de Entrega" />
       </SidebarWithHeader>
     </>
   );

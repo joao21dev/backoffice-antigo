@@ -65,14 +65,14 @@ const NavAccount = () => {
         templateColumns="repeat(8, 1fr)"
         boxShadow="md"
       >
-        <NavAccountItem to={"account-detail"} name={"Dados Pesoais"} />
-        <NavAccountItem to={"documents"} name={"Documentos"} />
-        <NavAccountItem to={"cards"} name={"Cartao"} />
-        <NavAccountItem to={"transactions"} name={"Transações"} />
-        <NavAccountItem to={"bank-account"} name={"Conta Bancária"} />
-        <NavAccountItem to={"devices"} name={"Dispositivos"} />
-        <NavAccountItem to={"activities"} name={"Atividades"} />
-        <NavAccountItem to={"partners"} name={"Sócios"} />
+        <NavAccountItem to={"accounts-account-detail"} name={"Dados Pessoais"} />
+        <NavAccountItem to={"account-documents"} name={"Documentos"} />
+        <NavAccountItem to={"account-cards"} name={"Cartões"} />
+        <NavAccountItem to={"account-transactions"} name={"Transações"} />
+        <NavAccountItem to={"account-bank-account"} name={"Conta Bancária"} />
+        <NavAccountItem to={"account-devices"} name={"Dispositivos"} />
+        <NavAccountItem to={"account-activities"} name={"Atividades"} />
+        <NavAccountItem to={"account-partners"} name={"Sócios"} />
       </Grid>
     </>
   );

@@ -1,55 +1,62 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import React from "react";
-
 import SidebarWithHeader from "../../components/Sidebar/sidebar";
 import NavAccount from "../../components/accounts/NavAccount";
 import { CustomTable } from "../../components/Table";
 import TableWrapper from "../../components/tableWrapper";
-import { dataAccountTransactions } from "../../dataTables";
+import { dataBanklineCards, dataBanklineCashouts, dataBanklineCompras } from "../../dataTables";
 
-export default function AccountTransactions() {
+
+export default function BankLineCashouts() {
   const columns = React.useMemo(
     () => [
       {
-        Header: "Transações",
+        Header: "Saques",
         columns: [
           {
             Header: "Selecionar",
             accessor: "box",
           },
           {
-            Header: "Detalhe",
-            accessor: "detail",
+            Header: "Conta",
+            accessor: "account",
           },
           {
-            Header: "Tipo da Transação",
-            accessor: "typeTransaction",
-          },
-          {
-            Header: "Tipo",
-            accessor: "type",
+            Header: "Descrição",
+            accessor: "description",
           },
           {
             Header: "Valor",
             accessor: "money",
           },
           {
+            Header: "Número",
+            accessor: "number",
+          },
+          
+          {
+            Header: "Data",
+            accessor: "date",
+          },
+          {
             Header: "Status",
             accessor: "status",
+          },
+          {
+            Header: "Visulaizar",
+            accessor: "open",
           },
         ],
       },
     ],
     []
   );
-
   return (
     <>
       <SidebarWithHeader>
-        <NavAccount />
         <TableWrapper>
           <ChakraProvider>
-            <CustomTable columns={columns} data={dataAccountTransactions} />
+            <CustomTable columns={columns} data={dataBanklineCashouts} />
           </ChakraProvider>
         </TableWrapper>
       </SidebarWithHeader>
