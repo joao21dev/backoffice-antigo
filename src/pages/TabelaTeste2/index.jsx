@@ -1,44 +1,25 @@
-import { Box, ChakraProvider } from "@chakra-ui/react";
-import React, { useState, useMemo, useEffect } from "react";
-
-import { Checkbox } from "@chakra-ui/react";
-import SidebarWithHeader from "../../components/Sidebar/sidebar";
-
-import NavAccount from "../../components/accounts/NavAccount";
-import { CustomTable } from "../../components/Table";
-import { dataAccountDocuments } from "../../dataTables";
-import TableWrapper from "../../components/tableWrapper";
-import { Link } from "react-router-dom";
+import {
+  Box,
+  Checkbox,
+} from "@chakra-ui/react";
+import axios from "axios";
+import React, { useEffect, useMemo, useState } from "react";
 import { AiFillEye } from "react-icons/ai";
 import { FaTrashAlt } from "react-icons/fa";
-import axios from "axios";
+import { Link } from "react-router-dom";
+import SidebarWithHeader from "../../components/Sidebar/sidebar";
+import { CustomTable } from "../../components/Table";
 
-export default function AccountDocuments() {
+
+const TableTeste2 = () => {
   const [data, setData] = useState([]);
 
   const userData = useMemo(() => [...data], [data]);
 
-  const fetchData = async () => {
-    const response = await axios
-      .get("https://jsonplaceholder.typicode.com/users")
-      .catch((err) => console.log(err));
-
-    if (response) {
-      const data = response.data;
-
-      console.log("Data: ", data);
-      setData(data);
-    }
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
   const columns = React.useMemo(
     () => [
       {
-        Header: "Documentos",
+        Header: "Contas",
         columns: [
           {
             accessor: "accessor",
@@ -46,16 +27,32 @@ export default function AccountDocuments() {
             Cell: ({ row: { original } }) => <Checkbox bg="#EDF2F7"></Checkbox>,
           },
           {
-            Header: "Tipo de Documento",
-            accessor: "company.name",
+            Header: "ID Conta",
+            accessor: "id",
           },
           {
-            Header: "Formato",
-            accessor: "company.bs",
+            Header: "Nome",
+            accessor: "name",
+          },
+          {
+            Header: "E-mail",
+            accessor: "email",
+          },
+          {
+            Header: "Documento",
+            accessor: "document",
+          },
+          {
+            Header: "Saldo",
+            accessor: "money",
           },
           {
             Header: "Data",
-            accessor: "geo.lat",
+            accessor: "date",
+          },
+          {
+            Header: "Status",
+            accessor: "status",
           },
           {
             Header: "Sobre",
@@ -82,12 +79,31 @@ export default function AccountDocuments() {
     ],
     []
   );
+
+  const fetchData = async () => {
+    const response = await axios
+      .get("https://jsonplaceholder.typicode.com/users")
+      .catch((err) => console.log(err));
+
+    if (response) {
+      const data = response.data;
+
+      console.log("Data: ", data);
+      setData(data);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
     <>
       <SidebarWithHeader>
-        <NavAccount />
         <CustomTable data={userData} columns={columns} />
       </SidebarWithHeader>
     </>
   );
-}
+};
+
+export default TableTeste2;

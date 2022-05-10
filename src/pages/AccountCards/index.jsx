@@ -4,7 +4,7 @@ import SidebarWithHeader from "../../components/Sidebar/sidebar";
 import NavAccount from "../../components/accounts/NavAccount";
 import { CustomTable } from "../../components/Table";
 import TableWrapper from "../../components/tableWrapper";
-import {  dataAccountCards } from "../../dataTables";
+import { dataAccountCards } from "../../dataTables";
 
 export default function AccountCards() {
   const columns = React.useMemo(
@@ -38,7 +38,7 @@ export default function AccountCards() {
           },
           {
             Header: "",
-            accessor: "change",
+            accessor: "edit",
           },
         ],
       },
@@ -49,11 +49,7 @@ export default function AccountCards() {
     <>
       <SidebarWithHeader>
         <NavAccount />
-        <TableWrapper>
-          <ChakraProvider>
-            <CustomTable columns={columns} data={dataAccountCards} />
-          </ChakraProvider>
-        </TableWrapper>
+        <CustomTable columns={columns} data={dataAccountCards} />
       </SidebarWithHeader>
     </>
   );

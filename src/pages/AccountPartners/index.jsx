@@ -46,11 +46,7 @@ export default function AccountPartners() {
     <>
       <SidebarWithHeader>
         <NavAccount />
-        <TableWrapper>
-          <ChakraProvider>
-            <CustomTable columns={columns} data={dataAccountPartners} />
-          </ChakraProvider>
-        </TableWrapper>
+        <CustomTable columns={columns} data={dataAccountPartners} />
       </SidebarWithHeader>
     </>
   );

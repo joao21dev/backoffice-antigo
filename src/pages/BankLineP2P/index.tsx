@@ -47,11 +47,7 @@ export default function BankLineP2P() {
     <>
       <SidebarWithHeader>
         {" "}
-        <TableWrapper>
-          <ChakraProvider>
             <CustomTable columns={columns} data={dataBanklineP2P} />
-          </ChakraProvider>
-        </TableWrapper>
       </SidebarWithHeader>
     </>
   );

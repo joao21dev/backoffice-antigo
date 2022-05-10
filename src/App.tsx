@@ -2,7 +2,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import Accounts from "./pages/Accounts";
 import BankLineBoletos from "./pages/BankLineBoletos";
 import BankLineCompras from "./pages/BankLineCompras";
 import AccountDocuments from "./pages/AccountDocuments";
@@ -24,6 +23,7 @@ import BankLinePaymentDetail from "./pages/BankLinePaymentDetail";
 import BankLineP2P from "./pages/BankLineP2P";
 import BankLinePix from "./pages/BankLinePix";
 import BankLineTed from "./pages/BankLineTed";
+import Accounts from "./pages/Accounts";
 
 export const App = () => (
   <>

@@ -54,11 +54,7 @@ export default function BankLineCashouts() {
   return (
     <>
       <SidebarWithHeader>
-        <TableWrapper>
-          <ChakraProvider>
             <CustomTable columns={columns} data={dataBanklineCashouts} />
-          </ChakraProvider>
-        </TableWrapper>
       </SidebarWithHeader>
     </>
   );

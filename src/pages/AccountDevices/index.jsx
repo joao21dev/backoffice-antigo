@@ -46,11 +46,7 @@ export default function AccountDevices() {
     <>
       <SidebarWithHeader>
         <NavAccount />
-        <TableWrapper>
-          <ChakraProvider>
-            <CustomTable columns={columns} data={dataAccountDevices} />
-          </ChakraProvider>
-        </TableWrapper>
+        <CustomTable columns={columns} data={dataAccountDevices} />
       </SidebarWithHeader>
     </>
   );

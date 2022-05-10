@@ -6,7 +6,6 @@ import { CustomTable } from "../../components/Table";
 import TableWrapper from "../../components/tableWrapper";
 import { dataBanklineCards } from "../../dataTables";
 
-
 export default function BanklineCards() {
   const columns = React.useMemo(
     () => [
@@ -43,7 +42,7 @@ export default function BanklineCards() {
           },
           {
             Header: "",
-            accessor: "change",
+            accessor: "edit",
           },
         ],
       },
@@ -53,11 +52,7 @@ export default function BanklineCards() {
   return (
     <>
       <SidebarWithHeader>
-        <TableWrapper>
-          <ChakraProvider>
-            <CustomTable columns={columns} data={dataBanklineCards} />
-          </ChakraProvider>
-        </TableWrapper>
+        <CustomTable columns={columns} data={dataBanklineCards} />
       </SidebarWithHeader>
     </>
   );

@@ -53,11 +53,7 @@ export default function BankLineCompras() {
   return (
     <>
       <SidebarWithHeader>
-        <TableWrapper>
-          <ChakraProvider>
             <CustomTable columns={columns} data={dataBanklineCompras} />
-          </ChakraProvider>
-        </TableWrapper>
       </SidebarWithHeader>
     </>
   );

@@ -38,11 +38,7 @@ export default function AccountActivities() {
   return (
     <SidebarWithHeader>
       <NavAccount />
-      <TableWrapper>
-        <ChakraProvider>
-          <CustomTable columns={columns} data={dataAccountActivities} />
-        </ChakraProvider>
-      </TableWrapper>
+      <CustomTable columns={columns} data={dataAccountActivities} />
     </SidebarWithHeader>
   );
 }

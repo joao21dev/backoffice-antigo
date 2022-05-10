@@ -54,11 +54,7 @@ export default function BankLinePix() {
   return (
     <>
       <SidebarWithHeader>
-        <TableWrapper>
-          <ChakraProvider>
             <CustomTable columns={columns} data={dataBanklinePix} />
-          </ChakraProvider>
-        </TableWrapper>
       </SidebarWithHeader>
     </>
   );

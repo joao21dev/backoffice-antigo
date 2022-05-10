@@ -50,12 +50,7 @@ export default function BankLineTed() {
   return (
     <>
       <SidebarWithHeader>
-        {" "}
-        <TableWrapper>
-          <ChakraProvider>
-            <CustomTable columns={columns} data={dataBanklineTed} />
-          </ChakraProvider>
-        </TableWrapper>
+        <CustomTable columns={columns} data={dataBanklineTed} />
       </SidebarWithHeader>
     </>
   );

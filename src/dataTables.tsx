@@ -3,8 +3,9 @@ import { Box, Checkbox, Text } from "@chakra-ui/react";
 import React from "react";
 import { AiFillEye } from "react-icons/ai";
 import { FaTrashAlt } from "react-icons/fa";
-import { RiEditFill } from "react-icons/ri";
+import { BsThreeDots } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import AccountsCardEdit from "./components/accounts/AccountsCardEdit";
 
 export const dataAccountDocuments = [
   {
@@ -57,11 +58,11 @@ export const dataAccounts = [
     change: (
       <Box display="flex" justifyContent="space-around">
         <FaTrashAlt color={"gray"} />
-        <RiEditFill color={"gray"} />
       </Box>
     ),
   },
 ];
+
 
 export const dataAccountDevices = [
   {
@@ -141,7 +142,11 @@ export const dataAccountCards = [
         </Box>
       </Link>
     ),
-    change: <SettingsIcon color={"gray"} />,
+    edit: (
+      <Box display="flex">
+        <AccountsCardEdit />
+      </Box>
+    ),
   },
 ];
 
@@ -220,6 +225,11 @@ export const dataBanklineCards = [
           <AiFillEye color={"gray"} fontSize="22px" />
         </Box>
       </Link>
+    ),
+    edit: (
+      <Box display="flex">
+        <AccountsCardEdit />
+      </Box>
     ),
   },
 ];
