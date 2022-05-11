@@ -12,7 +12,8 @@ import {
   StatArrow,
   StatGroup,
 } from "@chakra-ui/react";
-import { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import {
   FiArrowDown,
   FiArrowUp,
@@ -23,6 +24,26 @@ import {
 
 const Cardbank = () => {
   const [valor, setValor] = useState("valor");
+
+  const [data, setData] = useState([]);
+
+  const fetchData = async () => {
+    const response = await axios
+      .get("https://dummyjson.com/users/1")
+      .catch((err) => console.log(err));
+
+    if (response) {
+      const data = response.data;
+
+      console.log("Data: ", data);
+      setData(data);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
 
   return (
     <>
@@ -46,10 +67,10 @@ const Cardbank = () => {
             <StatGroup>
               <Stat>
                 <StatLabel fontWeight="normal">Transações</StatLabel>
-                <StatNumber>R$345,670</StatNumber>
+                <StatNumber>R$ {data.height}</StatNumber>
                 <StatHelpText>
                   <StatArrow type="increase" />
-                  23.36%
+                  {data.weight}%
                 </StatHelpText>
               </Stat>
             </StatGroup>

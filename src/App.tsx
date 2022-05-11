@@ -23,14 +23,24 @@ import BankLinePaymentDetail from "./pages/BankLinePaymentDetail";
 import BankLineP2P from "./pages/BankLineP2P";
 import BankLinePix from "./pages/BankLinePix";
 import BankLineTed from "./pages/BankLineTed";
+import { Products } from "./pages/TabelaTeste";
+import TableTeste2 from "./pages/TabelaTeste2";
 import Accounts from "./pages/Accounts";
+import Users from "./components/Testes/users";
+import UserInfo from "./components/Testes/userInfo";
 
 export const App = () => (
   <>
     <BrowserRouter>
       <Routes>
         <Route path="/home" element={<Home />} />
+        <Route path="/users" element={<Users />} />
+        <Route path="/users/:id" element={<UserInfo />} />
         <Route path="/accounts" element={<Accounts />} />
+        <Route
+          path="/accounts/:id"
+          element={<AccountsAccountDetail />}
+        />
         <Route path="/account-documents" element={<AccountDocuments />} />
         <Route path="/account-cards" element={<AccountCards />} />
         <Route path="/account-transactions" element={<AccountTransactions />} />
@@ -41,10 +51,7 @@ export const App = () => (
           element={<AccountActivities />}
         />{" "}
         <Route path="/account-card-detail" element={<AccountCardDetail />} />
-        <Route
-          path="/accounts-account-detail"
-          element={<AccountsAccountDetail />}
-        />
+        
         <Route
           path="/account-partner-detail"
           element={<AccountsPartnerDetail />}

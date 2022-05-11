@@ -9,13 +9,38 @@ import {
   color,
 } from "@chakra-ui/react";
 import { FiEdit2, FiSave } from "react-icons/fi";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
 const AccountsFormPersonalData = () => {
+  const [data, setData] = useState([]);
+
+  const { id } = useParams();
+
+  const fetchData = async () => {
+    const response = await axios
+      .get(`https://dummyjson.com/users/${id}`)
+      .catch((err) => console.log(err));
+
+    if (response) {
+      const data = response.data;
+
+      console.log("Data: ", data);
+      setData(data);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   const [personalData, setPersonalData] = useState(true);
   const handleEditPersonalData = () => {
     setPersonalData(!personalData);
   };
+
+
   if (personalData) {
     return (
       <Box
@@ -44,14 +69,21 @@ const AccountsFormPersonalData = () => {
             Edtar
           </Button>
         </Flex>
-        <Text m="2">Nome:</Text>
+        {/* <Text m="2">Nome:</Text>
         <Text m="2">Documento:</Text>
         <Text m="2">Telefone:</Text>
         <Text m="2">Data de Nascimento:</Text>
         <Text m="2">Nome da Mãe:</Text>
         <Text m="2">Nome da Mãe:</Text>
         <Text m="2">Renda Mensal:</Text>
-        <Text m="2">Agência Digital:</Text>
+        <Text m="2">Agência Digital:</Text> */}
+         <Text m="2">ID: {data.id}</Text>
+        <Text m="2">Nome: {data.firstName}</Text>
+        <Text m="2">E-mail: {data.email}</Text>
+        <Text m="2">Telefone de Nascimento: {data.name}</Text>
+        <Text m="2">Data de Nascimento: {data.phone}</Text>
+        <Text m="2">Cidade: {data.ip}</Text>
+        <Text m="2">Sexo: {data.gender}</Text>
         <Flex>
           <Text w="20%" m="2">
             Plano:

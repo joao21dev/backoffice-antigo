@@ -9,9 +9,31 @@ import {
   color,
 } from "@chakra-ui/react";
 import { FiEdit2, FiSave } from "react-icons/fi";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 
-const AccountsFormAddress = (props: any) => {
+const AccountsFormAddress = (props) => {
+  const [data, setData] = useState([]);
+
+  const { id } = useParams();
+
+  const fetchData = async () => {
+    const response = await axios
+      .get(`https://dummyjson.com/users/${id}`)
+      .catch((err) => console.log(err));
+
+    if (response) {
+      const data = response.data;
+
+      console.log("Data: ", data);
+      setData(data);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
   const [address, setAddress] = useState(true);
   const handleEditAddress = () => {
     setAddress(!address);
@@ -44,13 +66,13 @@ const AccountsFormAddress = (props: any) => {
             Edtar
           </Button>
         </Flex>
-        <Text m="2">Rua:</Text>
+        <Text m="2">Rua: {data.address ? data.address.address : ''}</Text>
         <Text m="2">Número:</Text>
         <Text m="2">Complemento:</Text>
-        <Text m="2">CEP:</Text>
+        <Text m="2">CEP: {data.address ? data.address.postalCode : ''}</Text>
         <Text m="2">Bairro:</Text>
-        <Text m="2">Cidade:</Text>
-        <Text m="2">Estado:</Text>
+        <Text m="2">Cidade:  {data.address ? data.address.city : ''}</Text>
+        <Text m="2">Estado:  {data.address ? data.address.state : ''}</Text>
       </Box>
     );
   }

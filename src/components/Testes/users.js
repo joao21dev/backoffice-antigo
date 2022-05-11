@@ -3,11 +3,11 @@ import axios from "axios";
 import React, { useEffect, useMemo, useState } from "react";
 import { AiFillEye } from "react-icons/ai";
 import { FaTrashAlt } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { generatePath, Link, useLocation, useParams } from "react-router-dom";
 import SidebarWithHeader from "../../components/Sidebar/sidebar";
 import { CustomTable } from "../../components/Table";
 
-const Accounts = () => {
+const Users = (props) => {
   const [data, setData] = useState([]);
 
   const userData = useMemo(() => [...data], [data]);
@@ -35,26 +35,26 @@ const Accounts = () => {
             accessor: "email",
           },
           {
-            Header: "Documento",
-            accessor: "document",
+            Header: "Telefone",
+            accessor: "phone",
           },
           {
-            Header: "Saldo",
-            accessor: "money",
+            Header: "Data de Nascimento",
+            accessor: "birthDate",
           },
           {
-            Header: "Data",
-            accessor: "date",
+            Header: "Cidade",
+            accessor: "address.city",
           },
           {
-            Header: "Status",
-            accessor: "status",
+            Header: "Sexo",
+            accessor: "gender",
           },
           {
             Header: "Sobre",
             accessor: "open",
             Cell: (props) => (
-              <Link to={`/accounts/${props.cell.row.cells[1].value}`}>
+              <Link to={`/users/${props.cell.row.cells[1].value}`}>
                 {" "}
                 <Box ml="25%">
                   <AiFillEye color={"gray"} fontSize="22px" />
@@ -103,4 +103,4 @@ const Accounts = () => {
   );
 };
 
-export default Accounts;
+export default Users;

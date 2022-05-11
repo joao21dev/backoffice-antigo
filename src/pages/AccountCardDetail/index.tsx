@@ -13,7 +13,6 @@ const AccountCardDetail = () => {
       <SidebarWithHeader>
         <NavAccount></NavAccount>
         <AccountInfo />
-
         <FormCartao />
         <FormAddress name="Endereço de Entrega" />
       </SidebarWithHeader>

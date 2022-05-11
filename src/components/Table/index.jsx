@@ -74,7 +74,9 @@ export function CustomTable({ columns, data }) {
                   <Tr {...row.getRowProps()} bg={isEven(idx) ? "#C1F2E0" : ""}>
                     {row.cells.map((cell, idx) => {
                       return (
-                        <Td {...cell.getCellProps()}>{cell.render("Cell")}</Td>
+                        <Td 
+                        // onClick={()=>  console.log(cell.value)}
+                         {...cell.getCellProps()}>{cell.render("Cell")}</Td>
                       );
                     })}
                   </Tr>
