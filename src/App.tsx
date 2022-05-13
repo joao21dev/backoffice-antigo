@@ -23,11 +23,14 @@ import BankLinePaymentDetail from "./pages/BankLinePaymentDetail";
 import BankLineP2P from "./pages/BankLineP2P";
 import BankLinePix from "./pages/BankLinePix";
 import BankLineTed from "./pages/BankLineTed";
-import { Products } from "./pages/TabelaTeste";
-import TableTeste2 from "./pages/TabelaTeste2";
 import Accounts from "./pages/Accounts";
 import Users from "./components/Testes/users";
 import UserInfo from "./components/Testes/userInfo";
+import Plans from "./pages/Plans";
+import PlanDetail from "./pages/PlanDetail";
+import Fares from "./pages/Fares";
+import FaresCreate from "./pages/FaresCreate";
+import AccountsInfo from "./pages/AccountsInfo";
 
 export const App = () => (
   <>
@@ -37,21 +40,22 @@ export const App = () => (
         <Route path="/users" element={<Users />} />
         <Route path="/users/:id" element={<UserInfo />} />
         <Route path="/accounts" element={<Accounts />} />
-        <Route
-          path="/accounts/:id"
-          element={<AccountsAccountDetail />}
-        />
-        <Route path="/account-documents" element={<AccountDocuments />} />
-        <Route path="/account-cards" element={<AccountCards />} />
+        <Route path="/accounts/:id" element={<AccountsInfo />} />
+        <Route path="/plans" element={<Plans />} />
+        <Route path="/fares" element={<Fares />} />
+        <Route path="/fares-create" element={<FaresCreate />} />
+        <Route path="/plan-detail" element={<PlanDetail />} />
+        {/* 
+        <Route path="/account-documents/:id" element={<AccountDocuments />} />
+        <Route path="/account-cards/:id" element={<AccountCards />} />
         <Route path="/account-transactions" element={<AccountTransactions />} />
         <Route path="/account-devices" element={<AccountDevices />} />
         <Route path="/account-partners" element={<AccountPartners />} />
         <Route
           path="/account-activities"
           element={<AccountActivities />}
-        />{" "}
+        />{" "} */}
         <Route path="/account-card-detail" element={<AccountCardDetail />} />
-        
         <Route
           path="/account-partner-detail"
           element={<AccountsPartnerDetail />}

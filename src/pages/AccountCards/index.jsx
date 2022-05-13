@@ -1,8 +1,9 @@
 import { Box, ChakraProvider, Checkbox } from "@chakra-ui/react";
 import React, { useEffect, useState, useMemo } from "react";
 import SidebarWithHeader from "../../components/Sidebar/sidebar";
-import NavAccount from "../../components/accounts/NavAccount";
 import { CustomTable } from "../../components/Table";
+import NavAccount from "../../components/accounts/NavAccount";
+
 import TableWrapper from "../../components/tableWrapper";
 import { dataAccountCards } from "../../dataTables";
 import axios from "axios";
@@ -43,7 +44,7 @@ export default function AccountCards() {
             Header: "Sobre",
             accessor: "open",
             Cell: ({ row: { original } }) => (
-              <Link to="/accounts-account-detail">
+              <Link to="/account-card-detail">
                 <Box ml="25%">
                   <AiFillEye color={"gray"} fontSize="22px" />
                 </Box>
@@ -75,11 +76,7 @@ export default function AccountCards() {
 
   return (
     <>
-      <SidebarWithHeader>
-        <NavAccount />
-        {JSON.stringify(data)}
-        <CustomTable columns={columns} data={userData} />
-      </SidebarWithHeader>
+      <CustomTable columns={columns} data={userData} />
     </>
   );
 }

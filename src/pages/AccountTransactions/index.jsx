@@ -45,14 +45,9 @@ export default function AccountTransactions() {
 
   return (
     <>
-      <SidebarWithHeader>
-        <NavAccount />
-        <TableWrapper>
-          <ChakraProvider>
+
             <CustomTable columns={columns} data={dataAccountTransactions} />
-          </ChakraProvider>
-        </TableWrapper>
-      </SidebarWithHeader>
+
     </>
   );
 }

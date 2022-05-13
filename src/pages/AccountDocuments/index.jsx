@@ -84,10 +84,9 @@ export default function AccountDocuments() {
   );
   return (
     <>
-      <SidebarWithHeader>
-        <NavAccount />
+   
         <CustomTable data={userData} columns={columns} />
-      </SidebarWithHeader>
+
     </>
   );
 }

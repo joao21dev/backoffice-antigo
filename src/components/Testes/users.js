@@ -8,9 +8,48 @@ import SidebarWithHeader from "../../components/Sidebar/sidebar";
 import { CustomTable } from "../../components/Table";
 
 const Users = (props) => {
-  const [data, setData] = useState([]);
-
-  const userData = useMemo(() => [...data], [data]);
+  const data = React.useMemo(
+    () => [
+      {
+        id: "627031bb8f4626e8ee198f7e" ,
+        client_id: "623668ac0f25e16f63295048",
+        registerName: "Alessandro Rocha ",
+        password:
+          "$2b$10$BX.0XanC9uFBfi4Hh9o9FOAeYWQkhT7VvtTC.NtF57H6EQpvDDue.",
+        socialName: "Alessandro Rocha ",
+        phone:  "+55 11948580303" ,
+        address: {
+          zipCode: "02523000",
+          addressLine: "Rua Urbano Duarte",
+          buildingNumber: "343",
+          complement: "",
+          neighborhood: "Vila Baruel",
+          city: "São Paulo",
+          state: "SP",
+          country: "BR",
+        },
+        birthDate: "1984-12-16",
+        motherName: "Maria do Socorro Sousa ",
+        email: "brokersandro@gmail.com",
+        isPoliticallyExposedPerson: false,
+        documentNumber: "05365433483",
+        documentNumberPhoto: "332616459",
+        dateNumberDocumentPhoto: "16/12/2020",
+        status: "CREATED",
+        tokens: ["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+        accounts: [
+          {
+            status: "ACTIVE",
+            branch: "0001",
+            number: "249050",
+            _id: { $oid: "627c4ef8cf04fb5675869f11" },
+          },
+        ],
+        _v: 0,
+      },
+    ],
+    []
+  );
 
   const columns = React.useMemo(
     () => [
@@ -19,7 +58,7 @@ const Users = (props) => {
         columns: [
           {
             accessor: "accessor",
-            Header: "Header",
+            Header: "Selecionar",
             Cell: ({ row: { original } }) => <Checkbox bg="#EDF2F7"></Checkbox>,
           },
           {
@@ -28,28 +67,25 @@ const Users = (props) => {
           },
           {
             Header: "Nome",
-            accessor: "firstName",
+            accessor: "socialName",
           },
           {
             Header: "E-mail",
             accessor: "email",
           },
           {
-            Header: "Telefone",
-            accessor: "phone",
+            Header: "Documento",
+            accessor: "documentNumber",
           },
           {
-            Header: "Data de Nascimento",
-            accessor: "birthDate",
+            Header: "Saldo",
+            accessor: "buildingNumber",
           },
           {
-            Header: "Cidade",
-            accessor: "address.city",
+            Header: "Status",
+            accessor: "status",
           },
-          {
-            Header: "Sexo",
-            accessor: "gender",
-          },
+          
           {
             Header: "Sobre",
             accessor: "open",
@@ -77,27 +113,27 @@ const Users = (props) => {
     []
   );
 
-  const fetchData = async () => {
-    const response = await axios
-      .get("https://dummyjson.com/users")
-      .catch((err) => console.log(err));
+  // const fetchData = async () => {
+  //   const response = await axios
+  //     .get("https://627d18c1e5ac2c452afcfcd2.mockapi.io/user")
+  //     .catch((err) => console.log(err));
 
-    if (response) {
-      const data = response.data.users;
+  //   if (response) {
+  //     const data = response;
 
-      console.log("Data: ", data);
-      setData(data);
-    }
-  };
+  //     console.log("Data: ", data);
+  //     setData(data);
+  //   }
+  // };
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
 
   return (
     <>
       <SidebarWithHeader>
-        <CustomTable data={userData} columns={columns} />
+        <CustomTable data={data} columns={columns} />
       </SidebarWithHeader>
     </>
   );

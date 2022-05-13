@@ -83,19 +83,19 @@ import {
           </Flex>
           <FormControl mt="2%">
             <Box display="flex">
-              <FormLabel htmlFor="numero">Número</FormLabel>
+              <FormLabel  w='10%' htmlFor="numero">Número</FormLabel>
               <Input id="numero" type="text" />
             </Box>
             <Box display="flex">
-              <FormLabel htmlFor="status">Status</FormLabel>
+              <FormLabel  w='10%' htmlFor="status">Status</FormLabel>
               <Input id="status" type="text" />
             </Box>
             <Box display="flex">
-              <FormLabel htmlFor="tipo">Tipo</FormLabel>
+              <FormLabel  w='10%' htmlFor="tipo">Tipo</FormLabel>
               <Input id="tipo" type="text" />
             </Box>
             <Box display="flex">
-              <FormLabel htmlFor="codigoRastreio">Código de Rastreio</FormLabel>
+              <FormLabel  w='10%' htmlFor="codigoRastreio">Código de Rastreio</FormLabel>
               <Input id="codigoRastreio" type="text" />
             </Box>
           </FormControl>

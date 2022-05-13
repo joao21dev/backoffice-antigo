@@ -8,16 +8,18 @@ import NavAccount from "../../components/accounts/NavAccount";
 import FormDadosPessoais from "../../components/accounts/AccountsFormPersonalData";
 import AccountInfo from "../../components/accounts/AccountInfo";
 import FormCartao from "../../components/accounts/AccountsFormCard";
+import NavTeste from "../../components/Testes/NavTeste";
+import { useParams } from "react-router-dom";
 
 const AccountsAccountDetail = () => {
+
   return (
     <>
-      <SidebarWithHeader>
-        <NavAccount />
+  
         <AccountInfo />
         <FormDadosPessoais />
         <Endereco name="Endereço" />
-      </SidebarWithHeader>
+     
     </>
   );
 };

@@ -83,27 +83,27 @@ const BankLineFormAddress = (props: any) => {
       </Flex>
       <FormControl mt="2%">
         <Box display="flex">
-          <FormLabel htmlFor="rua">Rua</FormLabel>
+          <FormLabel  w='10%' htmlFor="rua">Rua</FormLabel>
           <Input id="rua" type="text" />
         </Box>
         <Box display="flex">
-          <FormLabel htmlFor="numero">Número</FormLabel>
+          <FormLabel  w='10%' htmlFor="numero">Número</FormLabel>
           <Input id="numero" type="text" />
         </Box>
         <Box display="flex">
-          <FormLabel htmlFor="complemento">Complemento</FormLabel>
+          <FormLabel  w='10%' htmlFor="complemento">Complemento</FormLabel>
           <Input id="complemento" type="text" />
         </Box>
         <Box display="flex">
-          <FormLabel htmlFor="cep">CEP</FormLabel>
+          <FormLabel  w='10%' htmlFor="cep">CEP</FormLabel>
           <Input id="cep" type="text" />
         </Box>
         <Box display="flex">
-          <FormLabel htmlFor="bairro">Bairro</FormLabel>
+          <FormLabel  w='10%' htmlFor="bairro">Bairro</FormLabel>
           <Input id="bairro" type="text" />
         </Box>
         <Box display="flex">
-          <FormLabel htmlFor="estado">Estado</FormLabel>
+          <FormLabel  w='10%' htmlFor="estado">Estado</FormLabel>
           <Input id="estado" type="text" />
         </Box>
       </FormControl>

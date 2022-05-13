@@ -1,19 +1,16 @@
 import React from "react";
 
 import SidebarWithHeader from "../../components/Sidebar/sidebar";
-import NavAccount from "../../components/accounts/NavAccount";
 import FormBankAccount from "../../components/accounts/InfoBankAccount";
 import AccountInfo from "../../components/accounts/AccountInfo";
+import NavAccount from "../../components/accounts/NavAccount";
 
 const AccountBankAccounts = () => {
   return (
     <>
-      <SidebarWithHeader>
-        <NavAccount></NavAccount>
-        <AccountInfo />
+      <AccountInfo />
 
-        <FormBankAccount />
-      </SidebarWithHeader>
+      <FormBankAccount />
     </>
   );
 };

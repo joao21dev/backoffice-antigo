@@ -56,8 +56,8 @@ const LinkItems: Array<LinkItemProps> = [
   { name: "Transferência PIX", icon: FiUser, routh: "bankline-pix" },
   { name: "Transferência P2P", icon: FiUser, routh: "bankline-p2p" },
   { name: "Transferência TED", icon: FiUser, routh: "bankline-ted" },
-  { name: "Planos", icon: FiClipboard, routh: "plan" },
-  { name: "Agências", icon: FiBriefcase, routh: "agency" },
+  { name: "Planos", icon: FiClipboard, routh: "plans" },
+  { name: "Tarifas", icon: FiBriefcase, routh: "fares" },
   { name: "Suporte", icon: FiMessageCircle, routh: "support" },
 ];
 
@@ -111,7 +111,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       h="full"
       {...rest}
     >
-      <Flex h="20" alignItems="center" mx="8">
+      <Flex h="10" alignItems="center" mx="8">
         <FiDisc />
         <Text ml="15px" fontSize="2xl" fontFamily="monospace" fontWeight="bold">
           Sua Marca

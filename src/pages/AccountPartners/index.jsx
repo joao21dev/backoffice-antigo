@@ -44,10 +44,7 @@ export default function AccountPartners() {
   );
   return (
     <>
-      <SidebarWithHeader>
-        <NavAccount />
-        <CustomTable columns={columns} data={dataAccountPartners} />
-      </SidebarWithHeader>
+      <CustomTable columns={columns} data={dataAccountPartners} />
     </>
   );
 }

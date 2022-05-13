@@ -4,10 +4,11 @@ import React, { useEffect, useMemo, useState } from "react";
 import { AiFillEye } from "react-icons/ai";
 import { FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import PlansDetailForm from "../../components/Plans/PlansDetailForm";
 import SidebarWithHeader from "../../components/Sidebar/sidebar";
 import { CustomTable } from "../../components/Table";
 
-const Accounts = () => {
+const PlanDetail = () => {
   const [data, setData] = useState([]);
 
   const userData = useMemo(() => [...data], [data]);
@@ -28,7 +29,7 @@ const Accounts = () => {
           },
           {
             Header: "Nome",
-            accessor: "client_id",
+            accessor: "firstName",
           },
           {
             Header: "E-mail",
@@ -36,19 +37,19 @@ const Accounts = () => {
           },
           {
             Header: "Documento",
-            accessor: "dateNumberDocumentPhoto",
+            accessor: "document",
           },
           {
             Header: "Saldo",
-            accessor: "amount",
+            accessor: "money",
           },
           {
             Header: "Data",
-            accessor: "openDate",
+            accessor: "date",
           },
           {
             Header: "Status",
-            accessor: "accountStatus",
+            accessor: "status",
           },
           {
             Header: "Sobre",
@@ -79,11 +80,11 @@ const Accounts = () => {
 
   const fetchData = async () => {
     const response = await axios
-      .get("https://627d18c1e5ac2c452afcfcd2.mockapi.io/user")
+      .get("https://dummyjson.com/users")
       .catch((err) => console.log(err));
 
     if (response) {
-      const data = response.data;
+      const data = response.data.users;
 
       console.log("Data: ", data);
       setData(data);
@@ -93,14 +94,14 @@ const Accounts = () => {
   useEffect(() => {
     fetchData();
   }, []);
-
   return (
     <>
       <SidebarWithHeader>
+        <PlansDetailForm />
         <CustomTable data={userData} columns={columns} />
       </SidebarWithHeader>
     </>
   );
 };
 
-export default Accounts;
+export default PlanDetail;

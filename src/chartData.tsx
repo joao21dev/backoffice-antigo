@@ -73,3 +73,15 @@ export const dataStatusCard = {
     },
   ],
 };
+export const dataPlansStatusCard = {
+  labels: ["Ativo", "Pendentee", "Bloqueado", "Cancelado"],
+  datasets: [
+    {
+      label: "# of Votes",
+      data: [12, 19, 30, 40],
+      backgroundColor: ["#E3DD30", "#7730E3", "#2643F0", "#969102"],
+
+      borderWidth: 1,
+    },
+  ],
+};

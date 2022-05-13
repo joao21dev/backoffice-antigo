@@ -20,7 +20,7 @@ const AccountsFormPersonalData = () => {
 
   const fetchData = async () => {
     const response = await axios
-      .get(`https://dummyjson.com/users/${id}`)
+      .get(`https://627d18c1e5ac2c452afcfcd2.mockapi.io/user/${id}`)
       .catch((err) => console.log(err));
 
     if (response) {
@@ -78,15 +78,15 @@ const AccountsFormPersonalData = () => {
         <Text m="2">Renda Mensal:</Text>
         <Text m="2">Agência Digital:</Text> */}
          <Text m="2">ID: {data.id}</Text>
-        <Text m="2">Nome: {data.firstName}</Text>
+        <Text m="2">Nome: {data.client_id}</Text>
         <Text m="2">E-mail: {data.email}</Text>
         <Text m="2">Telefone de Nascimento: {data.name}</Text>
         <Text m="2">Data de Nascimento: {data.phone}</Text>
-        <Text m="2">Cidade: {data.ip}</Text>
+        <Text m="2">Cidade: {data.city}</Text>
         <Text m="2">Sexo: {data.gender}</Text>
         <Flex>
           <Text w="20%" m="2">
-            Plano:
+            Plano: {data.planType}
           </Text>
           <Text m="2">Data de Assinatura:</Text>
         </Flex>
@@ -122,44 +122,44 @@ const AccountsFormPersonalData = () => {
       </Flex>
       <FormControl mt="2%">
         <Box display="flex">
-          <FormLabel htmlFor="nome">Nome</FormLabel>
+          <FormLabel  w='10%' htmlFor="nome">Nome</FormLabel>
           <Input id="nome" type="text" />
         </Box>
         <Box display="flex">
-          <FormLabel htmlFor="documento">Documento</FormLabel>
+          <FormLabel  w='10%' htmlFor="documento">Documento</FormLabel>
           <Input id="documento" type="text" />
         </Box>
         <Box display="flex">
-          <FormLabel htmlFor="telefone">Telefone</FormLabel>
+          <FormLabel  w='10%' htmlFor="telefone">Telefone</FormLabel>
           <Input id="telefone" type="text" />
         </Box>
         <Box display="flex">
-          <FormLabel htmlFor="dataNascimento">Email</FormLabel>
+          <FormLabel  w='10%' htmlFor="dataNascimento">Email</FormLabel>
           <Input id="dataNascimento" type="date" />
         </Box>
         <Box display="flex">
-          <FormLabel htmlFor="nomeMae">Nome da Mãe</FormLabel>
+          <FormLabel  w='10%' htmlFor="nomeMae">Nome da Mãe</FormLabel>
           <Input id="nomeMae" type="text" />
         </Box>
         <Box display="flex">
-          <FormLabel htmlFor="nomePai">Nome do Pai</FormLabel>
+          <FormLabel  w='10%' htmlFor="nomePai">Nome do Pai</FormLabel>
           <Input id="nomePai" type="text" />
         </Box>
         <Box display="flex">
-          <FormLabel htmlFor="rendaMensal">Renda Mensal</FormLabel>
+          <FormLabel  w='10%' htmlFor="rendaMensal">Renda Mensal</FormLabel>
           <Input id="email" type="rendaMEnsal" />
         </Box>
         <Box display="flex">
-          <FormLabel htmlFor="ageniaDigital">Agência Digital</FormLabel>
+          <FormLabel  w='10%' htmlFor="ageniaDigital">Agência Digital</FormLabel>
           <Input id="agenciaDigital" type="text" />
         </Box>
         <Flex>
           <Box w="30%" display="flex">
-            <FormLabel htmlFor="email">Plano</FormLabel>
+            <FormLabel  w='10%' htmlFor="email">Plano</FormLabel>
             <Input id="plano" type="text" />
           </Box>
           <Flex>
-            <FormLabel htmlFor="dataAssinatura">Assinatura</FormLabel>
+            <FormLabel  w='10%' htmlFor="dataAssinatura">Assinatura</FormLabel>
             <Input id="dataAssinatura" type="date" />
           </Flex>
         </Flex>

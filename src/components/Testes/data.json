@@ -1,0 +1,36 @@
+{
+  "id": { "$oid": "627031bb8f4626e8ee198f7e" },
+  "client_id": "623668ac0f25e16f63295048",
+  "registerName": "Alessandro Rocha ",
+  "password": "$2b$10$BX.0XanC9uFBfi4Hh9o9FOAeYWQkhT7VvtTC.NtF57H6EQpvDDue.",
+  "socialName": "Alessandro Rocha ",
+  "phone": { "countryCode": "+55", "number": "11948580303" },
+  "address": {
+    "zipCode": "02523000",
+    "addressLine": "Rua Urbano Duarte",
+    "buildingNumber": "343",
+    "complement": "",
+    "neighborhood": "Vila Baruel",
+    "city": "São Paulo",
+    "state": "SP",
+    "country": "BR"
+  },
+  "birthDate": "1984-12-16",
+  "motherName": "Maria do Socorro Sousa ",
+  "email": "brokersandro@gmail.com",
+  "isPoliticallyExposedPerson": false,
+  "documentNumber": "05365433483",
+  "documentNumberPhoto": "332616459",
+  "dateNumberDocumentPhoto": "16/12/2020",
+  "status": "CREATED",
+  "tokens": ["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+  "accounts": [
+    {
+      "status": "ACTIVE",
+      "branch": "0001",
+      "number": "249050",
+      "_id": { "$oid": "627c4ef8cf04fb5675869f11" }
+    }
+  ],
+  "_v": 0
+}

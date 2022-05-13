@@ -7,11 +7,11 @@ const AccountInfo = () => {
   const [data, setData] = useState([]);
 
   const { id } = useParams();
-  console.log('O id é:', id)
+  console.log("O id é:", id);
 
   const fetchData = async () => {
     const response = await axios
-      .get(`https://dummyjson.com/users/${id}`)
+      .get(`https://627d18c1e5ac2c452afcfcd2.mockapi.io/user/${id}`)
       .catch((err) => console.log(err));
 
     if (response) {
@@ -41,7 +41,6 @@ const AccountInfo = () => {
         <Text m="2">Id Conta: {data.id}</Text>
         <Text m="2">Data de abertura: {data.birthDate}</Text>
         <Text m="2">Data de última atualização: {data.birthDate}</Text>
-        
       </Box>
     </>
   );

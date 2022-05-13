@@ -20,7 +20,7 @@ const AccountsFormAddress = (props) => {
 
   const fetchData = async () => {
     const response = await axios
-      .get(`https://dummyjson.com/users/${id}`)
+      .get(`https://627d18c1e5ac2c452afcfcd2.mockapi.io/user/${id}`)
       .catch((err) => console.log(err));
 
     if (response) {
@@ -66,13 +66,13 @@ const AccountsFormAddress = (props) => {
             Edtar
           </Button>
         </Flex>
-        <Text m="2">Rua: {data.address ? data.address.address : ''}</Text>
-        <Text m="2">Número:</Text>
-        <Text m="2">Complemento:</Text>
-        <Text m="2">CEP: {data.address ? data.address.postalCode : ''}</Text>
-        <Text m="2">Bairro:</Text>
-        <Text m="2">Cidade:  {data.address ? data.address.city : ''}</Text>
-        <Text m="2">Estado:  {data.address ? data.address.state : ''}</Text>
+        <Text m="2">Rua: {data.street}</Text>
+        <Text m="2">Número:{data.buildingNumber}</Text>
+        <Text m="2">Complemento: </Text>
+        <Text m="2">CEP: {data.zipCode}</Text>
+        <Text m="2">Bairro:{data.neighborhood}</Text>
+        <Text m="2">Cidade: {data.city}</Text>
+        <Text m="2">Estado: {data.state}</Text>
       </Box>
     );
   }
@@ -105,27 +105,39 @@ const AccountsFormAddress = (props) => {
       </Flex>
       <FormControl mt="2%">
         <Box display="flex">
-          <FormLabel htmlFor="rua">Rua</FormLabel>
+          <FormLabel w="10%" htmlFor="rua">
+            Rua
+          </FormLabel>
           <Input id="rua" type="text" />
         </Box>
         <Box display="flex">
-          <FormLabel htmlFor="numero">Número</FormLabel>
+          <FormLabel w="10%" htmlFor="numero">
+            Número
+          </FormLabel>
           <Input id="numero" type="text" />
         </Box>
         <Box display="flex">
-          <FormLabel htmlFor="complemento">Complemento</FormLabel>
+          <FormLabel w="10%" htmlFor="complemento">
+            Complemento
+          </FormLabel>
           <Input id="complemento" type="text" />
         </Box>
         <Box display="flex">
-          <FormLabel htmlFor="cep">CEP</FormLabel>
+          <FormLabel w="10%" htmlFor="cep">
+            CEP
+          </FormLabel>
           <Input id="cep" type="text" />
         </Box>
         <Box display="flex">
-          <FormLabel htmlFor="bairro">Bairro</FormLabel>
+          <FormLabel w="10%" htmlFor="bairro">
+            Bairro
+          </FormLabel>
           <Input id="bairro" type="text" />
         </Box>
         <Box display="flex">
-          <FormLabel htmlFor="estado">Estado</FormLabel>
+          <FormLabel w="10%" htmlFor="estado">
+            Estado
+          </FormLabel>
           <Input id="estado" type="text" />
         </Box>
       </FormControl>
@@ -134,3 +146,4 @@ const AccountsFormAddress = (props) => {
 };
 
 export default AccountsFormAddress;
+

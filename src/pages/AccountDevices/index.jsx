@@ -44,10 +44,8 @@ export default function AccountDevices() {
   );
   return (
     <>
-      <SidebarWithHeader>
-        <NavAccount />
+  
         <CustomTable columns={columns} data={dataAccountDevices} />
-      </SidebarWithHeader>
     </>
   );
 }
