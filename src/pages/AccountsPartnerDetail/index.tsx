@@ -14,7 +14,7 @@ const AccountsPartnerDetail = () => {
         <AccountInfo />
 
         <FormPersonalData />
-        <FormAddress name="Endereço" />
+        {/* <FormAddress name="Endereço" /> */}
       </SidebarWithHeader>
     </>
   );

@@ -24,11 +24,11 @@ const Accounts = () => {
           },
           {
             Header: "ID Conta",
-            accessor: "id",
+            accessor: "_id",
           },
           {
             Header: "Nome",
-            accessor: "client_id",
+            accessor: "registerName",
           },
           {
             Header: "E-mail",
@@ -36,7 +36,7 @@ const Accounts = () => {
           },
           {
             Header: "Documento",
-            accessor: "dateNumberDocumentPhoto",
+            accessor: "documentNumber",
           },
           {
             Header: "Saldo",
@@ -44,11 +44,11 @@ const Accounts = () => {
           },
           {
             Header: "Data",
-            accessor: "openDate",
+            accessor: "dateNumberDocumentPhoto",
           },
           {
             Header: "Status",
-            accessor: "accountStatus",
+            accessor: "accounts[0].status",
           },
           {
             Header: "Sobre",
@@ -79,13 +79,13 @@ const Accounts = () => {
 
   const fetchData = async () => {
     const response = await axios
-      .get("https://627d18c1e5ac2c452afcfcd2.mockapi.io/user")
+      .get("http://api-env.eba-p3jiv4uy.us-east-1.elasticbeanstalk.com/bank/accounts/1")
       .catch((err) => console.log(err));
 
     if (response) {
       const data = response.data;
 
-      console.log("Data: ", data);
+      console.log("Data da api em accounts: ", data);
       setData(data);
     }
   };

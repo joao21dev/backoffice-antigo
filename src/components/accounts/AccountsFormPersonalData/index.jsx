@@ -17,16 +17,17 @@ const AccountsFormPersonalData = () => {
   const [data, setData] = useState([]);
 
   const { id } = useParams();
+  console.log("O id é:", id);
 
   const fetchData = async () => {
     const response = await axios
-      .get(`https://627d18c1e5ac2c452afcfcd2.mockapi.io/user/${id}`)
+      .get("http://api-env.eba-p3jiv4uy.us-east-1.elasticbeanstalk.com/bank/accounts/")
       .catch((err) => console.log(err));
 
     if (response) {
-      const data = response.data;
+      const data = response.data[id];
 
-      console.log("Data: ", data);
+      console.log("Data da api: ", data);
       setData(data);
     }
   };
@@ -77,7 +78,7 @@ const AccountsFormPersonalData = () => {
         <Text m="2">Nome da Mãe:</Text>
         <Text m="2">Renda Mensal:</Text>
         <Text m="2">Agência Digital:</Text> */}
-         <Text m="2">ID: {data.id}</Text>
+         <Text m="2">ID: {data._id}</Text>
         <Text m="2">Nome: {data.client_id}</Text>
         <Text m="2">E-mail: {data.email}</Text>
         <Text m="2">Telefone de Nascimento: {data.name}</Text>

@@ -43,11 +43,9 @@ export default function BankLineBoletos() {
   );
   return (
     <SidebarWithHeader>
-      <TableWrapper>
-        <ChakraProvider>
+
           <CustomTable columns={columns} data={dataBanklineBoletos} />
-        </ChakraProvider>
-      </TableWrapper>
+
     </SidebarWithHeader>
   );
 }

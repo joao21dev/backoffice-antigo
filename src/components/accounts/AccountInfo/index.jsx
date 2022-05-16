@@ -7,17 +7,17 @@ const AccountInfo = () => {
   const [data, setData] = useState([]);
 
   const { id } = useParams();
-  console.log("O id é:", id);
+  console.log("O id em accounts info:", id);
 
   const fetchData = async () => {
     const response = await axios
-      .get(`https://627d18c1e5ac2c452afcfcd2.mockapi.io/user/${id}`)
+      .get(`http://api-env.eba-p3jiv4uy.us-east-1.elasticbeanstalk.com/bank/accounts/1`)
       .catch((err) => console.log(err));
 
     if (response) {
       const data = response.data;
 
-      console.log("Data: ", data);
+      console.log("Data em accounts info ", data);
       setData(data);
     }
   };
@@ -38,7 +38,7 @@ const AccountInfo = () => {
         h="140px"
         color="black"
       >
-        <Text m="2">Id Conta: {data.id}</Text>
+        <Text m="2">Id Conta: {data._id}</Text>
         <Text m="2">Data de abertura: {data.birthDate}</Text>
         <Text m="2">Data de última atualização: {data.birthDate}</Text>
       </Box>

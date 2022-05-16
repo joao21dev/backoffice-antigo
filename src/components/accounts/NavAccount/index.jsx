@@ -108,8 +108,8 @@ const NavAccount = () => {
     setTransactions(false);
     setDevices(false);
     setBankAccount(false);
-    setActivities(!partners);
-    setPartners(true);
+    setActivities(false);
+    setPartners(!partners);
   };
   return (
     <>
