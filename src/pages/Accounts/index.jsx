@@ -6,6 +6,7 @@ import { FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import SidebarWithHeader from "../../components/Sidebar/sidebar";
 import { CustomTable } from "../../components/Table";
+import api from "../../services/usersApi.tsx";
 
 const Accounts = () => {
   const [data, setData] = useState([]);
@@ -37,10 +38,6 @@ const Accounts = () => {
           {
             Header: "Documento",
             accessor: "documentNumber",
-          },
-          {
-            Header: "Saldo",
-            accessor: "amount",
           },
           {
             Header: "Data",
@@ -78,9 +75,7 @@ const Accounts = () => {
   );
 
   const fetchData = async () => {
-    const response = await axios
-      .get("http://api-env.eba-p3jiv4uy.us-east-1.elasticbeanstalk.com/bank/accounts/1")
-      .catch((err) => console.log(err));
+    const response = await api.get().catch((err) => console.log(err));
 
     if (response) {
       const data = response.data;
