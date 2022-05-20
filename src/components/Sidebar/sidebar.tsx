@@ -58,6 +58,10 @@ const LinkItems: Array<LinkItemProps> = [
   { name: "Transferência TED", icon: FiUser, routh: "bankline-ted" },
   { name: "Planos", icon: FiClipboard, routh: "plans" },
   { name: "Tarifas", icon: FiBriefcase, routh: "fares" },
+  { name: "Agências", icon: FiMessageCircle, routh: "agencias" },
+  { name: "Configurações", icon: FiMessageCircle, routh: "settings" },
+  { name: "Usuários", icon: FiMessageCircle, routh: "users" },
+  { name: "Termos", icon: FiMessageCircle, routh: "terms" },
   { name: "Suporte", icon: FiMessageCircle, routh: "support" },
 ];
 

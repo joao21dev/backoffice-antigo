@@ -1,14 +1,14 @@
-import { Box, Checkbox } from "@chakra-ui/react";
+import { Box, Checkbox, Text } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect, useMemo, useState } from "react";
 import { AiFillEye } from "react-icons/ai";
 import { FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
+
 import SidebarWithHeader from "../../components/Sidebar/sidebar";
 import { CustomTable } from "../../components/Table";
 
-
-const Accounts = () => {
+const AgenciaDetail = () => {
   const [data, setData] = useState([]);
 
   const userData = useMemo(() => [...data], [data]);
@@ -25,11 +25,11 @@ const Accounts = () => {
           },
           {
             Header: "ID Conta",
-            accessor: "_id",
+            accessor: "id",
           },
           {
             Header: "Nome",
-            accessor: "registerName",
+            accessor: "firstName",
           },
           {
             Header: "E-mail",
@@ -37,15 +37,19 @@ const Accounts = () => {
           },
           {
             Header: "Documento",
-            accessor: "documentNumber",
+            accessor: "document",
+          },
+          {
+            Header: "Saldo",
+            accessor: "money",
           },
           {
             Header: "Data",
-            accessor: "dateNumberDocumentPhoto",
+            accessor: "date",
           },
           {
             Header: "Status",
-            accessor: "accounts[0].status",
+            accessor: "status",
           },
           {
             Header: "Sobre",
@@ -74,28 +78,50 @@ const Accounts = () => {
     []
   );
 
-  // const fetchData = async () => {
-  //   const response = await api.get().catch((err) => console.log(err));
+  const fetchData = async () => {
+    const response = await axios
+      .get("https://dummyjson.com/users")
+      .catch((err) => console.log(err));
 
-  //   if (response) {
-  //     const data = response.data;
+    if (response) {
+      const data = response.data.users;
 
-  //     console.log("Data da api em accounts: ", data);
-  //     setData(data);
-  //   }
-  // };
+      console.log("Data: ", data);
+      setData(data);
+    }
+  };
 
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
-
+  useEffect(() => {
+    fetchData();
+  }, []);
   return (
     <>
       <SidebarWithHeader>
+        <Text w="90%" mb='50px' fontSize="25px" fontWeight="Bold">
+          Agência:
+        </Text>
+        <Box
+          fontWeight="medium"
+          p="2"
+          boxShadow="md"
+          borderRadius="15px"
+          m="15px"
+          bg="white"
+          h="50%"
+          color="black"
+        >
+          <Text w="90%" fontSize="25px" fontWeight="semibold">
+            Detalhe da Agência:
+          </Text>
+
+          <Text m="2">Código da Agência:</Text>
+          <Text m="2">Nome da Agência:</Text>
+          <Text m="2">Data da Criação:</Text>
+        </Box>
         <CustomTable data={userData} columns={columns} />
       </SidebarWithHeader>
     </>
   );
 };
 
-export default Accounts;
+export default AgenciaDetail;
