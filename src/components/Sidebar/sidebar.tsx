@@ -145,7 +145,7 @@ const NavItem = ({ icon, children, routh, ...rest }: NavItemProps) => {
     >
       <Flex
         align="center"
-        p="4"
+        p="7px"
         mx="4"
         borderRadius="lg"
         role="group"

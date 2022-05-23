@@ -6,18 +6,19 @@ import { FaTrashAlt } from "react-icons/fa";
 import { generatePath, Link, useLocation, useParams } from "react-router-dom";
 import SidebarWithHeader from "../../components/Sidebar/sidebar";
 import { CustomTable } from "../../components/Table";
+import useUserStore from "../../store/user";
 
 const Users = (props) => {
   const data = React.useMemo(
     () => [
       {
-        id: "627031bb8f4626e8ee198f7e" ,
+        id: "627031bb8f4626e8ee198f7e",
         client_id: "623668ac0f25e16f63295048",
         registerName: "Alessandro Rocha ",
         password:
           "$2b$10$BX.0XanC9uFBfi4Hh9o9FOAeYWQkhT7VvtTC.NtF57H6EQpvDDue.",
         socialName: "Alessandro Rocha ",
-        phone:  "+55 11948580303" ,
+        phone: "+55 11948580303",
         address: {
           zipCode: "02523000",
           addressLine: "Rua Urbano Duarte",
@@ -50,6 +51,9 @@ const Users = (props) => {
     ],
     []
   );
+
+
+  
 
   const columns = React.useMemo(
     () => [
@@ -85,7 +89,7 @@ const Users = (props) => {
             Header: "Status",
             accessor: "status",
           },
-          
+
           {
             Header: "Sobre",
             accessor: "open",
@@ -129,11 +133,14 @@ const Users = (props) => {
   // useEffect(() => {
   //   fetchData();
   // }, []);
+  const users = useUserStore(state => state.users);
 
   return (
     <>
       <SidebarWithHeader>
-        <CustomTable data={data} columns={columns} />
+      {users?.map(user => (
+        <p>{user.name}</p>
+      ))}
       </SidebarWithHeader>
     </>
   );

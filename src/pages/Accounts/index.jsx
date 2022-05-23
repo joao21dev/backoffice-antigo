@@ -6,12 +6,11 @@ import { FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import SidebarWithHeader from "../../components/Sidebar/sidebar";
 import { CustomTable } from "../../components/Table";
+import { connect } from "react-redux";
+import { fetchUsers } from "../../redux";
 
-
-const Accounts = () => {
-  const [data, setData] = useState([]);
-
-  const userData = useMemo(() => [...data], [data]);
+const Accounts = ({ fetchUsers, userData }) => {
+  const data = useMemo(() => [...userData.users], [userData.users]);
 
   const columns = React.useMemo(
     () => [
@@ -74,28 +73,27 @@ const Accounts = () => {
     []
   );
 
-  // const fetchData = async () => {
-  //   const response = await api.get().catch((err) => console.log(err));
-
-  //   if (response) {
-  //     const data = response.data;
-
-  //     console.log("Data da api em accounts: ", data);
-  //     setData(data);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
+  useEffect(() => {
+    fetchUsers();
+  }, []);
 
   return (
-    <>
-      <SidebarWithHeader>
-        <CustomTable data={userData} columns={columns} />
-      </SidebarWithHeader>
-    </>
+    <SidebarWithHeader>
+      <CustomTable data={data} columns={columns} />
+    </SidebarWithHeader>
   );
 };
 
-export default Accounts;
+const mapStateToProps = (state) => {
+  return {
+    userData: state.user,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchUsers: () => dispatch(fetchUsers()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Accounts);

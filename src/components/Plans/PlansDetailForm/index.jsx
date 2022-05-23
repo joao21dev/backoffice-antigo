@@ -34,7 +34,7 @@ const PlansDetailForm = () => {
           borderRadius="15px"
           mt="15px"
           bg="white"
-          h="50%"
+          h="60%"
           color="black"
         >
           <Flex>
@@ -45,7 +45,7 @@ const PlansDetailForm = () => {
           </Flex>
 
           <FormControl mt="2%">
-            <Box display="flex">
+            <Box h='50px' display="flex">
               <FormLabel w="140px" htmlFor="name">
                 Nome do Plano
               </FormLabel>
@@ -53,7 +53,7 @@ const PlansDetailForm = () => {
                 <Input id="name" type="text" />
               </Box>
             </Box>
-            <Box display="flex">
+            <Box h='50px' display="flex">
               <FormLabel w="140px" htmlFor="active">
                 Plano ativo?
               </FormLabel>
@@ -64,7 +64,7 @@ const PlansDetailForm = () => {
                 </Text>
               </Box>
             </Box>
-            <Box display="flex">
+            <Box h='50px' display="flex">
               <FormLabel w="140px" htmlFor="bonus">
                 Benefícios
               </FormLabel>
@@ -72,7 +72,7 @@ const PlansDetailForm = () => {
                 <Input id="bonus" type="text" />
               </Box>
             </Box>
-            <Box display="flex">
+            <Box h='50px' display="flex">
               <FormLabel w="140px" htmlFor="description">
                 Descrição
               </FormLabel>
@@ -80,7 +80,7 @@ const PlansDetailForm = () => {
                 <Input id="description" type="text" />
               </Box>
             </Box>
-            <Box display="flex">
+            <Box h='50px' display="flex">
               <FormLabel w="140px" htmlFor="avaliable">
                 Disponibilidade
               </FormLabel>
@@ -94,7 +94,7 @@ const PlansDetailForm = () => {
             <Text mt="4%" w="90%" fontSize="25px" fontWeight="semibold">
               Tarifas
             </Text>
-            <Box mt="2%" display="flex">
+            <Box mt="2%" h='50px' display="flex">
               <FormLabel w="10%" htmlFor="value">
                 Valor Mensal
               </FormLabel>
@@ -106,7 +106,7 @@ const PlansDetailForm = () => {
                 </Text>
               </Box>
             </Box>
-            <Box display="flex">
+            <Box h='50px' display="flex">
               <FormLabel w="10%" htmlFor="pix">
                 PIX
               </FormLabel>
@@ -117,7 +117,7 @@ const PlansDetailForm = () => {
                 </Text>
               </Box>
             </Box>
-            <Box display="flex">
+            <Box h='50px' display="flex">
               <FormLabel w="10%" htmlFor="ted">
                 TED
               </FormLabel>
@@ -128,7 +128,7 @@ const PlansDetailForm = () => {
                 </Text>
               </Box>
             </Box>
-            <Box display="flex">
+            <Box h='50px' display="flex">
               <FormLabel w="10%" htmlFor="boleto">
                 Boleto
               </FormLabel>
@@ -139,7 +139,7 @@ const PlansDetailForm = () => {
                 </Text>
               </Box>
             </Box>
-            <Box display="flex">
+            <Box h='50px' display="flex">
               <FormLabel w="10%" htmlFor="saque">
                 Saque
               </FormLabel>
@@ -153,7 +153,7 @@ const PlansDetailForm = () => {
             <Text mt="4%" w="90%" fontSize="25px" fontWeight="semibold">
               Gratuidades
             </Text>
-            <Box mt="2%" display="flex">
+            <Box mt="2%" h='50px' display="flex">
               <FormLabel w="10%" htmlFor="ted">
                 TED
               </FormLabel>
@@ -164,7 +164,7 @@ const PlansDetailForm = () => {
                 </Text>
               </Box>
             </Box>
-            <Box display="flex">
+            <Box h='50px' display="flex">
               <FormLabel w="10%" htmlFor="boleto">
                 PIX Gratuitos
               </FormLabel>
@@ -176,7 +176,7 @@ const PlansDetailForm = () => {
                 </Text>
               </Box>
             </Box>
-            <Box display="flex">
+            <Box h='50px' display="flex">
               <FormLabel w="10%" htmlFor="saque">
                 TED Gratuitos
               </FormLabel>
@@ -188,7 +188,7 @@ const PlansDetailForm = () => {
                 </Text>
               </Box>
             </Box>
-            <Box display="flex">
+            <Box h='50px' display="flex">
               <FormLabel w="10%" htmlFor="saque">
                 Boletos Gratuitos
               </FormLabel>
@@ -202,7 +202,7 @@ const PlansDetailForm = () => {
             <Text mt="4%" w="90%" fontSize="25px" fontWeight="semibold">
               Configurações
             </Text>
-            <Box mt="2%" display="flex">
+            <Box mt="2%" h='70px' display="flex">
               <FormLabel w="10%" htmlFor="ted">
                 Período Grátis (dias)
               </FormLabel>
@@ -213,11 +213,11 @@ const PlansDetailForm = () => {
                 </Text>
               </Box>
             </Box>
-            <Box display="flex">
+            <Box h='50px'  display="flex">
               <FormLabel w="10%" htmlFor="boleto">
                 Tempo máximo de inadimplência (dias)
               </FormLabel>
-              <Box w="19.5%">
+              <Box w='17.5%' >
                 <Input placeholder="30 dias" id="boleto" type="text" />
                 <Text fontWeight="100" fontSize="10px">
                   Após o encerramento do período do tempo máximo de
