@@ -12,28 +12,16 @@ import { FiEdit2, FiSave } from "react-icons/fi";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { connect, useDispatch, useSelector } from "react-redux";
+import { fetchUsers, fetchUsersInfo } from "../../../redux";
 
 const AccountsFormAddress = (props) => {
-  const [data, setData] = useState([]);
-
+  const userData = useSelector((state) => state.userInfo.usersInfo);
+  const dispatch = useDispatch();
   const { id } = useParams();
-
-  const fetchData = async () => {
-    const response = await axios
-      .get(`https://627d18c1e5ac2c452afcfcd2.mockapi.io/user/${id}`)
-      .catch((err) => console.log(err));
-
-    if (response) {
-      const data = response.data;
-
-      console.log("Data: ", data);
-      setData(data);
-    }
-  };
-
   useEffect(() => {
-    fetchData();
-  }, []);
+    dispatch(fetchUsersInfo(id));
+  }, [dispatch]);
   const [address, setAddress] = useState(true);
   const handleEditAddress = () => {
     setAddress(!address);
@@ -66,13 +54,15 @@ const AccountsFormAddress = (props) => {
             Edtar
           </Button>
         </Flex>
-        <Text m="2">Rua: {data.street}</Text>
-        <Text m="2">Número:{data.buildingNumber}</Text>
+        <Text m="2">Rua: {userData.address && userData.address.address}</Text>
+        <Text m="2">Número: {userData.height}</Text>
         <Text m="2">Complemento: </Text>
-        <Text m="2">CEP: {data.zipCode}</Text>
-        <Text m="2">Bairro:{data.neighborhood}</Text>
-        <Text m="2">Cidade: {data.city}</Text>
-        <Text m="2">Estado: {data.state}</Text>
+        <Text m="2">
+          CEP: {userData.address && userData.address.postalCode}
+        </Text>
+        <Text m="2">Bairro: {userData.hair && userData.hair.type}</Text>
+        <Text m="2">Cidade: {userData.address && userData.address.city}</Text>
+        <Text m="2">Estado: {userData.address && userData.address.state}</Text>
       </Box>
     );
   }
@@ -146,4 +136,3 @@ const AccountsFormAddress = (props) => {
 };
 
 export default AccountsFormAddress;
-

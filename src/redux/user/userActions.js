@@ -10,13 +10,13 @@ export const fetchUsersRequest = () => {
     type: FETCH_USERS_REQUEST,
   };
 };
- const fetchUsersSuccess = (users) => {
+const fetchUsersSuccess = (users) => {
   return {
     type: FETCH_USERS_SUCCESS,
     payload: users,
   };
 };
- const fetchUsersFailure = (error) => {
+const fetchUsersFailure = (error) => {
   return {
     type: FETCH_USERS_FAILURE,
     payload: error,
@@ -27,17 +27,14 @@ export const fetchUsers = () => {
   return (dispatch) => {
     dispatch(fetchUsersRequest);
     axios
-      .get(
-        "http://api-env.eba-p3jiv4uy.us-east-1.elasticbeanstalk.com/bank/accounts/1"
-     
-      )
+      .get("https://dummyjson.com/users")
       .then((response) => {
-        const users = response.data;
+        const users = response.data.users;
         dispatch(fetchUsersSuccess(users));
       })
       .catch((error) => {
         const errorMsg = error.message;
-        dispatch(fetchUsersFailure(errorMsg))
+        dispatch(fetchUsersFailure(errorMsg));
       });
   };
 };
