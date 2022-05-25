@@ -53,9 +53,7 @@ export default function BankLineCashouts() {
   );
   return (
     <>
-      <SidebarWithHeader>
             <CustomTable columns={columns} data={dataBanklineCashouts} />
-      </SidebarWithHeader>
     </>
   );
 }

@@ -90,6 +90,9 @@ const Fares = () => {
   return (
     <>
       <SidebarWithHeader>
+      <Text mb='2%'  w="90%" fontSize="25px" fontWeight="bold">
+        Tarifas
+      </Text>
         <Grid
           m="15"
           templateRows="repeat(1, 1fr)"

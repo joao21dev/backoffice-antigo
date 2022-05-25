@@ -42,6 +42,8 @@ import UsersCreate from "./pages/UsersCreate";
 import PermissionsCreate from "./pages/PermissionsCreate";
 import { Provider } from "react-redux";
 import store from "./redux/store/store";
+import NavBankline from "./components/BankLine/NavBankline";
+import Bankline from "./pages/Bankline";
 // import store from "./components/Testes/redux/store/store";
 
 export const App = () => (
@@ -50,6 +52,7 @@ export const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/home" element={<Home />} />
+          <Route path="/bankline" element={<Bankline />} />
           {/* <Route path="/users" element={<Users />} />
         <Route path="/users/:id" element={<UserInfo />} /> */}
           <Route path="/accounts" element={<Accounts />} />

@@ -12,8 +12,8 @@ import { FiEdit2, FiSave } from "react-icons/fi";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import { connect, useDispatch, useSelector } from "react-redux";
-import { fetchUsers, fetchUsersInfo } from "../../../redux";
+import { useDispatch, useSelector } from "react-redux";
+import {  fetchUsersInfo } from "../../../redux";
 
 const AccountsFormAddress = (props) => {
   const userData = useSelector((state) => state.userInfo.usersInfo);

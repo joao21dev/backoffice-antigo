@@ -52,9 +52,8 @@ export default function BankLineCompras() {
   );
   return (
     <>
-      <SidebarWithHeader>
             <CustomTable columns={columns} data={dataBanklineCompras} />
-      </SidebarWithHeader>
+     
     </>
   );
 }

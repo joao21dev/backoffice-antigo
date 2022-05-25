@@ -48,21 +48,21 @@ interface LinkItemProps {
 const LinkItems: Array<LinkItemProps> = [
   { name: "Home", icon: FiHome, routh: "home" },
   { name: "Contas", icon: FiUser, routh: "accounts" },
-  { name: "Boletos", icon: FiUser, routh: "bankline-boletos" },
-  { name: "Cartões", icon: FiUser, routh: "bankline-cards" },
-  { name: "Compras", icon: FiUser, routh: "bankline-compras" },
-  { name: "Saques", icon: FiUser, routh: "bankline-cashouts" },
-  { name: "Pagamentos", icon: FiUser, routh: "bankline-payments" },
-  { name: "Transferência PIX", icon: FiUser, routh: "bankline-pix" },
-  { name: "Transferência P2P", icon: FiUser, routh: "bankline-p2p" },
-  { name: "Transferência TED", icon: FiUser, routh: "bankline-ted" },
+  { name: "Bankline", icon: FiUser, routh: "bankline" },
+  // { name: "Boletos", icon: FiUser, routh: "bankline-boletos" },
+  // { name: "Cartões", icon: FiUser, routh: "bankline-cards" },
+  // { name: "Compras", icon: FiUser, routh: "bankline-compras" },
+  // { name: "Saques", icon: FiUser, routh: "bankline-cashouts" },
+  // { name: "Pagamentos", icon: FiUser, routh: "bankline-payments" },
+  // { name: "Transferência PIX", icon: FiUser, routh: "bankline-pix" },
+  // { name: "Transferência P2P", icon: FiUser, routh: "bankline-p2p" },
+  // { name: "Transferência TED", icon: FiUser, routh: "bankline-ted" },
   { name: "Planos", icon: FiClipboard, routh: "plans" },
   { name: "Tarifas", icon: FiBriefcase, routh: "fares" },
   { name: "Agências", icon: FiMessageCircle, routh: "agencias" },
   { name: "Configurações", icon: FiMessageCircle, routh: "settings" },
   { name: "Usuários", icon: FiMessageCircle, routh: "users" },
   { name: "Termos", icon: FiMessageCircle, routh: "terms" },
-  { name: "Suporte", icon: FiMessageCircle, routh: "support" },
 ];
 
 export default function SidebarWithHeader({
@@ -115,7 +115,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       h="full"
       {...rest}
     >
-      <Flex h="10" alignItems="center" mx="8">
+      <Flex h="20" alignItems="center" mx="8">
         <FiDisc />
         <Text ml="15px" fontSize="2xl" fontFamily="monospace" fontWeight="bold">
           Sua Marca
@@ -145,7 +145,7 @@ const NavItem = ({ icon, children, routh, ...rest }: NavItemProps) => {
     >
       <Flex
         align="center"
-        p="7px"
+        p="4"
         mx="4"
         borderRadius="lg"
         role="group"

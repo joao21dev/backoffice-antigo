@@ -45,10 +45,7 @@ export default function BankLineP2P() {
 
   return (
     <>
-      <SidebarWithHeader>
-        {" "}
-            <CustomTable columns={columns} data={dataBanklineP2P} />
-      </SidebarWithHeader>
+      <CustomTable columns={columns} data={dataBanklineP2P} />
     </>
   );
 }

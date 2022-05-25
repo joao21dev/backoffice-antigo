@@ -53,9 +53,7 @@ export default function BankLinePix() {
 
   return (
     <>
-      <SidebarWithHeader>
             <CustomTable columns={columns} data={dataBanklinePix} />
-      </SidebarWithHeader>
     </>
   );
 }

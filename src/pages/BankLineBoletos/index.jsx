@@ -41,11 +41,5 @@ export default function BankLineBoletos() {
     ],
     []
   );
-  return (
-    <SidebarWithHeader>
-
-          <CustomTable columns={columns} data={dataBanklineBoletos} />
-
-    </SidebarWithHeader>
-  );
+  return <CustomTable columns={columns} data={dataBanklineBoletos} />;
 }

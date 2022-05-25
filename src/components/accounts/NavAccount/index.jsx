@@ -122,6 +122,8 @@ const NavAccount = () => {
         boxShadow="md"
       >
         <Flex
+          bg={personalData && "#5A32EA"}
+          color={personalData && "white"}
           p="4"
           cursor="pointer"
           fontWeight="medium"
@@ -135,6 +137,8 @@ const NavAccount = () => {
           <Text borderRadius="15px">Dados Pessoais</Text>
         </Flex>
         <Flex
+          bg={documents && "#5A32EA"}
+          color={documents && "white"}
           p="4"
           cursor="pointer"
           fontWeight="medium"
@@ -148,6 +152,8 @@ const NavAccount = () => {
           <Text borderRadius="15px">Documentos</Text>
         </Flex>
         <Flex
+          bg={cards && "#5A32EA"}
+          color={cards && "white"}
           p="4"
           cursor="pointer"
           fontWeight="medium"
@@ -161,6 +167,8 @@ const NavAccount = () => {
           <Text borderRadius="15px">Cartões</Text>
         </Flex>
         <Flex
+          bg={transactions && "#5A32EA"}
+          color={transactions && "white"}
           p="4"
           cursor="pointer"
           fontWeight="medium"
@@ -174,6 +182,8 @@ const NavAccount = () => {
           <Text borderRadius="15px">Transações</Text>
         </Flex>
         <Flex
+          bg={bankAccount && "#5A32EA"}
+          color={bankAccount && "white"}
           p="4"
           cursor="pointer"
           fontWeight="medium"
@@ -187,6 +197,8 @@ const NavAccount = () => {
           <Text borderRadius="15px">Conta Bancária</Text>
         </Flex>
         <Flex
+          bg={devices && "#5A32EA"}
+          color={devices && "white"}
           p="4"
           cursor="pointer"
           fontWeight="medium"
@@ -200,6 +212,8 @@ const NavAccount = () => {
           <Text borderRadius="15px">Dispositivos</Text>
         </Flex>
         <Flex
+          bg={activities && "#5A32EA"}
+          color={activities && "white"}
           p="4"
           cursor="pointer"
           fontWeight="medium"
@@ -213,6 +227,8 @@ const NavAccount = () => {
           <Text borderRadius="15px">Atividades</Text>
         </Flex>
         <Flex
+          bg={partners && "#5A32EA"}
+          color={partners && "white"}
           p="4"
           cursor="pointer"
           fontWeight="medium"

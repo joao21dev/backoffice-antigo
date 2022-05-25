@@ -86,6 +86,9 @@ const Plans = () => {
   return (
     <>
       <SidebarWithHeader>
+      <Text mb='2%'  w="90%" fontSize="25px" fontWeight="bold">
+        Planos
+      </Text>
         <Box
           fontWeight="medium"
           p="2"

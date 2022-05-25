@@ -58,7 +58,7 @@ const Agencias = () => {
             Cell: (props) => (
               <Link to={`/agencia-detail`}>
                 {" "}
-                <Box ml="25%"> 
+                <Box ml="25%">
                   <AiFillEye color={"gray"} fontSize="22px" />
                 </Box>
               </Link>
@@ -90,6 +90,9 @@ const Agencias = () => {
   return (
     <>
       <SidebarWithHeader>
+        <Text mb="2%" w="90%" fontSize="25px" fontWeight="bold">
+          Agências
+        </Text>
         <Flex justifyContent="flex-end">
           <Box
             fontWeight="semibold"

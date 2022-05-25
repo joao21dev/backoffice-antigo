@@ -51,9 +51,7 @@ export default function BanklineCards() {
   );
   return (
     <>
-      <SidebarWithHeader>
         <CustomTable columns={columns} data={dataBanklineCards} />
-      </SidebarWithHeader>
     </>
   );
 }

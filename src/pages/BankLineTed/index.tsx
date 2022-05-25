@@ -49,9 +49,7 @@ export default function BankLineTed() {
 
   return (
     <>
-      <SidebarWithHeader>
-        <CustomTable columns={columns} data={dataBanklineTed} />
-      </SidebarWithHeader>
+      <CustomTable columns={columns} data={dataBanklineTed} />
     </>
   );
 }

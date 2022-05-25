@@ -1,4 +1,4 @@
-import { Box, Checkbox } from "@chakra-ui/react";
+import { Box, Checkbox, Text } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect, useMemo, useState } from "react";
 import { AiFillEye } from "react-icons/ai";
@@ -80,6 +80,9 @@ const Accounts = () => {
 
   return (
     <SidebarWithHeader>
+    <Text  w="90%" fontSize="25px" fontWeight="bold">
+        Contas
+      </Text>
       <CustomTable data={data} columns={columns} />
     </SidebarWithHeader>
   );
