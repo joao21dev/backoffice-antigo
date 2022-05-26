@@ -8,34 +8,29 @@ import NavAccount from "../../components/accounts/NavAccount";
 import { CustomTable } from "../../components/Table";
 import { dataAccountDocuments } from "../../dataTables";
 import TableWrapper from "../../components/tableWrapper";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { AiFillEye } from "react-icons/ai";
 import { FaTrashAlt } from "react-icons/fa";
 import axios from "axios";
+import {
+  fetchCards,
+  fetchTodos,
+  fetchUsers,
+  fetchUsersCards,
+  fetchUsersInfo,
+} from "../../redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function AccountDocuments() {
-  const [data, setData] = useState([]);
-
-  
-
-  const userData = useMemo(() => [...data], [data]);
-
-  const fetchData = async () => {
-    const response = await axios
-      .get("https://jsonplaceholder.typicode.com/users")
-      .catch((err) => console.log(err));
-
-    if (response) {
-      const data = response.data;
-
-      console.log("Data: ", data);
-      setData(data);
-    }
-  };
-
+  const userData = useSelector((state) => state.todo);
+  const dispatch = useDispatch();
+  const data = useMemo(() => [...userData.todos], [userData.todos]);
+  const { id } = useParams();
   useEffect(() => {
-    fetchData();
-  }, []);
+    dispatch(fetchTodos(id));
+  }, [dispatch]);
+
+  console.log("accountDocuments todos: ", userData);
 
   const columns = React.useMemo(
     () => [
@@ -49,15 +44,15 @@ export default function AccountDocuments() {
           },
           {
             Header: "Tipo de Documento",
-            accessor: "company.name",
+            accessor: "id",
           },
           {
             Header: "Formato",
-            accessor: "company.bs",
+            accessor: "todo",
           },
           {
             Header: "Data",
-            accessor: "geo.lat",
+            accessor: "userId",
           },
           {
             Header: "Sobre",
@@ -86,9 +81,7 @@ export default function AccountDocuments() {
   );
   return (
     <>
-   
-        <CustomTable data={userData} columns={columns} />
-
+      <CustomTable data={data} columns={columns} />
     </>
   );
 }

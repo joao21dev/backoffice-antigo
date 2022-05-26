@@ -29,9 +29,10 @@ export const fetchUsersInfo = (id) => {
     axios
       .get(`https://dummyjson.com/users/${id}`)
       .then((response) => {
-        const usersInfo = response.data;
-        console.log('valor do users info: ', usersInfo)
+        const usersInfo =  response.data;
         dispatch(fetchUsersInfoSuccess(usersInfo));
+        console.log('UsersInfo atual ', usersInfo)
+
       })
       .catch((error) => {
         const errorMsg = error.message;
@@ -39,3 +40,5 @@ export const fetchUsersInfo = (id) => {
       });
   };
 };
+
+

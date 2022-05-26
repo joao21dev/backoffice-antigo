@@ -13,7 +13,7 @@ const AccountInfo = () => {
     dispatch(fetchUsersInfo(id));
   }, [dispatch]);
   
-  console.log('account info data atual: ', userData);
+  console.log('accountInfo userData: ', userData);
 
   return (
     <Box

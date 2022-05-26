@@ -7,13 +7,26 @@ import NavAccount from "../../components/accounts/NavAccount";
 import TableWrapper from "../../components/tableWrapper";
 import { dataAccountCards } from "../../dataTables";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { AiFillEye } from "react-icons/ai";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  fetchCards,
+  fetchTodos,
+  fetchUsers,
+  fetchUsersCards,
+  fetchUsersInfo,
+} from "../../redux";
+
 
 export default function AccountCards() {
-  const [data, setData] = useState([]);
-
-  const userData = useMemo(() => [...data], [data]);
+  const userData = useSelector((state) => state.todo);
+  const dispatch = useDispatch();
+  const data = useMemo(() => [...userData.todos], [userData.todos]);
+  const { id } = useParams();
+  useEffect(() => {
+    dispatch(fetchTodos(id));
+  }, [dispatch]);
   const columns = React.useMemo(
     () => [
       {
@@ -26,19 +39,19 @@ export default function AccountCards() {
           },
           {
             Header: "Número",
-            accessor: "bank.cardNumber",
+            accessor: "userId",
           },
           {
             Header: "Tipo",
-            accessor: "bank.cardType",
+            accessor: "todo",
           },
           {
             Header: "Data de Ativação",
-            accessor: "bank.cardExpire",
+            accessor: "id",
           },
           {
             Header: "Status",
-            accessor: "eyeColor",
+            accessor: "completed",
           },
           {
             Header: "Sobre",
@@ -57,26 +70,9 @@ export default function AccountCards() {
     []
   );
 
-  const fetchData = async () => {
-    const response = await axios
-      .get("https://dummyjson.com/users")
-      .catch((err) => console.log(err));
-
-    if (response) {
-      const data = response.data.users;
-
-      console.log("Data: ", data);
-      setData(data);
-    }
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
   return (
     <>
-      <CustomTable columns={columns} data={userData} />
+      <CustomTable columns={columns} data={data} />
     </>
   );
 }
