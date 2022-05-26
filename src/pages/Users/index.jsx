@@ -1,11 +1,11 @@
-import { Box, Button, Checkbox, Flex, Text } from "@chakra-ui/react";
-import axios from "axios";
 import React, { useEffect, useMemo, useState } from "react";
-import { AiFillEye } from "react-icons/ai";
-import { FaTrashAlt } from "react-icons/fa";
+
+import axios from "axios";
+
 import { Link } from "react-router-dom";
-import { dataStatusCard } from "../../chartData";
-import ChartCards from "../../components/dashboard/ChartCards";
+
+import { Box, Checkbox, Flex, Text } from "@chakra-ui/react";
+import { AiFillEye } from "react-icons/ai";
 import SidebarWithHeader from "../../components/Sidebar/sidebar";
 import { CustomTable } from "../../components/Table";
 
@@ -115,9 +115,9 @@ const Users = () => {
   return (
     <>
       <SidebarWithHeader>
-      <Text w="90%" fontSize="25px" fontWeight="semibold">
-      Usuários
-   </Text>
+        <Text w="90%" fontSize="25px" fontWeight="semibold">
+          Usuários
+        </Text>
         <CustomTable data={userData} columns={userColumns} />
         <Flex justifyContent="flex-end">
           <Box
@@ -135,8 +135,8 @@ const Users = () => {
           </Box>
         </Flex>
         <Text w="90%" fontSize="25px" fontWeight="semibold">
-        Tipos de Acesso
-     </Text>
+          Tipos de Acesso
+        </Text>
         <CustomTable data={userData} columns={TypesColumns} />
         <Flex justifyContent="flex-end">
           <Box

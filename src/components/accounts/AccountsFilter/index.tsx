@@ -1,20 +1,7 @@
 import React from "react";
-import {
-  Container,
-  FormControl,
-  FormLabel,
-  Code,
-  Link,
-  FormErrorMessage,
-  Box,
-} from "@chakra-ui/react";
-import {
-  Select,
-  CreatableSelect,
-  AsyncSelect,
-  OptionBase,
-  GroupBase,
-} from "chakra-react-select";
+
+import { FormControl } from "@chakra-ui/react";
+import { Select } from "chakra-react-select";
 
 const statusOptions = [
   { value: "ativa", label: "Ativa" },
@@ -33,8 +20,6 @@ const groupedOptions = [
     options: statusOptions,
   },
 ];
-
-
 
 const AccountsFilter = () => {
   return (

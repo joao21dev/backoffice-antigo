@@ -1,3 +1,5 @@
+import React from "react";
+
 import {
   Box,
   Center,
@@ -8,7 +10,6 @@ import {
   StatHelpText,
   StatLabel,
 } from "@chakra-ui/react";
-import React from "react";
 
 const BankInfoStat = () => {
   return (

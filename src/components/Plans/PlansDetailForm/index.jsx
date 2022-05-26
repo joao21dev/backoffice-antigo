@@ -1,3 +1,5 @@
+import React, { useState } from "react";
+
 import {
   Box,
   Button,
@@ -9,12 +11,8 @@ import {
   Text,
   Stack,
   RadioGroup,
-  CheckboxGroup,
-  StackDivider,
   Radio,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
-import { FiEdit2, FiSave } from "react-icons/fi";
 import { Link } from "react-router-dom";
 const PlansDetailForm = () => {
   const [plan, setPlan] = useState(true);
@@ -41,11 +39,10 @@ const PlansDetailForm = () => {
             <Text w="90%" fontSize="25px" fontWeight="semibold">
               Detalhes do Plano
             </Text>
-            
           </Flex>
 
           <FormControl mt="2%">
-            <Box h='50px' display="flex">
+            <Box h="50px" display="flex">
               <FormLabel w="140px" htmlFor="name">
                 Nome do Plano
               </FormLabel>
@@ -53,7 +50,7 @@ const PlansDetailForm = () => {
                 <Input id="name" type="text" />
               </Box>
             </Box>
-            <Box h='50px' display="flex">
+            <Box h="50px" display="flex">
               <FormLabel w="140px" htmlFor="active">
                 Plano ativo?
               </FormLabel>
@@ -64,7 +61,7 @@ const PlansDetailForm = () => {
                 </Text>
               </Box>
             </Box>
-            <Box h='50px' display="flex">
+            <Box h="50px" display="flex">
               <FormLabel w="140px" htmlFor="bonus">
                 Benefícios
               </FormLabel>
@@ -72,7 +69,7 @@ const PlansDetailForm = () => {
                 <Input id="bonus" type="text" />
               </Box>
             </Box>
-            <Box h='50px' display="flex">
+            <Box h="50px" display="flex">
               <FormLabel w="140px" htmlFor="description">
                 Descrição
               </FormLabel>
@@ -80,7 +77,7 @@ const PlansDetailForm = () => {
                 <Input id="description" type="text" />
               </Box>
             </Box>
-            <Box h='50px' display="flex">
+            <Box h="50px" display="flex">
               <FormLabel w="140px" htmlFor="avaliable">
                 Disponibilidade
               </FormLabel>
@@ -94,7 +91,7 @@ const PlansDetailForm = () => {
             <Text mt="4%" w="90%" fontSize="25px" fontWeight="semibold">
               Tarifas
             </Text>
-            <Box mt="2%" h='50px' display="flex">
+            <Box mt="2%" h="50px" display="flex">
               <FormLabel w="10%" htmlFor="value">
                 Valor Mensal
               </FormLabel>
@@ -106,7 +103,7 @@ const PlansDetailForm = () => {
                 </Text>
               </Box>
             </Box>
-            <Box h='50px' display="flex">
+            <Box h="50px" display="flex">
               <FormLabel w="10%" htmlFor="pix">
                 PIX
               </FormLabel>
@@ -117,7 +114,7 @@ const PlansDetailForm = () => {
                 </Text>
               </Box>
             </Box>
-            <Box h='50px' display="flex">
+            <Box h="50px" display="flex">
               <FormLabel w="10%" htmlFor="ted">
                 TED
               </FormLabel>
@@ -128,7 +125,7 @@ const PlansDetailForm = () => {
                 </Text>
               </Box>
             </Box>
-            <Box h='50px' display="flex">
+            <Box h="50px" display="flex">
               <FormLabel w="10%" htmlFor="boleto">
                 Boleto
               </FormLabel>
@@ -139,7 +136,7 @@ const PlansDetailForm = () => {
                 </Text>
               </Box>
             </Box>
-            <Box h='50px' display="flex">
+            <Box h="50px" display="flex">
               <FormLabel w="10%" htmlFor="saque">
                 Saque
               </FormLabel>
@@ -153,7 +150,7 @@ const PlansDetailForm = () => {
             <Text mt="4%" w="90%" fontSize="25px" fontWeight="semibold">
               Gratuidades
             </Text>
-            <Box mt="2%" h='50px' display="flex">
+            <Box mt="2%" h="50px" display="flex">
               <FormLabel w="10%" htmlFor="ted">
                 TED
               </FormLabel>
@@ -164,7 +161,7 @@ const PlansDetailForm = () => {
                 </Text>
               </Box>
             </Box>
-            <Box h='50px' display="flex">
+            <Box h="50px" display="flex">
               <FormLabel w="10%" htmlFor="boleto">
                 PIX Gratuitos
               </FormLabel>
@@ -176,7 +173,7 @@ const PlansDetailForm = () => {
                 </Text>
               </Box>
             </Box>
-            <Box h='50px' display="flex">
+            <Box h="50px" display="flex">
               <FormLabel w="10%" htmlFor="saque">
                 TED Gratuitos
               </FormLabel>
@@ -188,7 +185,7 @@ const PlansDetailForm = () => {
                 </Text>
               </Box>
             </Box>
-            <Box h='50px' display="flex">
+            <Box h="50px" display="flex">
               <FormLabel w="10%" htmlFor="saque">
                 Boletos Gratuitos
               </FormLabel>
@@ -202,7 +199,7 @@ const PlansDetailForm = () => {
             <Text mt="4%" w="90%" fontSize="25px" fontWeight="semibold">
               Configurações
             </Text>
-            <Box mt="2%" h='70px' display="flex">
+            <Box mt="2%" h="70px" display="flex">
               <FormLabel w="10%" htmlFor="ted">
                 Período Grátis (dias)
               </FormLabel>
@@ -213,11 +210,11 @@ const PlansDetailForm = () => {
                 </Text>
               </Box>
             </Box>
-            <Box h='50px'  display="flex">
+            <Box h="50px" display="flex">
               <FormLabel w="10%" htmlFor="boleto">
                 Tempo máximo de inadimplência (dias)
               </FormLabel>
-              <Box w='17.5%' >
+              <Box w="17.5%">
                 <Input placeholder="30 dias" id="boleto" type="text" />
                 <Text fontWeight="100" fontSize="10px">
                   Após o encerramento do período do tempo máximo de
@@ -231,20 +228,20 @@ const PlansDetailForm = () => {
           </FormControl>
         </Box>
         <Flex justifyContent="flex-end">
-        <Box
-          fontWeight="semibold"
-          color="white"
-          borderRadius="15px"
-          p="4"
-          m="4"
-          bg="#5A32EA"
-          alignItems="center"
-          align="center"
-          w="200px"
-        >
-          <Link to="/plan-detail">Criar Plano</Link>
-        </Box>
-      </Flex>
+          <Box
+            fontWeight="semibold"
+            color="white"
+            borderRadius="15px"
+            p="4"
+            m="4"
+            bg="#5A32EA"
+            alignItems="center"
+            align="center"
+            w="200px"
+          >
+            <Link to="/plan-detail">Criar Plano</Link>
+          </Box>
+        </Flex>
       </>
     );
   } else {
@@ -335,7 +332,6 @@ const PlansDetailForm = () => {
           <Text m="2">Período Grátis (dias):</Text>
           <Text m="2">Tempo máximo de inadimplência (dias):</Text>
         </Box>
-        
       </>
     );
   }

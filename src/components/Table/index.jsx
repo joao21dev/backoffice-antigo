@@ -1,3 +1,5 @@
+import React from "react";
+
 import {
   Flex,
   Text,
@@ -9,8 +11,6 @@ import {
   Td,
   Box,
 } from "@chakra-ui/react";
-import React from "react";
-
 import { useTable, useSortBy, useGlobalFilter } from "react-table";
 import { GlobalFilter } from "../../pages/TabelaTeste2/globalFilter";
 
@@ -74,9 +74,12 @@ export function CustomTable({ columns, data }) {
                   <Tr {...row.getRowProps()} bg={isEven(idx) ? "#C1F2E0" : ""}>
                     {row.cells.map((cell, idx) => {
                       return (
-                        <Td 
-                        // onClick={()=>  console.log(cell.value)}
-                         {...cell.getCellProps()}>{cell.render("Cell")}</Td>
+                        <Td
+                          // onClick={()=>  console.log(cell.value)}
+                          {...cell.getCellProps()}
+                        >
+                          {cell.render("Cell")}
+                        </Td>
                       );
                     })}
                   </Tr>

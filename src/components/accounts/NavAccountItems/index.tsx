@@ -1,11 +1,12 @@
-import { Box, Flex, GridItem, Text } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React from "react";
+
+import { Flex, Text } from "@chakra-ui/react";
 import { NavLink, useParams } from "react-router-dom";
 import "./index.css";
 
 const NavAccountItem = (props: any) => {
   const { id } = useParams();
-  console.log('o id no nav item é: ',id)
+  console.log("o id no nav item é: ", id);
   return (
     // <GridItem w="100%" borderRadius="15px">
     // <NavLink

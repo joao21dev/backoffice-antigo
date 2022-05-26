@@ -1,5 +1,6 @@
-import { Box, Flex, Text } from "@chakra-ui/react";
 import React from "react";
+
+import { Box, Text } from "@chakra-ui/react";
 import { Doughnut } from "react-chartjs-2";
 
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";

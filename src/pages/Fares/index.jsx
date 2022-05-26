@@ -1,17 +1,9 @@
-import {
-  Box,
-  Button,
-  Checkbox,
-  Flex,
-  Grid,
-  GridItem,
-  Text,
-} from "@chakra-ui/react";
-import axios from "axios";
 import React, { useEffect, useMemo, useState } from "react";
+import axios from "axios";
+
+import { Box, Checkbox, Flex, Grid, GridItem, Text } from "@chakra-ui/react";
+
 import { AiFillEye } from "react-icons/ai";
-import { FaTrashAlt } from "react-icons/fa";
-import { Link } from "react-router-dom";
 import { dataAgencyCard, dataStatusCard } from "../../chartData";
 import ChartCards from "../../components/dashboard/ChartCards";
 import SidebarWithHeader from "../../components/Sidebar/sidebar";
@@ -90,9 +82,9 @@ const Fares = () => {
   return (
     <>
       <SidebarWithHeader>
-      <Text mb='2%'  w="90%" fontSize="25px" fontWeight="bold">
-        Tarifas
-      </Text>
+        <Text mb="2%" w="90%" fontSize="25px" fontWeight="bold">
+          Tarifas
+        </Text>
         <Grid
           m="15"
           templateRows="repeat(1, 1fr)"

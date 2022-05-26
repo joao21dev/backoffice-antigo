@@ -1,25 +1,13 @@
-import {
-  Box,
-  Center,
-  Divider,
-  Flex,
-  Grid,
-  Stat,
-  StatGroup,
-  StatHelpText,
-  StatLabel,
-  Text,
-} from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
-import BankLineBoletos from "../../../pages/BankLineBoletos";
-import BanklineCards from "../../../pages/BankLineCards";
-import BankLineCashouts from "../../../pages/BanklineCashouts";
-import BankLineCompras from "../../../pages/BankLineCompras";
-import BankLineP2P from "../../../pages/BankLineP2P";
-import BankLinePix from "../../../pages/BankLinePix";
-import BankLineTed from "../../../pages/BankLineTed";
-import Plans from "../../../pages/Plans";
+import { Flex, Grid, Text } from "@chakra-ui/react";
+import BankLineBoletos from "../BankLineBoletos";
+import BanklineCards from "../BankLineCards";
+import BankLineCompras from "../BankLineCompras";
+import BankLineCashouts from "../BanklineCashouts";
+import BankLinePix from "../BankLinePix";
+import BankLineP2P from "../BankLineP2P";
+import BankLineTed from "../BankLineTed";
 
 const NavBankline = () => {
   const [boletos, setBoletos] = useState(true);
@@ -134,13 +122,11 @@ const NavBankline = () => {
           alignItems="center"
           align="center"
           borderRadius="md"
-          
           role="group"
           onClick={handleBoletos}
           _hover={{
             bg: "#5A32EA",
             color: "white",
-            
           }}
         >
           <Text borderRadius="15px">Boletos</Text>
@@ -167,7 +153,6 @@ const NavBankline = () => {
         <Flex
           bg={compras && "#5A32EA"}
           color={compras && "white"}
-
           p="4"
           cursor="pointer"
           fontWeight="medium"
@@ -187,7 +172,6 @@ const NavBankline = () => {
         <Flex
           bg={cashouts && "#5A32EA"}
           color={cashouts && "white"}
-
           p="4"
           cursor="pointer"
           fontWeight="medium"
@@ -207,7 +191,6 @@ const NavBankline = () => {
         <Flex
           bg={pix && "#5A32EA"}
           color={pix && "white"}
-
           p="4"
           cursor="pointer"
           fontWeight="medium"
@@ -227,7 +210,6 @@ const NavBankline = () => {
         <Flex
           bg={p2p && "#5A32EA"}
           color={p2p && "white"}
-
           p="4"
           cursor="pointer"
           fontWeight="medium"
@@ -247,7 +229,6 @@ const NavBankline = () => {
         <Flex
           bg={ted && "#5A32EA"}
           color={ted && "white"}
-
           p="4"
           cursor="pointer"
           fontWeight="medium"

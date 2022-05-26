@@ -1,15 +1,6 @@
 import React from "react";
-import {
-  Flex,
-  Box,
-  Text,
-  Stack,
-  InputGroup,
-  InputLeftElement,
-  Input,
-  ChakraProvider,
-} from "@chakra-ui/react";
-import { FiSearch } from "react-icons/fi";
+
+import { Flex, Box } from "@chakra-ui/react";
 
 const TableWrapper = (props: any) => {
   return (

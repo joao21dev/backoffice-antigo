@@ -1,30 +1,25 @@
+import React from "react";
+
 import {
   Box,
-  Button,
-  Checkbox,
   Flex,
   FormControl,
   FormLabel,
   Input,
   Text,
-  Stack,
-  RadioGroup,
-  CheckboxGroup,
-  StackDivider,
-  Radio,
   Select,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
-import { FiEdit2, FiSave } from "react-icons/fi";
+
 import { Link } from "react-router-dom";
+
 import SidebarWithHeader from "../../components/Sidebar/sidebar";
 
 const UsersCreate = () => {
   return (
     <SidebarWithHeader>
-    <Text w="90%" fontSize="25px" fontWeight="semibold">
-     Usuários
-  </Text>
+      <Text w="90%" fontSize="25px" fontWeight="semibold">
+        Usuários
+      </Text>
       <Box
         fontWeight="medium"
         p="6"

@@ -1,16 +1,18 @@
 import { Box, Grid, GridItem, useMediaQuery } from "@chakra-ui/react";
-
 import Graphic from "../graphicTransact/graphic";
 import Card from "../Card";
-
 import { FiDollarSign as Pix } from "react-icons/fi";
 import { FiShoppingCart as Compras } from "react-icons/fi";
 import { RiBankLine as Ted } from "react-icons/ri";
 import { BiTransfer as P2P } from "react-icons/bi";
 import ChartAccounts from "../ChartAccounts";
-
 import ChartCards from "../ChartCards";
-import { dataAgencyCard, dataSortAccount, dataStatusAccount, dataStatusCard } from "../../../chartData";
+import {
+  dataAgencyCard,
+  dataSortAccount,
+  dataStatusAccount,
+  dataStatusCard,
+} from "../../../chartData";
 
 const GridCardMobile = () => {
   const data = [{ name: "Page A", uv: 400, pv: 2400, amt: 2400 }];
@@ -111,15 +113,15 @@ const GridCardMobile = () => {
           />{" "}
         </GridItem>
         <GridItem colSpan={2} bg="white" borderRadius="15px" boxShadow="lg">
-        <Box mt="10%">
-          <ChartAccounts name={"Contas por tipo"} data={dataSortAccount} />
+          <Box mt="10%">
+            <ChartAccounts name={"Contas por tipo"} data={dataSortAccount} />
           </Box>
         </GridItem>
         <GridItem colSpan={2} bg="white" borderRadius="15px" boxShadow="lg">
-        <ChartCards name={"Cartões por status"} data={dataStatusCard} />
+          <ChartCards name={"Cartões por status"} data={dataStatusCard} />
         </GridItem>
         <GridItem colSpan={2} bg="white" borderRadius="15px" boxShadow="lg">
-        <ChartCards name={"Cartões por agência"} data={dataAgencyCard} />
+          <ChartCards name={"Cartões por agência"} data={dataAgencyCard} />
         </GridItem>
       </Grid>
     </>

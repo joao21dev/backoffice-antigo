@@ -1,15 +1,13 @@
-import {
-  Box,
-  Checkbox,
-} from "@chakra-ui/react";
-import axios from "axios";
 import React, { useEffect, useMemo, useState } from "react";
+
+import axios from "axios";
+import { Link } from "react-router-dom";
+
+import { Box, Checkbox } from "@chakra-ui/react";
 import { AiFillEye } from "react-icons/ai";
 import { FaTrashAlt } from "react-icons/fa";
-import { Link } from "react-router-dom";
 import SidebarWithHeader from "../../components/Sidebar/sidebar";
 import { CustomTable } from "../../components/Table";
-
 
 const TableTeste2 = () => {
   const [data, setData] = useState([]);

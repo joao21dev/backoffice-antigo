@@ -1,3 +1,5 @@
+import React, { useEffect, useState } from "react";
+
 import {
   Box,
   Button,
@@ -6,14 +8,12 @@ import {
   FormControl,
   FormLabel,
   Input,
-  color,
 } from "@chakra-ui/react";
 import { FiEdit2, FiSave } from "react-icons/fi";
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import {  fetchUsersInfo } from "../../../redux";
+import { fetchUsersInfo } from "../../../redux";
 
 const AccountsFormAddress = (props) => {
   const userData = useSelector((state) => state.userInfo.usersInfo);

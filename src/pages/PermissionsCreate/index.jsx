@@ -1,22 +1,17 @@
+import React from "react";
+
 import {
   Box,
-  Button,
   Checkbox,
   Flex,
   FormControl,
   FormLabel,
   Input,
   Text,
-  Stack,
-  RadioGroup,
-  CheckboxGroup,
-  StackDivider,
-  Radio,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
-import { FiEdit2, FiSave } from "react-icons/fi";
-import { Link } from "react-router-dom";
 import SidebarWithHeader from "../../components/Sidebar/sidebar";
+
+import { Link } from "react-router-dom";
 
 const PermissionsCreate = () => {
   return (
@@ -126,7 +121,7 @@ const PermissionsCreate = () => {
           </Box>
           <Box mb="15px" display="flex">
             <FormLabel w="140px" htmlFor="agency">
-             Agências
+              Agências
             </FormLabel>
             <Box>
               <Checkbox size="lg"></Checkbox>
@@ -156,8 +151,6 @@ const PermissionsCreate = () => {
               <Checkbox size="lg"></Checkbox>
             </Box>
           </Box>
-          
-          
         </FormControl>
       </Box>
       <Flex justifyContent="flex-end">

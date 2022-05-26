@@ -1,9 +1,10 @@
+import React, { useEffect } from "react";
+
 import { Box, Text } from "@chakra-ui/react";
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+
 import { useParams } from "react-router-dom";
-import { connect, useDispatch, useSelector } from "react-redux";
-import { fetchUsers, fetchUsersInfo } from "../../../redux";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchUsersInfo } from "../../../redux";
 
 const AccountInfo = () => {
   const userData = useSelector((state) => state.userInfo.usersInfo);
@@ -12,8 +13,8 @@ const AccountInfo = () => {
   useEffect(() => {
     dispatch(fetchUsersInfo(id));
   }, [dispatch]);
-  
-  console.log('accountInfo userData: ', userData);
+
+  console.log("accountInfo userData: ", userData);
 
   return (
     <Box
@@ -28,7 +29,9 @@ const AccountInfo = () => {
     >
       <Text m="2">Id Conta: {userData.firstName}</Text>
       <Text m="2">Data de abertura: {userData.birthDate}</Text>
-      <Text m="2">Data de última atualização: {userData.bank && userData.bank.cardExpire}</Text>
+      <Text m="2">
+        Data de última atualização: {userData.bank && userData.bank.cardExpire}
+      </Text>
     </Box>
   );
 };

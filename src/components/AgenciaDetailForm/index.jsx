@@ -1,7 +1,7 @@
+import React from "react";
+
 import {
   Box,
-  Button,
-  Checkbox,
   Flex,
   FormControl,
   FormLabel,
@@ -9,15 +9,12 @@ import {
   Text,
   Stack,
   RadioGroup,
-  CheckboxGroup,
-  StackDivider,
   Radio,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
-import { FiEdit2, FiSave } from "react-icons/fi";
-import { Link } from "react-router-dom";
-import Agencias from "../../pages/Agencias";
 import SidebarWithHeader from "../Sidebar/sidebar";
+
+import { Link } from "react-router-dom";
+
 const AgenciaDetailForm = () => {
   return (
     <>

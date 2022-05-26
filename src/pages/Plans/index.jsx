@@ -1,9 +1,10 @@
-import { Box, Button, Checkbox, Flex, Text } from "@chakra-ui/react";
-import axios from "axios";
 import React, { useEffect, useMemo, useState } from "react";
-import { AiFillEye } from "react-icons/ai";
-import { FaTrashAlt } from "react-icons/fa";
+
+import axios from "axios";
 import { Link } from "react-router-dom";
+
+import { Box, Checkbox, Flex, Text } from "@chakra-ui/react";
+import { AiFillEye } from "react-icons/ai";
 import { dataStatusCard } from "../../chartData";
 import ChartCards from "../../components/dashboard/ChartCards";
 import SidebarWithHeader from "../../components/Sidebar/sidebar";
@@ -86,9 +87,9 @@ const Plans = () => {
   return (
     <>
       <SidebarWithHeader>
-      <Text mb='2%'  w="90%" fontSize="25px" fontWeight="bold">
-        Planos
-      </Text>
+        <Text mb="2%" w="90%" fontSize="25px" fontWeight="bold">
+          Planos
+        </Text>
         <Box
           fontWeight="medium"
           p="2"

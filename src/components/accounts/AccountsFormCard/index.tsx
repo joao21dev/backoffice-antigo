@@ -1,3 +1,5 @@
+import React, { useState } from "react";
+
 import {
   Box,
   Button,
@@ -7,7 +9,6 @@ import {
   Input,
   Text,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
 import { FiEdit2, FiSave } from "react-icons/fi";
 
 const AccountsFormCard = () => {

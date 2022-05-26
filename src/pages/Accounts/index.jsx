@@ -1,12 +1,12 @@
+import React, { useEffect, useMemo } from "react";
+
 import { Box, Checkbox, Text } from "@chakra-ui/react";
-import axios from "axios";
-import React, { useEffect, useMemo, useState } from "react";
 import { AiFillEye } from "react-icons/ai";
 import { FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import SidebarWithHeader from "../../components/Sidebar/sidebar";
 import { CustomTable } from "../../components/Table";
-import { connect, useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { fetchUsers } from "../../redux";
 
 const Accounts = () => {
@@ -80,7 +80,7 @@ const Accounts = () => {
 
   return (
     <SidebarWithHeader>
-    <Text  w="90%" fontSize="25px" fontWeight="bold">
+      <Text w="90%" fontSize="25px" fontWeight="bold">
         Contas
       </Text>
       <CustomTable data={data} columns={columns} />

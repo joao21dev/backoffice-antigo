@@ -1,9 +1,9 @@
+import React, { useEffect, useState } from "react";
+
 import {
   Flex,
   Center,
-  Text,
   Box,
-  Badge,
   Divider,
   Stat,
   StatNumber,
@@ -12,15 +12,9 @@ import {
   StatArrow,
   StatGroup,
 } from "@chakra-ui/react";
+import { FiDollarSign, FiUser, FiUserCheck } from "react-icons/fi";
+
 import axios from "axios";
-import { useEffect, useState } from "react";
-import {
-  FiArrowDown,
-  FiArrowUp,
-  FiDollarSign,
-  FiUser,
-  FiUserCheck,
-} from "react-icons/fi";
 
 const Cardbank = () => {
   const [valor, setValor] = useState("valor");
@@ -44,11 +38,9 @@ const Cardbank = () => {
     fetchData();
   }, []);
 
-
   return (
     <>
-      <Flex  color="black" h="130px" m="15" boxShadow='lg' borderRadius="15px">
-        
+      <Flex color="black" h="130px" m="15" boxShadow="lg" borderRadius="15px">
         <Center w="50%" bg="white" borderLeftRadius="15px">
           <Box
             display="flex"
@@ -58,7 +50,6 @@ const Cardbank = () => {
             justifyContent="center"
             alignItems="center"
             borderRadius="35px"
-            
           >
             <FiDollarSign fontSize="35px" color="green" display="flex" />
           </Box>
@@ -78,7 +69,7 @@ const Cardbank = () => {
         </Center>
 
         <Center>
-          <Divider  orientation="vertical" />
+          <Divider orientation="vertical" />
         </Center>
 
         <Center w="50%" bg="white">

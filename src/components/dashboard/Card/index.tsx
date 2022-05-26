@@ -1,8 +1,6 @@
 import React from "react";
 
 import { Box, Center, Text, Stack, Icon } from "@chakra-ui/react";
-import { link } from "fs";
-import { IconType } from "react-icons";
 
 const Card = (props: any) => {
   return (

@@ -1,7 +1,7 @@
 import React from "react";
-import { Box, useMediaQuery,} from "@chakra-ui/react";
-import "chartjs-plugin-style";
 
+import { Box, useMediaQuery } from "@chakra-ui/react";
+import "chartjs-plugin-style";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -79,14 +79,15 @@ export default function Graphic() {
   const [isLargerThan1280] = useMediaQuery("(min-width: 700px)");
   return (
     <>
-    {isLargerThan1280 ?  <Box w="65%" mt='8%' ml='18%'>
+      {isLargerThan1280 ? (
+        <Box w="65%" mt="8%" ml="18%">
           <Bar data={data} options={options} />
-        </Box> : 
-         <Box w="65%" mt='30%' ml='18%'>
-         <Bar data={data} options={options} />
-       </Box>
-        }
-       
+        </Box>
+      ) : (
+        <Box w="65%" mt="30%" ml="18%">
+          <Bar data={data} options={options} />
+        </Box>
+      )}
     </>
   );
 }

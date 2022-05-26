@@ -1,25 +1,15 @@
-import {
-  Box,
-  Center,
-  Divider,
-  Flex,
-  Grid,
-  Stat,
-  StatGroup,
-  StatHelpText,
-  StatLabel,
-  Text,
-} from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
-import AccountActivities from "../../../pages/AccountActivities";
-import AccountBankAccounts from "../../../pages/AccountBankAccounts";
-import AccountCards from "../../../pages/AccountCards";
-import AccountsAccountDetail from "../../../pages/AccountDetail";
-import AccountDevices from "../../../pages/AccountDevices";
-import AccountDocuments from "../../../pages/AccountDocuments";
-import AccountPartners from "../../../pages/AccountPartners";
-import AccountTransactions from "../../../pages/AccountTransactions";
-import BankInfoStat from "../BankInfoStat";
+import React, { useState } from "react";
+
+import { Flex, Grid, Text } from "@chakra-ui/react";
+import AccountsAccountDetail from "../AccountDetail";
+import AccountDocuments from "../AccountDocuments";
+import AccountCards from "../AccountCards";
+import AccountTransactions from "../AccountTransactions";
+import AccountBankAccounts from "../AccountBankAccounts";
+import AccountDevices from "../AccountDevices";
+import AccountActivities from "../AccountActivities";
+import AccountPartners from "../AccountPartners";
+
 
 const NavAccount = () => {
   const [personalData, setPersonalData] = useState(true);

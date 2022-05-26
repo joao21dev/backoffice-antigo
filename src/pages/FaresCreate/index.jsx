@@ -1,6 +1,7 @@
+import React, { useState } from "react";
+
 import {
   Box,
-  Button,
   Checkbox,
   Flex,
   FormControl,
@@ -8,13 +9,8 @@ import {
   Input,
   Text,
   Stack,
-  RadioGroup,
-  CheckboxGroup,
-  StackDivider,
-  Radio,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
-import { FiEdit2, FiSave } from "react-icons/fi";
+
 import { Link } from "react-router-dom";
 import SidebarWithHeader from "../../components/Sidebar/sidebar";
 const FaresCreate = () => {
@@ -84,7 +80,6 @@ const FaresCreate = () => {
               color="white"
               borderRadius="15px"
               p="4"
-
               m="4"
               bg="#5A32EA"
               alignItems="center"

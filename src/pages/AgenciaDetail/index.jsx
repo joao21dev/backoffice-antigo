@@ -1,10 +1,10 @@
+import React, { useEffect, useMemo, useState } from "react";
+
 import { Box, Checkbox, Text } from "@chakra-ui/react";
 import axios from "axios";
-import React, { useEffect, useMemo, useState } from "react";
 import { AiFillEye } from "react-icons/ai";
 import { FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
-
 import SidebarWithHeader from "../../components/Sidebar/sidebar";
 import { CustomTable } from "../../components/Table";
 
@@ -97,7 +97,7 @@ const AgenciaDetail = () => {
   return (
     <>
       <SidebarWithHeader>
-        <Text w="90%" mb='50px' fontSize="25px" fontWeight="Bold">
+        <Text w="90%" mb="50px" fontSize="25px" fontWeight="Bold">
           Agência:
         </Text>
         <Box
