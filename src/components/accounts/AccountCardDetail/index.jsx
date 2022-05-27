@@ -1,19 +1,18 @@
 import React from "react";
-
-import SidebarWithHeader from "../../components/Sidebar/sidebar";
-import FormCartao from "../../components/accounts/AccountsFormCard";
-import FormAddress from "../../components/accounts/AccountsFormAddress";
-import AccountInfo from "../../components/accounts/AccountInfo";
-import NavAccount from "../../components/accounts/NavAccount";
+import SidebarWithHeader from "../../Sidebar/sidebar";
+import AccountInfo from "../AccountInfo";
+import AccountsFormAddress from "../AccountsFormAddress";
+import AccountsFormCard from "../AccountsFormCard";
+import NavAccount from "../NavAccount";
 
 const AccountCardDetail = () => {
   return (
     <>
       <SidebarWithHeader>
-        <NavAccount />
+       
         <AccountInfo />
-        <FormCartao />
-        <FormAddress name="Endereço de Entrega" />
+        <AccountsFormCard />
+        <AccountsFormAddress name="Endereço de Entrega" />
       </SidebarWithHeader>
     </>
   );

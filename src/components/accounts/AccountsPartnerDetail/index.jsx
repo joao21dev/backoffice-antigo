@@ -1,18 +1,17 @@
 import React from "react";
+import SidebarWithHeader from "../../Sidebar/sidebar";
+import AccountInfo from "../AccountInfo";
+import AccountsFormAddress from "../AccountsFormAddress";
+import AccountsFormPersonalData from "../AccountsFormPersonalData";
 
-import SidebarWithHeader from "../../components/Sidebar/sidebar";
-import NavAccount from "../../components/accounts/NavAccount";
-import FormPersonalData from "../../components/accounts/AccountsFormPersonalData";
-import AccountInfo from "../../components/accounts/AccountInfo";
 
 const AccountsPartnerDetail = () => {
   return (
     <>
       <SidebarWithHeader>
-        <NavAccount></NavAccount>
         <AccountInfo />
-        <FormPersonalData />
-        {/* <FormAddress name="Endereço" /> */}
+        <AccountsFormPersonalData />
+        <AccountsFormAddress name="Endereço" />
       </SidebarWithHeader>
     </>
   );

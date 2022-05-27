@@ -21,6 +21,8 @@ import { Provider } from "react-redux";
 import store from "./redux/store/store";
 import Bankline from "./pages/Bankline";
 import AccountsInfo from "./components/accounts/AccountsInfo";
+import AccountCardDetail from "./components/accounts/AccountCardDetail";
+import AccountsPartnerDetail from "./components/accounts/AccountsPartnerDetail";
 
 export const App = () => (
   <>
@@ -29,6 +31,8 @@ export const App = () => (
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/accounts/:id" element={<AccountsInfo />} />
+          <Route path="/accounts-card/:id" element={<AccountCardDetail />} />
+          <Route path="/accounts-partner/:id" element={<AccountsPartnerDetail />} />
           <Route path="/bankline" element={<Bankline />} />
           <Route path="/accounts" element={<Accounts />} />
           <Route path="/plans" element={<Plans />} />

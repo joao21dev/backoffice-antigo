@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useEffect, useMemo } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import { dataAccountActivities } from "../../../dataTables";
+import { fetchTodos } from "../../../redux";
 import { CustomTable } from "../../Table";
 
-
-
 export default function AccountActivities() {
+  const userData = useSelector((state) => state.todo);
+  const dispatch = useDispatch();
+  const data = useMemo(() => [...userData.todos], [userData.todos]);
+  const { id } = useParams();
+  useEffect(() => {
+    dispatch(fetchTodos(id));
+  }, [dispatch]);
   const columns = React.useMemo(
     () => [
       {
@@ -12,11 +20,11 @@ export default function AccountActivities() {
         columns: [
           {
             Header: "Usuário",
-            accessor: "user",
+            accessor: "todo",
           },
           {
             Header: "IP",
-            accessor: "ip",
+            accessor: "id",
           },
           {
             Header: "Descrição",
@@ -31,5 +39,5 @@ export default function AccountActivities() {
     ],
     []
   );
-  return <CustomTable columns={columns} data={dataAccountActivities} />;
+  return <CustomTable columns={columns} data={data} />;
 }

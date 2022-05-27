@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useEffect, useMemo } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import { dataAccountDevices } from "../../../dataTables";
+import { fetchTodos } from "../../../redux";
 import { CustomTable } from "../../Table";
 
-
-
 export default function AccountDevices() {
+  const userData = useSelector((state) => state.todo);
+  const dispatch = useDispatch();
+  const data = useMemo(() => [...userData.todos], [userData.todos]);
+  const { id } = useParams();
+  useEffect(() => {
+    dispatch(fetchTodos(id));
+  }, [dispatch]);
   const columns = React.useMemo(
     () => [
       {
@@ -41,8 +49,7 @@ export default function AccountDevices() {
   );
   return (
     <>
-  
-        <CustomTable columns={columns} data={dataAccountDevices} />
+      <CustomTable columns={columns} data={data} />
     </>
   );
 }

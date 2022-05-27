@@ -3,7 +3,6 @@ import React, { useEffect, useMemo } from "react";
 import { Box, Checkbox } from "@chakra-ui/react";
 import { AiFillEye } from "react-icons/ai";
 
-
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { CustomTable } from "../../Table";
@@ -46,8 +45,9 @@ export default function AccountCards() {
           {
             Header: "Sobre",
             accessor: "open",
-            Cell: ({ row: { original } }) => (
-              <Link to="/account-card-detail">
+            Cell: (props) => (
+              <Link to={`/accounts-card/${props.cell.row.cells[1].value}`}>
+                {console.log("props cell: ", props.cell)}
                 <Box ml="25%">
                   <AiFillEye color={"gray"} fontSize="22px" />
                 </Box>
