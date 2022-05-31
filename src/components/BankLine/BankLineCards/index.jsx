@@ -1,8 +1,19 @@
-import React from "react";
+import { Box } from "@chakra-ui/react";
+import React, { useEffect, useMemo } from "react";
+import { AiFillEye } from "react-icons/ai";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { dataBanklineCards } from "../../../dataTables";
+import { fetchUsers } from "../../../redux";
 import { CustomTable } from "../../Table";
 
 export default function BanklineCards() {
+  const userData = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+  const data = useMemo(() => [...userData.users], [userData.users]);
+  useEffect(() => {
+    dispatch(fetchUsers());
+  }, [dispatch]);
   const columns = React.useMemo(
     () => [
       {
@@ -14,7 +25,7 @@ export default function BanklineCards() {
           },
           {
             Header: "Titular/Conta",
-            accessor: "titular",
+            accessor: "id",
           },
           {
             Header: "Número",
@@ -33,8 +44,16 @@ export default function BanklineCards() {
             accessor: "status",
           },
           {
-            Header: "Visulaizar",
+            Header: "Sobre",
             accessor: "open",
+            Cell: (props) => (
+              <Link to={`/bankline-card/${props.cell.row.cells[1].value}`}>
+                {" "}
+                <Box ml="25%">
+                  <AiFillEye color={"gray"} fontSize="22px" />
+                </Box>
+              </Link>
+            ),
           },
           {
             Header: "",
@@ -47,7 +66,7 @@ export default function BanklineCards() {
   );
   return (
     <>
-        <CustomTable columns={columns} data={dataBanklineCards} />
+        <CustomTable columns={columns} data={data} />
     </>
   );
 }

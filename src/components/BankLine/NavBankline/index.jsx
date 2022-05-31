@@ -127,6 +127,7 @@ const NavBankline = () => {
           _hover={{
             bg: "#5A32EA",
             color: "white",
+            transition: "0.3s",
           }}
         >
           <Text borderRadius="15px">Boletos</Text>
@@ -146,6 +147,7 @@ const NavBankline = () => {
           _hover={{
             bg: "#5A32EA",
             color: "white",
+            transition: "0.3s",
           }}
         >
           <Text borderRadius="15px">Cartões</Text>
@@ -165,6 +167,7 @@ const NavBankline = () => {
           _hover={{
             bg: "#5A32EA",
             color: "white",
+            transition: "0.3s",
           }}
         >
           <Text borderRadius="15px">Compras</Text>
@@ -184,6 +187,7 @@ const NavBankline = () => {
           _hover={{
             bg: "#5A32EA",
             color: "white",
+            transition: "0.3s",
           }}
         >
           <Text borderRadius="15px">Saques</Text>
@@ -203,6 +207,7 @@ const NavBankline = () => {
           _hover={{
             bg: "#5A32EA",
             color: "white",
+            transition: "0.3s",
           }}
         >
           <Text borderRadius="15px">Transferência Pix</Text>
@@ -222,6 +227,7 @@ const NavBankline = () => {
           _hover={{
             bg: "#5A32EA",
             color: "white",
+            transition: "0.3s",
           }}
         >
           <Text borderRadius="15px">Transferência P2P</Text>
@@ -241,6 +247,7 @@ const NavBankline = () => {
           _hover={{
             bg: "#5A32EA",
             color: "white",
+            transition: "0.3s",
           }}
         >
           <Text borderRadius="15px">Transferência Ted</Text>

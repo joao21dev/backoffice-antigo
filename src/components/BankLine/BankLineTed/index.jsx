@@ -3,11 +3,11 @@ import React, { useEffect, useMemo } from "react";
 import { AiFillEye } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { dataBanklineBoletos } from "../../../dataTables";
+import { dataBanklineTed } from "../../../dataTables";
 import { fetchUsers } from "../../../redux";
 import { CustomTable } from "../../Table";
 
-export default function BankLineBoletos() {
+export default function BankLineTed() {
   const userData = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const data = useMemo(() => [...userData.users], [userData.users]);
@@ -17,21 +17,28 @@ export default function BankLineBoletos() {
   const columns = React.useMemo(
     () => [
       {
-        Header: "Boletos",
+        Header: "Transferência TED",
         columns: [
           {
-            Header: "Conta",
+            Header: "Selecionar",
+            accessor: "box",
+          },
+          {
+            Header: "Pagador/Recebedor",
             accessor: "id",
           },
           {
-            Header: "Tipo da Transação",
-            accessor: "typeTransaction",
+            Header: "Conta Bancária",
+            accessor: "bankAccount",
+          },
+          {
+            Header: "Tipo",
+            accessor: "type",
           },
           {
             Header: "Valor",
             accessor: "money",
           },
-
           {
             Header: "Data e Hora",
             accessor: "time",
@@ -44,7 +51,7 @@ export default function BankLineBoletos() {
             Header: "Sobre",
             accessor: "open",
             Cell: (props) => (
-              <Link to={`/bankline-boleto/${props.cell.row.cells[0].value}`}>
+              <Link to={`/bankline-compra/${props.cell.row.cells[0].value}`}>
                 {" "}
                 <Box ml="25%">
                   <AiFillEye color={"gray"} fontSize="22px" />
@@ -57,5 +64,10 @@ export default function BankLineBoletos() {
     ],
     []
   );
-  return <CustomTable columns={columns} data={data} />;
+
+  return (
+    <>
+      <CustomTable columns={columns} data={data} />
+    </>
+  );
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import {
   Box,
@@ -10,12 +10,22 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { FiEdit2, FiSave } from "react-icons/fi";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import { fetchUsersInfo } from "../../../redux";
 
 const BankLineFormCard = () => {
   const [cartao, setCartao] = useState(true);
   const handleEditCartao = () => {
     setCartao(!cartao);
   };
+
+  const userData = useSelector((state) => state.userInfo.usersInfo);
+  const dispatch = useDispatch();
+  const { id } = useParams();
+  useEffect(() => {
+    dispatch(fetchUsersInfo(id));
+  }, [dispatch]);
   if (cartao) {
     return (
       <>
@@ -47,7 +57,7 @@ const BankLineFormCard = () => {
             </Button>
           </Flex>
 
-          <Text m="2">Número:</Text>
+          <Text m="2">Número: {userData.id}</Text>
           <Text m="2">Status:</Text>
           <Text m="2">Tipo:</Text>
           <Text m="2">Código de rastreio:</Text>

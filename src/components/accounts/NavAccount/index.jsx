@@ -123,6 +123,11 @@ const NavAccount = () => {
           borderRadius="lg"
           role="group"
           onClick={handlePersonalData}
+          _hover={{
+            bg: "#5A32EA",
+            color: "white",
+            transition: '0.3s',
+          }}
         >
           <Text borderRadius="15px">Dados Pessoais</Text>
         </Flex>
@@ -138,6 +143,11 @@ const NavAccount = () => {
           borderRadius="lg"
           role="group"
           onClick={handleDocuments}
+          _hover={{
+            bg: "#5A32EA",
+            color: "white",
+            transition: '0.3s',
+          }}
         >
           <Text borderRadius="15px">Documentos</Text>
         </Flex>
@@ -153,6 +163,11 @@ const NavAccount = () => {
           borderRadius="lg"
           role="group"
           onClick={handleCards}
+          _hover={{
+            bg: "#5A32EA",
+            color: "white",
+            transition: '0.3s',
+          }}
         >
           <Text borderRadius="15px">Cartões</Text>
         </Flex>
@@ -168,6 +183,11 @@ const NavAccount = () => {
           borderRadius="lg"
           role="group"
           onClick={handleTransactions}
+          _hover={{
+            bg: "#5A32EA",
+            color: "white",
+            transition: '0.3s',
+          }}
         >
           <Text borderRadius="15px">Transações</Text>
         </Flex>
@@ -183,6 +203,11 @@ const NavAccount = () => {
           borderRadius="lg"
           role="group"
           onClick={handleBankAccount}
+          _hover={{
+            bg: "#5A32EA",
+            color: "white",
+            transition: '0.3s',
+          }}
         >
           <Text borderRadius="15px">Conta Bancária</Text>
         </Flex>
@@ -198,6 +223,11 @@ const NavAccount = () => {
           borderRadius="lg"
           role="group"
           onClick={handleDevices}
+          _hover={{
+            bg: "#5A32EA",
+            color: "white",
+            transition: '0.3s',
+          }}
         >
           <Text borderRadius="15px">Dispositivos</Text>
         </Flex>
@@ -213,6 +243,11 @@ const NavAccount = () => {
           borderRadius="lg"
           role="group"
           onClick={handleActivities}
+          _hover={{
+            bg: "#5A32EA",
+            color: "white",
+            transition: '0.3s',
+          }}
         >
           <Text borderRadius="15px">Atividades</Text>
         </Flex>
@@ -228,6 +263,11 @@ const NavAccount = () => {
           borderRadius="lg"
           role="group"
           onClick={handlePartners}
+          _hover={{
+            bg: "#5A32EA",
+            color: "white",
+            transition: '0.3s',
+          }}
         >
           <Text borderRadius="15px">Sócios</Text>
         </Flex>

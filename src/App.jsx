@@ -23,6 +23,9 @@ import Bankline from "./pages/Bankline";
 import AccountsInfo from "./components/accounts/AccountsInfo";
 import AccountCardDetail from "./components/accounts/AccountCardDetail";
 import AccountsPartnerDetail from "./components/accounts/AccountsPartnerDetail";
+import BankLineBoletoDetail from "./components/BankLine/BankLineBoletoDetail";
+import BankLineCardDetail from "./components/BankLine/BankLineCardDetail";
+import BankLineCompras from "./components/BankLine/BankLineCompras";
 
 export const App = () => (
   <>
@@ -32,7 +35,19 @@ export const App = () => (
           <Route path="/home" element={<Home />} />
           <Route path="/accounts/:id" element={<AccountsInfo />} />
           <Route path="/accounts-card/:id" element={<AccountCardDetail />} />
-          <Route path="/accounts-partner/:id" element={<AccountsPartnerDetail />} />
+          <Route
+            path="/bankline-boleto/:id"
+            element={<BankLineBoletoDetail />}
+          />
+          <Route
+            path="/accounts-partner/:id"
+            element={<AccountsPartnerDetail />}
+          />
+          <Route path="/bankline-card/:id" element={<BankLineCardDetail />} />
+          <Route path="/bankline-compra/:id" element={<BankLineCardDetail />} />
+          <Route path="/bankline-pix" element={<BankLineCardDetail />} />
+          <Route path="/bankline-p2p" element={<BankLineCardDetail />} />
+          <Route path="/bankline-compras" element={<BankLineCompras />} />
           <Route path="/bankline" element={<Bankline />} />
           <Route path="/accounts" element={<Accounts />} />
           <Route path="/plans" element={<Plans />} />

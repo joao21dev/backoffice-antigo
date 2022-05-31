@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useEffect, useMemo } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { dataBanklinePix } from "../../../dataTables";
+import { fetchUsers } from "../../../redux";
 import { CustomTable } from "../../Table";
 
 export default function BankLinePix() {
+  const userData = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+  const data = useMemo(() => [...userData.users], [userData.users]);
+  useEffect(() => {
+    dispatch(fetchUsers());
+  }, [dispatch]);
   const columns = React.useMemo(
     () => [
       {
@@ -14,7 +22,7 @@ export default function BankLinePix() {
           },
           {
             Header: "Conta",
-            accessor: "account",
+            accessor: "id",
           },
           {
             Header: "Pagador/Recebedor",
@@ -48,7 +56,7 @@ export default function BankLinePix() {
 
   return (
     <>
-      <CustomTable columns={columns} data={dataBanklinePix} />
+      <CustomTable columns={columns} data={data} />
     </>
   );
 }
