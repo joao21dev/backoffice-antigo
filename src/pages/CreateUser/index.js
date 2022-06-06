@@ -29,10 +29,10 @@ const UsersCreate = () => {
       const response = await axios({
         method: "post",
         url: "https://omssxfdlgh.execute-api.us-east-1.amazonaws.com/users/create",
-        dataType: "jsonp",
+        // dataType: "jsonp",
         headers: {
           "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
+          // "Access-Control-Allow-Origin": "*",
         },
         body: {
           name: formValue.name,
@@ -69,7 +69,7 @@ const UsersCreate = () => {
   };
 
   return (
-    <SidebarWithHeader>
+    <>
       <Text w="90%" fontSize="25px" fontWeight="semibold">
         Usuários
       </Text>
@@ -143,7 +143,7 @@ const UsersCreate = () => {
           </Button>
         </Flex>
       </form>
-    </SidebarWithHeader>
+    </>
   );
 };
 
