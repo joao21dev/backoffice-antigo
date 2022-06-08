@@ -17,46 +17,62 @@ import axios from "axios";
 
 const UsersCreate = () => {
   const [formValue, setformValue] = useState({
-    name: "",
-    email: "",
-    phone: "",
+    firstName: "",
+    lastName: "",
+    age: "",
     password: "",
   });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const response = await axios({
-        method: "post",
-        url: "https://omssxfdlgh.execute-api.us-east-1.amazonaws.com/users/create",
-        // dataType: "jsonp",
-        headers: {
-          "Content-Type": "application/json",
-          // "Access-Control-Allow-Origin": "*",
-        },
-        body: {
-          name: formValue.name,
-          email: formValue.email,
-          phone: formValue.phone,
-          password: formValue.password,
-        },
-      });
-      console.log(response);
-    } catch (error) {
-      console.log(error);
-    }
-    // fetch("", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify({
-    //     name: formValue.name,
-    //           email: formValue.email,
-    //           phone: formValue.phone,
-    //           password: formValue.password,
-    //   }),
-    // })
+    // try {
+    //   const response = await axios({
+    //     method: "post",
+    //     url: "https://dummyjson.com/users/add",
+    //     // dataType: "jsonp",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //       // "Access-Control-Allow-Origin": "*",
+    //     },
+    //     body: JSON.stringify({
+    //       firstName: formValue.firstName,
+    //       lastName: formValue.lastName,
+    //       age: formValue.age,
+    //       // password: formValue.password,
+    //       // client_id: "902d1cd8-0834-4b92-4b92-8e6e-6a58bf758db",
+    //     }),
+    //   });
+    //   console.log(response);
+    // } catch (error) {
+    //   console.log(error);
+    // }
+    // fetch(
+    //   "https://omssxfdlgh.execute-api.us-east-1.amazonaws.com/users/create",
+    //   {
+    //     method: "POST",
+    //     headers: { "Content-Type": "application/json" },
+    //     body: JSON.stringify({
+    //       name: formValue.name,
+    //       email: formValue.email,
+    //       phone: formValue.phone,
+    //       password: formValue.password,
+    //       client_id: "902d1cd8-0834-4b92-4b92-8e6e-6a58bf758db",
+    //     }),
+    //   }
+    // )
     //   .then((res) => res.json())
     //   .then(console.log);
+    fetch("https://dummyjson.com/users/add", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        firstName: formValue.firstName,
+        lastName: formValue.lastName,
+        age: formValue.age,
+      }),
+    })
+      .then((res) => res.json())
+      .then(console.log);
   };
 
   const handleChange = (event) => {
@@ -87,32 +103,32 @@ const UsersCreate = () => {
           <Text w="90%" fontSize="25px" fontWeight="semibold">
             Criar Usuário
           </Text>
-          <FormControl id="name">
+          <FormControl id="firstName">
             <FormLabel>Nome</FormLabel>
             <Input
               type="text"
-              name="name"
+              name="firstName"
               onChange={handleChange}
-              value={formValue.name}
+              value={formValue.firstName}
               maxLength={14}
             />
           </FormControl>
-          <FormControl id="email">
+          <FormControl id="lastName">
             <FormLabel>Email</FormLabel>
             <Input
-              type="email"
+              type="text"
               onChange={handleChange}
-              name="email"
-              value={formValue.email}
+              name="lastName"
+              value={formValue.lastName}
             />
           </FormControl>
-          <FormControl id="phone">
+          <FormControl id="age">
             <FormLabel>Telefone</FormLabel>
             <Input
               type="number"
               onChange={handleChange}
-              name="phone"
-              value={formValue.phone}
+              name="age"
+              value={formValue.age}
             />
           </FormControl>
           <FormControl id="password">
