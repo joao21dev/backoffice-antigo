@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode } from "react";
 import {
   IconButton,
   Box,
@@ -24,7 +24,7 @@ import {
   Input,
   Stack,
   InputGroup,
-} from '@chakra-ui/react';
+} from "@chakra-ui/react";
 import {
   FiHome,
   FiBox,
@@ -35,10 +35,10 @@ import {
   FiChevronDown,
   FiDisc,
   FiMessageCircle,
-  FiSearch
-} from 'react-icons/fi';
-import { IconType } from 'react-icons';
-import { ReactText } from 'react';
+  FiSearch,
+} from "react-icons/fi";
+import { IconType } from "react-icons";
+import { ReactText } from "react";
 
 interface LinkItemProps {
   name: string;
@@ -46,12 +46,15 @@ interface LinkItemProps {
   routh: string;
 }
 const LinkItems: Array<LinkItemProps> = [
-  { name: 'Home', icon: FiHome, routh: "home" },
-  { name: 'Bankline', icon: FiBox, routh: "bank" },
-  { name: 'Contas', icon: FiUser, routh: "accounts" },
-  { name: 'Planos', icon: FiClipboard, routh: "plan" },
-  { name: 'Agências', icon: FiBriefcase, routh: "agency" },
-  { name: 'Suporte', icon: FiMessageCircle, routh: "support" },
+  { name: "Home", icon: FiHome, routh: "home" },
+  { name: "Contas", icon: FiUser, routh: "accounts" },
+  { name: "Bankline", icon: FiUser, routh: "bankline" },
+  { name: "Planos", icon: FiClipboard, routh: "plans" },
+  { name: "Tarifas", icon: FiBriefcase, routh: "fares" },
+  { name: "Agências", icon: FiMessageCircle, routh: "agencias" },
+  { name: "Configurações", icon: FiMessageCircle, routh: "settings" },
+  { name: "Usuários", icon: FiMessageCircle, routh: "users" },
+  { name: "Termos", icon: FiMessageCircle, routh: "terms" },
 ];
 
 export default function SidebarWithHeader({
@@ -61,10 +64,10 @@ export default function SidebarWithHeader({
 }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <Box minH="100vh" bg={useColorModeValue('gray.100', 'gray.900')}>
+    <Box minH="100vh" bg={useColorModeValue("gray.100", "gray.900")}>
       <SidebarContent
         onClose={() => onClose}
-        display={{ base: 'none', md: 'block' }}
+        display={{ base: "none", md: "block" }}
       />
       <Drawer
         autoFocus={false}
@@ -73,7 +76,8 @@ export default function SidebarWithHeader({
         onClose={onClose}
         returnFocusOnClose={false}
         onOverlayClick={onClose}
-        size="full">
+        size="full"
+      >
         <DrawerContent>
           <SidebarContent onClose={onClose} />
         </DrawerContent>
@@ -95,26 +99,25 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
   return (
     <Box
       transition="3s ease"
-      bg={useColorModeValue('white', 'gray.900')}
+      bg={useColorModeValue("white", "gray.900")}
       borderRight="1px"
-      borderRightColor={useColorModeValue('gray.200', 'gray.700')}
-      w={{ base: 'full', md: 60 }}
+      borderRightColor={useColorModeValue("gray.200", "gray.700")}
+      w={{ base: "full", md: 60 }}
       pos="fixed"
       h="full"
-      {...rest}>
-      <Flex h="20" alignItems="center" mx="8" >
-        <FiDisc /> 
-        <Text  ml='15px' fontSize="2xl" fontFamily="monospace" fontWeight="bold"   >
-        Sua Marca
+      {...rest}
+    >
+      <Flex h="20" alignItems="center" mx="8">
+        <FiDisc />
+        <Text ml="15px" fontSize="2xl" fontFamily="monospace" fontWeight="bold">
+          Sua Marca
         </Text>
-        <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
+        <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link) => (
-        <NavItem key={link.name} icon={link.icon} routh={link.routh} >
+        <NavItem key={link.name} icon={link.icon} routh={link.routh}>
           {link.name}
-
         </NavItem>
-        
       ))}
     </Box>
   );
@@ -124,12 +127,14 @@ interface NavItemProps extends FlexProps {
   icon: IconType;
   children: ReactText;
   routh: string;
-  
 }
 const NavItem = ({ icon, children, routh, ...rest }: NavItemProps) => {
   return (
-    <Link href={routh} style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
-      
+    <Link
+      href={routh}
+      style={{ textDecoration: "none" }}
+      _focus={{ boxShadow: "none" }}
+    >
       <Flex
         align="center"
         p="4"
@@ -138,18 +143,17 @@ const NavItem = ({ icon, children, routh, ...rest }: NavItemProps) => {
         role="group"
         cursor="pointer"
         _hover={{
-          bg: '#5A32EA',
-          color: 'white',
+          bg: "#5A32EA",
+          color: "white",
         }}
-        {...rest}>
-
-
+        {...rest}
+      >
         {icon && (
           <Icon
             mr="4"
             fontSize="16"
             _groupHover={{
-              color: 'white',
+              color: "white",
             }}
             as={icon}
           />
@@ -166,87 +170,83 @@ interface MobileProps extends FlexProps {
 const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
   return (
     <>
-   
-    <Flex
-      ml={{ base: 0, md: 60 }}
-      px={{ base: 4, md: 4 }}
-      height="20"
-      alignItems="center"
-      justifyContent={{ base: 'space-between' }}
-      {...rest}>
-        <Flex  
->
-        <Box >
-          <Text fontWeight='bold' m='15' >
-            Olá, Carlos Ivan
-          </Text>
-        </Box>
+      <Flex
+        ml={{ base: 0, md: 60 }}
+        px={{ base: 4, md: 4 }}
+        height="20"
+        alignItems="center"
+        justifyContent={{ base: "space-between" }}
+        {...rest}
+      >
+        <Flex>
+          <Box>
+            <Text fontWeight="bold" m="15">
+              Olá, Carlos Ivan
+            </Text>
+          </Box>
         </Flex>
 
-      <IconButton
-        display={{ base: 'flex', md: 'none' }}
-        onClick={onOpen}
-        variant="outline"
-        aria-label="open menu"
-        icon={<FiMenu />}
-        
-      />
+        <IconButton
+          display={{ base: "flex", md: "none" }}
+          onClick={onOpen}
+          variant="outline"
+          aria-label="open menu"
+          icon={<FiMenu />}
+        />
 
-     
-
-      <HStack spacing={{ base: '0', md: '6' }}>
-      <Stack >
-        <InputGroup>
-          <InputLeftElement
-            pointerEvents='none'
-            children={<FiSearch color='gray.300' />}
-          />
-          <Input 
-          type='text'
-          placeholder='Pesquisar' 
-          bg="white"
-          borderRadius='15px' 
-          />
-        </InputGroup>
-      </Stack>
-        <Flex alignItems={'center'}>
-          
-          <Menu>
-            <MenuButton
-              py={2}
-              transition="all 0.3s"
-              _focus={{ boxShadow: 'none' }}>
-              <HStack>
-                
-                <VStack
-                  display={{ base: 'none', md: 'flex' }}
-                  alignItems="flex-start"
-                  spacing="1px"
-                  ml="2">
-                  <Text fontSize="sm">Usuário</Text>
-                  <Text fontSize="xs" color="gray.600">
-                    Banco
-                  </Text>
-                </VStack>
-                <Box display={{ base: 'none', md: 'flex' }}>
-                  <FiChevronDown />
-                </Box>
-              </HStack>
-            </MenuButton>
-            <MenuList
-              bg={useColorModeValue('white', 'gray.900')}
-              borderColor={useColorModeValue('gray.200', 'gray.700')}>
-              <MenuItem>Profile</MenuItem>
-              <MenuItem>Settings</MenuItem>
-              <MenuItem>Billing</MenuItem>
-              <MenuDivider />
-              <MenuItem>Sign out</MenuItem>
-            </MenuList>
-          </Menu>
-        </Flex>
-      </HStack>
-    </Flex>
+        <HStack spacing={{ base: "0", md: "6" }}>
+          <Stack>
+            <InputGroup>
+              <InputLeftElement
+                pointerEvents="none"
+                children={<FiSearch color="gray.300" />}
+              />
+              <Input
+                type="text"
+                placeholder="Pesquisar"
+                bg="white"
+                borderRadius="15px"
+              />
+            </InputGroup>
+          </Stack>
+          <Flex alignItems={"center"}>
+            <Menu>
+              <MenuButton
+                py={2}
+                transition="all 0.3s"
+                _focus={{ boxShadow: "none" }}
+              >
+                <HStack>
+                  <VStack
+                    display={{ base: "none", md: "flex" }}
+                    alignItems="flex-start"
+                    spacing="1px"
+                    ml="2"
+                  >
+                    <Text fontSize="sm">Usuário</Text>
+                    <Text fontSize="xs" color="gray.600">
+                      Banco
+                    </Text>
+                  </VStack>
+                  <Box display={{ base: "none", md: "flex" }}>
+                    <FiChevronDown />
+                  </Box>
+                </HStack>
+              </MenuButton>
+              <MenuList
+                bg={useColorModeValue("white", "gray.900")}
+                borderColor={useColorModeValue("gray.200", "gray.700")}
+              >
+                <MenuItem>Profile</MenuItem>
+                <MenuItem>Settings</MenuItem>
+                <MenuItem>Billing</MenuItem>
+                <MenuDivider />
+                <MenuItem>Sign out</MenuItem>
+              </MenuList>
+            </Menu>
+          </Flex>
+        </HStack>
+      </Flex>
     </>
-
   );
 };

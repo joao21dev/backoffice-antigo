@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-/.pnp
+/.pnpBuild a Modern User Interface with Chakra UI | egghead.io
 .pnp.js
 
 # testing
