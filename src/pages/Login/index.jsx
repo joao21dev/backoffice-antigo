@@ -9,10 +9,47 @@ import {
   Link,
   Heading,
   Text,
+  Button,
 } from "@chakra-ui/react";
+import axios from "axios";
+import React, { useState } from "react";
 import { theme } from "../../theme/theme";
 
 export default function SimpleCard() {
+  const [formValue, setformValue] = useState({
+    document: "",
+    password: "",
+  });
+
+  const handleSubmit = async () => {
+    // const loginFormData = new FormData();
+    // loginFormData.append("document", formValue.document);
+    // loginFormData.append("password", formValue.password);
+
+    try {
+      const response = await axios({
+        method: "post",
+        url: "https://6294f2c163b5d108c1977aaf.mockapi.io/user",
+        headers: { "Content-Type": "multipart/form-data" },
+        body: JSON.stringify({
+          document: "",
+          password: "",
+        }),
+      });
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleChange = (event) => {
+    setformValue({
+      ...formValue,
+      [event.target.name]: event.target.value,
+    });
+    console.log("testando o event: ", event.target.value);
+    console.log("testando o formValue: ", formValue);
+  };
   return (
     <Flex
       minH={"100vh"}
@@ -33,38 +70,51 @@ export default function SimpleCard() {
           p={8}
         >
           <Stack spacing={4}>
-            <FormControl id="email">
-              <FormLabel>CNPJ</FormLabel>
-              <Input type="number" maxLength={14} />
-            </FormControl>
-            <FormControl id="password">
-              <FormLabel>Senha</FormLabel>
-              <Input type="password" />
-            </FormControl>
-            <Stack spacing={10}>
-              <Stack
-                direction={{ base: "column", sm: "row" }}
-                align={"start"}
-                justify={"space-between"}
-              >
-                <Checkbox>Lembrar-me</Checkbox>
-                <Link color={"blue.400"}>Esqueceu a senha?</Link>
+            <form onSubmit={handleSubmit}>
+              <FormControl id="document">
+                <FormLabel>CNPJ</FormLabel>
+                <Input
+                  onChange={handleChange}
+                  type="number"
+                  name="document"
+                  maxLength={14}
+                  value={formValue.document}
+                />
+              </FormControl>
+              <FormControl id="password">
+                <FormLabel>Senha</FormLabel>
+                <Input
+                  onChange={handleChange}
+                  name="password"
+                  value={formValue.password}
+                  type="password"
+                />
+              </FormControl>
+              <Stack spacing={10}>
+                <Stack
+                  direction={{ base: "column", sm: "row" }}
+                  align={"start"}
+                  justify={"space-between"}
+                >
+                  <Checkbox>Lembrar-me</Checkbox>
+                  <Link color={"blue.400"}>Esqueceu a senha?</Link>
+                </Stack>
+                <Button
+                  type="submit"
+                  bg={theme.LoginColor.buttonColorBackground[0]}
+                  color={theme.LoginColor.fontButton[0]}
+                  justifyContent="center"
+                  alignItems="center"
+                  borderRadius={15}
+                  p={1}
+                  _hover={{
+                    bg: "blue.500",
+                  }}
+                >
+                  <Text textAlign="center">Entrar</Text>
+                </Button>
               </Stack>
-              <Link
-                href="/home"
-                bg={theme.LoginColor.buttonColorBackground[0]}
-                color={theme.LoginColor.fontButton[0]}
-                justifyContent="center"
-                alignItems="center"
-                borderRadius={15}
-                p={1}
-                _hover={{
-                  bg: "blue.500",
-                }}
-              >
-                <Text textAlign="center">Entrar</Text>
-              </Link>
-            </Stack>
+            </form>
           </Stack>
         </Box>
       </Stack>
