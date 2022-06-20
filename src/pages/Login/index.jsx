@@ -1,18 +1,18 @@
 import {
-  Flex,
   Box,
+  Button,
+  Checkbox,
+  Flex,
   FormControl,
   FormLabel,
-  Input,
-  Checkbox,
-  Stack,
-  Link,
   Heading,
+  Input,
+  Link,
+  Stack,
   Text,
-  Button,
 } from "@chakra-ui/react";
-import axios from "axios";
-import React, { useState } from "react";
+import { useState } from "react";
+import api from "../../services/api";
 import { theme } from "../../theme/theme";
 
 export default function SimpleCard() {
@@ -22,21 +22,21 @@ export default function SimpleCard() {
   });
 
   const handleSubmit = async () => {
-    // const loginFormData = new FormData();
-    // loginFormData.append("document", formValue.document);
-    // loginFormData.append("password", formValue.password);
-
+    const data = {
+      email: formValue.document,
+      password: formValue.password,
+    };
     try {
-      const response = await axios({
-        method: "post",
-        url: " https://omssxfdlgh.execute-api.us-east-1.amazonaws.com/users/login",
-        headers: { "Content-Type": "multipart/form-data" },
-        body: JSON.stringify({
-          document: formValue.document,
-          password: formValue.password,
-        }),
-      });
-      console.log(response);
+      await api
+        .post("https://omssxfdlgh.execute-api.us-east-1.amazonaws.com/users/login", data, {
+          headers: { "Content-Type": "application/json" },
+        })
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     } catch (error) {
       console.log(error);
     }
@@ -47,8 +47,6 @@ export default function SimpleCard() {
       ...formValue,
       [event.target.name]: event.target.value,
     });
-    console.log("testando o event: ", event.target.value);
-    console.log("testando o formValue: ", formValue);
   };
   return (
     <Flex
@@ -72,12 +70,11 @@ export default function SimpleCard() {
           <Stack spacing={4}>
             <form onSubmit={handleSubmit}>
               <FormControl id="document">
-                <FormLabel>CNPJ</FormLabel>
+                <FormLabel>Email</FormLabel>
                 <Input
                   onChange={handleChange}
-                  type="number"
+                  type="email"
                   name="document"
-                  maxLength={14}
                   value={formValue.document}
                 />
               </FormControl>
