@@ -29,11 +29,11 @@ export default function SimpleCard() {
     try {
       const response = await axios({
         method: "post",
-        url: "https://6294f2c163b5d108c1977aaf.mockapi.io/user",
+        url: " https://omssxfdlgh.execute-api.us-east-1.amazonaws.com/users/login",
         headers: { "Content-Type": "multipart/form-data" },
         body: JSON.stringify({
-          document: "",
-          password: "",
+          document: formValue.document,
+          password: formValue.password,
         }),
       });
       console.log(response);

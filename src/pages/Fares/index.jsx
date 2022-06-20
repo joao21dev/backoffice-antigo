@@ -8,6 +8,7 @@ import { dataAgencyCard, dataStatusCard } from "../../chartData";
 import ChartCards from "../../components/dashboard/ChartCards";
 import SidebarWithHeader from "../../components/Sidebar/sidebar";
 import { CustomTable } from "../../components/Table";
+import { Link } from "react-router-dom";
 
 const Fares = () => {
   const [data, setData] = useState([]);
@@ -64,7 +65,7 @@ const Fares = () => {
 
   const fetchData = async () => {
     const response = await axios
-      .get("https://dummyjson.com/users")
+      .get("https://omssxfdlgh.execute-api.us-east-1.amazonaws.com/users")
       .catch((err) => console.log(err));
 
     if (response) {

@@ -27,7 +27,7 @@ export const fetchUsersInfo = (id) => {
   return (dispatch) => {
     dispatch(fetchUsersInfoRequest);
     axios
-      .get(`https://dummyjson.com/users/${id}`)
+      .get(`https://omssxfdlgh.execute-api.us-east-1.amazonaws.com/users/${id}`)
       .then((response) => {
         const usersInfo =  response.data;
         dispatch(fetchUsersInfoSuccess(usersInfo));

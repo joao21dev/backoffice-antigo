@@ -97,7 +97,7 @@ const Users = () => {
 
   const fetchData = async () => {
     const response = await axios
-      .get("https://dummyjson.com/users")
+      .get("https://omssxfdlgh.execute-api.us-east-1.amazonaws.com/users/pf")
       .catch((err) => console.log(err));
 
     if (response) {

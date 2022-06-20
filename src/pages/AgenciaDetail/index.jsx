@@ -80,7 +80,7 @@ const AgenciaDetail = () => {
 
   const fetchData = async () => {
     const response = await axios
-      .get("https://dummyjson.com/users")
+      .get("https://omssxfdlgh.execute-api.us-east-1.amazonaws.com/users")
       .catch((err) => console.log(err));
 
     if (response) {

@@ -28,7 +28,7 @@ const UsersCreate = () => {
     // try {
     //   const response = await axios({
     //     method: "post",
-    //     url: "https://dummyjson.com/users/add",
+    //     url: "https://omssxfdlgh.execute-api.us-east-1.amazonaws.com/users/add",
     //     // dataType: "jsonp",
     //     headers: {
     //       "Content-Type": "application/json",
@@ -62,7 +62,7 @@ const UsersCreate = () => {
     // )
     //   .then((res) => res.json())
     //   .then(console.log);
-    fetch("https://dummyjson.com/users/add", {
+    fetch("https://omssxfdlgh.execute-api.us-east-1.amazonaws.com/users/add", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

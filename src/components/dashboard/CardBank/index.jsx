@@ -23,7 +23,7 @@ const Cardbank = () => {
 
   const fetchData = async () => {
     const response = await axios
-      .get("https://dummyjson.com/users/1")
+      .get("https://omssxfdlgh.execute-api.us-east-1.amazonaws.com/users/1")
       .catch((err) => console.log(err));
 
     if (response) {

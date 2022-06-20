@@ -27,7 +27,13 @@ export const fetchUsers = () => {
   return (dispatch) => {
     dispatch(fetchUsersRequest);
     axios
-      .get("https://dummyjson.com/users")
+      .get("https://omssxfdlgh.execute-api.us-east-1.amazonaws.com/account/pf",
+      {
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+          "Authorization": "Bearer " + localStorage.getItem("token"),
+      }})
       .then((response) => {
         const users = response.data.users;
         dispatch(fetchUsersSuccess(users));

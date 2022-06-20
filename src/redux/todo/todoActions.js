@@ -27,7 +27,7 @@ export const fetchTodos = (id) => {
   return (dispatch) => {
     dispatch(fetchTodosRequest);
     axios
-      .get(`https://dummyjson.com/users/${id}/todos`)
+      .get(`https://omssxfdlgh.execute-api.us-east-1.amazonaws.com/users/${id}/todos`)
       .then((response) => {
         const todos = response.data.todos;
         dispatch(fetchTodosSuccess(todos));

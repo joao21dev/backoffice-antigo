@@ -32,6 +32,7 @@ export const App = () => (
     <Provider store={store}>
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<Login />} />
           <Route path="/home" element={<Home />} />
           <Route path="/accounts/:id" element={<AccountsInfo />} />
           <Route path="/accounts-card/:id" element={<AccountCardDetail />} />
@@ -63,7 +64,7 @@ export const App = () => (
           <Route path="/agencia-detail" element={<AgenciaDetail />} />
           <Route path="/agencias-create" element={<AgenciaDetailForm />} />
           <Route path="/Login" element={<Login />} />
-          <Route path="/" element={<Login />} />
+         
         </Routes>
       </BrowserRouter>
     </Provider>
