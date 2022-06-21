@@ -65,7 +65,7 @@ const Fares = () => {
 
   const fetchData = async () => {
     const response = await axios
-      .get("https://omssxfdlgh.execute-api.us-east-1.amazonaws.com/users")
+      .get("/backoffice/users")
       .catch((err) => console.log(err));
 
     if (response) {

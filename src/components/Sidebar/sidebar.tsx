@@ -39,6 +39,7 @@ import {
 } from "react-icons/fi";
 import { IconType } from "react-icons";
 import { ReactText } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 
 interface LinkItemProps {
   name: string;
@@ -96,6 +97,7 @@ interface SidebarProps extends BoxProps {
 }
 
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
+  const navigate = useNavigate();
   return (
     <Box
       transition="3s ease"

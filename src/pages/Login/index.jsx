@@ -9,13 +9,17 @@ import {
   Input,
   Link,
   Stack,
-  Text,
+  Text
 } from "@chakra-ui/react";
 import { useState } from "react";
+import { config } from "../../core/config";
 import api from "../../services/api";
 import { theme } from "../../theme/theme";
+import {  useNavigate } from "react-router-dom"
 
 export default function SimpleCard() {
+  const navigate = useNavigate()
+ 
   const [formValue, setformValue] = useState({
     document: "",
     password: "",
@@ -25,12 +29,16 @@ export default function SimpleCard() {
     const data = {
       email: formValue.document,
       password: formValue.password,
+      clientId: config.clientId,
     };
     try {
       await api
-        .post("/login",data)
+        .post("/backoffice/login",data)
         .then((res) => {
-          console.log(res);
+          if(res.data.access_token){
+            localStorage.setItem('access_token', res.data.access_token)
+            navigate("/home");
+          }
         })
         .catch((error) => {
           console.log(error);
@@ -66,7 +74,7 @@ export default function SimpleCard() {
           p={8}
         >
           <Stack spacing={4}>
-            <form onSubmit={handleSubmit}>
+            <form>
               <FormControl id="document">
                 <FormLabel>Email</FormLabel>
                 <Input
@@ -95,7 +103,7 @@ export default function SimpleCard() {
                   <Link color={"blue.400"}>Esqueceu a senha?</Link>
                 </Stack>
                 <Button
-                  type="submit"
+                  onClick={()=>handleSubmit()}
                   bg={theme.LoginColor.buttonColorBackground[0]}
                   color={theme.LoginColor.fontButton[0]}
                   justifyContent="center"

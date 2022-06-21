@@ -1,4 +1,5 @@
 import axios from "axios";
+import api from "../../services/api";
 import {
   FETCH_USERS_FAILURE,
   FETCH_USERS_REQUEST,
@@ -26,16 +27,16 @@ const fetchUsersFailure = (error) => {
 export const fetchUsers = () => {
   return (dispatch) => {
     dispatch(fetchUsersRequest);
-    axios
-      .get("https://omssxfdlgh.execute-api.us-east-1.amazonaws.com/account/pf",
+    api
+      .get("/onboarding/accounts/",
       {
         headers: {
           "Content-Type": "application/json",
           "Access-Control-Allow-Origin": "*",
-          "Authorization": "Bearer " + localStorage.getItem("token"),
+          "Authorization": "Bearer " + localStorage.getItem("access_token"),
       }})
       .then((response) => {
-        const users = response.data.users;
+        const users = response.data;
         dispatch(fetchUsersSuccess(users));
       })
       .catch((error) => {

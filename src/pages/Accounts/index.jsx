@@ -13,6 +13,7 @@ const Accounts = () => {
   const userData = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const data = useMemo(() => [...userData.users], [userData.users]);
+  console.log(data)
   useEffect(() => {
     dispatch(fetchUsers());
   }, [dispatch]);

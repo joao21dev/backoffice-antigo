@@ -1,7 +1,7 @@
 import axios from  'axios';
 
 const api = axios.create({
-  baseURL: 'https://omssxfdlgh.execute-api.us-east-1.amazonaws.com/dev',
+  baseURL: 'https://api-backoffice.herokuapp.com',
 })
 
 export default api;

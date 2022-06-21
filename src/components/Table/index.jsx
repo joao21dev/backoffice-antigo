@@ -10,11 +10,14 @@ import {
   Th,
   Td,
   Box,
+  background,
 } from "@chakra-ui/react";
 import { useTable, useSortBy, useGlobalFilter } from "react-table";
 import { GlobalFilter } from "../../pages/TabelaTeste2/globalFilter";
 
 export function CustomTable({ columns, data }) {
+
+  console.log(data)
   const {
     getTableProps,
     getTableBodyProps,
@@ -48,7 +51,7 @@ export function CustomTable({ columns, data }) {
           m={4}
           w="150vw"
         >
-          <Table {...getTableProps()}>
+          <Table {...getTableProps()} background={"ButtonFace"} style={background}>
             <Thead>
               {headerGroups.map((headerGroup) => (
                 <Tr {...headerGroup.getHeaderGroupProps()}>
