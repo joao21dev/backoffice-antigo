@@ -28,9 +28,7 @@ export default function SimpleCard() {
     };
     try {
       await api
-        .post("https://omssxfdlgh.execute-api.us-east-1.amazonaws.com/users/login", data, {
-          headers: { "Content-Type": "application/json" },
-        })
+        .post("/login",data)
         .then((res) => {
           console.log(res);
         })
