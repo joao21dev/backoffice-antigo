@@ -1,23 +1,27 @@
 import { Box, Text } from "@chakra-ui/react";
 
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useParams } from "react-router-dom";
-import { CustomTable } from "../../Table";
-import { fetchTodos, fetchUsersInfo } from "../../../redux";
-import { useEffect, useMemo } from "react";
+import { useParams } from "react-router-dom";
+import { fetchAccountInfo, fetchUsersInfo } from "../../../redux";
 
 const InfoBankAccount = () => {
+
+
   const userData = useSelector((state) => state.userInfo.usersInfo);
   const dispatch = useDispatch();
   const { id } = useParams();
 
 
-
-
   useEffect(async () => {
     dispatch(fetchUsersInfo(id));
   }, []);
-  console.log("userdata em bank: ", userData);
+
+  useEffect(async () => {
+    dispatch(fetchAccountInfo(id));
+  }, [userData]);
+  
+
   return (
     <>
       {" "}

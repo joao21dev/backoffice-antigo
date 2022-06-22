@@ -16,13 +16,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchUsersInfo } from "../../../redux";
 
 const AccountsFormPersonalData = () => {
-  var userData 
-  userData = useSelector((state) => state.userInfo.usersInfo);
+  var userData  = useSelector((state) => state.userInfo.usersInfo);
   const dispatch = useDispatch();
   const { id } = useParams();
-  useEffect(() => {
-  }, [dispatch]);
-
+ 
   const [personalData, setPersonalData] = useState(true);
   const handleEditPersonalData = () => {
     setPersonalData(!personalData);

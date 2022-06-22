@@ -1,25 +1,51 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import { Box, Text } from "@chakra-ui/react";
 
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchUsersInfo } from "../../../redux";
+import { fetchUsersAccountFailute, fetchUsersAccountSuccess, fetchUsersInfo } from "../../../redux";
 import AccountsFormPersonalData from "../AccountsFormPersonalData";
 import AccountsFormAddress from "../AccountsFormAddress";
+import api from "../../../services/api";
 
 const AccountInfo = () => {
-  const userData = useSelector((state) => state.userInfo.usersInfo);
+
+  const [userData,setUserData ]= useState({})
+
   const dispatch = useDispatch();
+
   const { id } = useParams();
 
-  console.log(id)
 
-  
-  useEffect(() => {
-    dispatch(fetchUsersInfo(id));
+
+ useEffect(() => {
+  fetchUsersInfo()
   }, []);
 
+  
+
+  const fetchUsersInfo = async () => {
+    
+      await api
+        .get(`/onboarding/accounts/${id}`,{
+          headers:{
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+            "Authorization": "Bearer " + localStorage.getItem("access_token"),
+        }
+        })
+        .then((response) => {
+
+          setUserData(response.data)
+  
+        })
+        .catch((error) => {
+          const errorMsg = error.message;
+          dispatch(fetchUsersAccountFailute(errorMsg));
+        });
+    
+  };
 
 
   return (

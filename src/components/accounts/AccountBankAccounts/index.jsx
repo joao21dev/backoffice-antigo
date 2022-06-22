@@ -5,7 +5,6 @@ import InfoBankAccount from "../InfoBankAccount";
 const AccountBankAccounts = () => {
   return (
     <>
-      <AccountInfo />
       <InfoBankAccount />
     </>
   );

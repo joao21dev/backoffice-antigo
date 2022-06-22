@@ -6,16 +6,18 @@ import {
   FormControl,
   FormLabel,
   Heading,
+  Image,
   Input,
   Link,
   Stack,
   Text
 } from "@chakra-ui/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { config } from "../../core/config";
 import api from "../../services/api";
 import { theme } from "../../theme/theme";
 import {  useNavigate } from "react-router-dom"
+
 
 export default function SimpleCard() {
   const navigate = useNavigate()
@@ -37,6 +39,7 @@ export default function SimpleCard() {
         .then((res) => {
           if(res.data.access_token){
             localStorage.setItem('access_token', res.data.access_token)
+            localStorage.setItem('user.name', res.data.name)
             navigate("/home");
           }
         })
@@ -54,6 +57,10 @@ export default function SimpleCard() {
       [event.target.name]: event.target.value,
     });
   };
+
+  useEffect(() => {
+    localStorage.clear()
+  },[])
   return (
     <Flex
       minH={"100vh"}
@@ -64,7 +71,7 @@ export default function SimpleCard() {
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
           <Heading fontSize={"4xl"} color={theme.LoginColor.fontBackground[0]}>
-            Sua Marca
+            <Image src={'logo.png'}/>
           </Heading>
         </Stack>
         <Box

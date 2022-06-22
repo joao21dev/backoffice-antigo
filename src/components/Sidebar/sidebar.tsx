@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import {
   IconButton,
   Box,
@@ -8,7 +8,6 @@ import {
   VStack,
   Icon,
   useColorModeValue,
-  Link,
   Drawer,
   DrawerContent,
   Text,
@@ -24,6 +23,8 @@ import {
   Input,
   Stack,
   InputGroup,
+  Link,
+  Image,
 } from "@chakra-ui/react";
 import {
   FiHome,
@@ -56,6 +57,7 @@ const LinkItems: Array<LinkItemProps> = [
   { name: "Configurações", icon: FiMessageCircle, routh: "settings" },
   { name: "Usuários", icon: FiMessageCircle, routh: "users" },
   { name: "Termos", icon: FiMessageCircle, routh: "terms" },
+  { name: "Logout", icon: FiMessageCircle, routh: "login" },
 ];
 
 export default function SidebarWithHeader({
@@ -64,6 +66,7 @@ export default function SidebarWithHeader({
   children: ReactNode;
 }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <Box minH="100vh" bg={useColorModeValue("gray.100", "gray.900")}>
       <SidebarContent
@@ -97,7 +100,6 @@ interface SidebarProps extends BoxProps {
 }
 
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
-  const navigate = useNavigate();
   return (
     <Box
       transition="3s ease"
@@ -112,7 +114,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       <Flex h="20" alignItems="center" mx="8">
         <FiDisc />
         <Text ml="15px" fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-          Sua Marca
+          <Image src={"logo.png"} />
         </Text>
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
@@ -169,7 +171,14 @@ const NavItem = ({ icon, children, routh, ...rest }: NavItemProps) => {
 interface MobileProps extends FlexProps {
   onOpen: () => void;
 }
+
 const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
+  const [userName, setUserName] = useState("");
+
+  useEffect(() => {
+    var names = localStorage.getItem("user.name") ?? "";
+    setUserName(names);
+  }, []);
   return (
     <>
       <Flex
@@ -183,7 +192,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         <Flex>
           <Box>
             <Text fontWeight="bold" m="15">
-              Olá, Carlos Ivan
+              Olá, {userName}
             </Text>
           </Box>
         </Flex>
@@ -239,11 +248,8 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
                 bg={useColorModeValue("white", "gray.900")}
                 borderColor={useColorModeValue("gray.200", "gray.700")}
               >
-                <MenuItem>Profile</MenuItem>
-                <MenuItem>Settings</MenuItem>
-                <MenuItem>Billing</MenuItem>
-                <MenuDivider />
-                <MenuItem>Sign out</MenuItem>
+                <MenuItem>Perfil</MenuItem>
+                <MenuItem>Ajustes</MenuItem>
               </MenuList>
             </Menu>
           </Flex>

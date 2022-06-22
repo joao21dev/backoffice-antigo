@@ -1,6 +1,8 @@
 import axios from "axios";
 import api from "../../services/api";
 import {
+  FETCH_USERS_ACCOUNT_FAILURE,
+  FETCH_USERS_ACCOUNT_SUCCESS,
   FETCH_USERS_INFO_FAILURE,
   FETCH_USERS_INFO_REQUEST,
   FETCH_USERS_INFO_SUCCESS,
@@ -11,25 +13,63 @@ export const fetchUsersInfoRequest = () => {
     type: FETCH_USERS_INFO_REQUEST,
   };
 };
-const fetchUsersInfoSuccess = (usersInfo) => {
+export const fetchUsersInfoSuccess = (usersInfo) => {
   return {
     type: FETCH_USERS_INFO_SUCCESS,
     payload: usersInfo,
   };
 };
-const fetchUsersInfoFailute = (error) => {
+export const fetchUsersInfoFailute = (error) => {
   return {
     type: FETCH_USERS_INFO_FAILURE,
     payload: error,
   };
 };
 
+export const fetchUsersAccountSuccess = (usersInfo) => {
+  return {
+    type: FETCH_USERS_ACCOUNT_SUCCESS,
+    payload: usersInfo,
+  };
+};
+export const fetchUsersAccountFailute = (error) => {
+  return {
+    type: FETCH_USERS_ACCOUNT_FAILURE,
+    payload: error,
+  };
+};
+
 export const fetchUsersInfo =  (id) => {
-console.log("teste")
+
+  return async (dispatch) => {
+  
+    await api
+      .get(`/onboarding/accounts/${id}`,{
+        headers:{
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+          "Authorization": "Bearer " + localStorage.getItem("access_token"),
+      }
+      })
+      .then((response) => {
+
+        dispatch(fetchUsersAccountSuccess(response.data));
+
+      })
+      .catch((error) => {
+        const errorMsg = error.message;
+        dispatch(fetchUsersAccountFailute(errorMsg));
+      });
+  };
+};
+
+
+export const fetchAccountInfo =  (id) => {
+
   return async (dispatch) => {
     dispatch(fetchUsersInfoRequest);
     await api
-      .get(`/onboarding/accounts/${id}`,{
+      .get(`/accounts/${id}`,{
         headers:{
           "Content-Type": "application/json",
           "Access-Control-Allow-Origin": "*",
