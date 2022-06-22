@@ -10,9 +10,13 @@ const InfoBankAccount = () => {
   const userData = useSelector((state) => state.userInfo.usersInfo);
   const dispatch = useDispatch();
   const { id } = useParams();
-  useEffect(() => {
+
+
+
+
+  useEffect(async () => {
     dispatch(fetchUsersInfo(id));
-  }, [dispatch]);
+  }, []);
   console.log("userdata em bank: ", userData);
   return (
     <>
@@ -28,11 +32,8 @@ const InfoBankAccount = () => {
         color="black"
       >
         <Text m="2">Banco: {userData.id}</Text>
-        <Text m="2">Agência: {userData.height}</Text>
-        <Text m="2">Digito da Agência: {userData.weight}</Text>
+        <Text m="2">Agência: {userData.account[0].branch}</Text>
         <Text m="2">Conta:</Text>
-        <Text m="2">Dígio Conta:</Text>
-        <Text m="2">Tipo de conta:</Text>
         <Text m="2">Status:</Text>
       </Box>
     </>

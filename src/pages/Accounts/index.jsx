@@ -13,28 +13,32 @@ const Accounts = () => {
   const userData = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const data = useMemo(() => [...userData.users], [userData.users]);
-  console.log(data)
+  
   useEffect(() => {
     dispatch(fetchUsers());
-  }, [dispatch]);
+  }, []);
 
   const columns = React.useMemo(
     () => [
       {
-        Header: "Contas",
+        Header: "Lista de Contas",
         columns: [
           {
             accessor: "accessor",
-            Header: "Header",
+            Header: "",
             Cell: ({ row: { original } }) => <Checkbox bg="#EDF2F7"></Checkbox>,
           },
           {
-            Header: "ID Conta",
-            accessor: "id",
+            Header: "Agência",
+            accessor: "accounts[0].branch",
+          },
+          {
+            Header: "Conta",
+            accessor: "accounts[0].number",
           },
           {
             Header: "Nome",
-            accessor: "firstName",
+            accessor: "socialName",
           },
           {
             Header: "E-mail",
@@ -56,7 +60,8 @@ const Accounts = () => {
             Header: "Sobre",
             accessor: "open",
             Cell: (props) => (
-              <Link to={`/accounts/${props.cell.row.cells[1].value}`}>
+             
+              <Link to={`/accounts/${props.cell.row.cells[5].value}`}>
                 {" "}
                 <Box ml="25%">
                   <AiFillEye color={"gray"} fontSize="22px" />

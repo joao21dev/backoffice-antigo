@@ -8,7 +8,6 @@ const AccountsAccountDetail = () => {
     <>
       <AccountInfo />
       <AccountsFormPersonalData />
-      <AccountsFormAddress name="Endereço" />
     </>
   );
 };

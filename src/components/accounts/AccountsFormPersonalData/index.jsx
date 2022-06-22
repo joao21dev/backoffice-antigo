@@ -16,17 +16,19 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchUsersInfo } from "../../../redux";
 
 const AccountsFormPersonalData = () => {
-  const userData = useSelector((state) => state.userInfo.usersInfo);
+  var userData 
+  userData = useSelector((state) => state.userInfo.usersInfo);
   const dispatch = useDispatch();
   const { id } = useParams();
   useEffect(() => {
-    dispatch(fetchUsersInfo(id));
   }, [dispatch]);
 
   const [personalData, setPersonalData] = useState(true);
   const handleEditPersonalData = () => {
     setPersonalData(!personalData);
   };
+
+
 
   if (personalData) {
     return (
@@ -64,21 +66,17 @@ const AccountsFormPersonalData = () => {
         <Text m="2">Nome da Mãe:</Text>
         <Text m="2">Renda Mensal:</Text>
         <Text m="2">Agência Digital:</Text> */}
-        <Text m="2">ID: {userData.id}</Text>
+        <Text m="2">ID: {userData._id}</Text>
         <Text m="2">
-          Nome: {userData.firstName} {userData.lastName}
+          Nome: {userData.registerName} 
         </Text>
         <Text m="2">E-mail: {userData.email}</Text>
-        <Text m="2">Telefone: {userData.phone}</Text>
+        <Text m="2">Telefone: {userData?.phone?.countryCode + userData?.phone?.number } </Text>
         <Text m="2">Data de Nascimento: {userData.birthDate}</Text>
-        <Text m="2">Cidade: {userData.address && userData.address.city}</Text>
-        <Text m="2">Gênero: {userData.gender}</Text>
+        <Text m="2">Cidade: {userData.address.city}</Text>
         <Flex>
           <Text w="20%" m="2">
             Plano: Tipo de plano
-          </Text>
-          <Text m="2">
-            Data de Assinatura: {userData.bank && userData.bank.cardExpire}
           </Text>
         </Flex>
       </Box>

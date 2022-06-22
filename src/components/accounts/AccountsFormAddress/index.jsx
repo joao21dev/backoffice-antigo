@@ -16,12 +16,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchUsersInfo } from "../../../redux";
 
 const AccountsFormAddress = (props) => {
-  const userData = useSelector((state) => state.userInfo.usersInfo);
+  const userData = useSelector((state) => state.userInfo);
+  console.log(userData);
   const dispatch = useDispatch();
   const { id } = useParams();
-  useEffect(() => {
-    dispatch(fetchUsersInfo(id));
-  }, [dispatch]);
+
   const [address, setAddress] = useState(true);
   const handleEditAddress = () => {
     setAddress(!address);
@@ -54,15 +53,15 @@ const AccountsFormAddress = (props) => {
             Edtar
           </Button>
         </Flex>
-        <Text m="2">Rua: {userData.address && userData.address.address}</Text>
-        <Text m="2">Número: {userData.height}</Text>
-        <Text m="2">Complemento: </Text>
+        <Text m="2">Rua: {userData.address.addressLine}</Text>
+        <Text m="2">Número: {userData.address.buildingNumber}</Text>
+        <Text m="2">Complemento:{userData.address.complement} </Text>
         <Text m="2">
-          CEP: {userData.address && userData.address.postalCode}
+          CEP: {userData.address.zipCode}
         </Text>
-        <Text m="2">Bairro: {userData.hair && userData.hair.type}</Text>
-        <Text m="2">Cidade: {userData.address && userData.address.city}</Text>
-        <Text m="2">Estado: {userData.address && userData.address.state}</Text>
+        <Text m="2">Bairro: { userData.address.neighborhood}</Text>
+        <Text m="2">Cidade: {userData.address.city}</Text>
+        <Text m="2">Estado: { userData.address.state}</Text>
       </Box>
     );
   }

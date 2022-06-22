@@ -1,4 +1,5 @@
 import axios from "axios";
+import api from "../../services/api";
 import {
   FETCH_USERS_INFO_FAILURE,
   FETCH_USERS_INFO_REQUEST,
@@ -23,15 +24,21 @@ const fetchUsersInfoFailute = (error) => {
   };
 };
 
-export const fetchUsersInfo = (id) => {
-  return (dispatch) => {
+export const fetchUsersInfo =  (id) => {
+console.log("teste")
+  return async (dispatch) => {
     dispatch(fetchUsersInfoRequest);
-    axios
-      .get(`https://omssxfdlgh.execute-api.us-east-1.amazonaws.com/users/${id}`)
+    await api
+      .get(`/onboarding/accounts/${id}`,{
+        headers:{
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+          "Authorization": "Bearer " + localStorage.getItem("access_token"),
+      }
+      })
       .then((response) => {
         const usersInfo =  response.data;
         dispatch(fetchUsersInfoSuccess(usersInfo));
-        console.log('UsersInfo atual ', usersInfo)
 
       })
       .catch((error) => {
