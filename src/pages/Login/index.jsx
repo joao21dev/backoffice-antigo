@@ -76,7 +76,7 @@ export default function SimpleCard() {
           <Stack spacing={4}>
             <form>
               <FormControl id="document">
-                <FormLabel>Email</FormLabel>
+                <FormLabel>E-mail</FormLabel>
                 <Input
                   onChange={handleChange}
                   type="email"
