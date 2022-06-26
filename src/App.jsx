@@ -61,6 +61,7 @@ export const App = () => (
           <Route path="/users-create" element={<UsersCreate />} />
           <Route path="/permissions-create" element={<PermissionsCreate />} />
           <Route path="/plan-detail" element={<PlanDetail />} />
+          <Route path="/plan-detail/:id" element={<PlanDetail />} />
           <Route path="/agencia-detail" element={<AgenciaDetail />} />
           <Route path="/agencias-create" element={<AgenciaDetailForm />} />
           <Route path="/Login" element={<Login />} />

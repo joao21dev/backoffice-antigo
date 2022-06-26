@@ -9,6 +9,7 @@ import { dataStatusCard } from "../../chartData";
 import ChartCards from "../../components/dashboard/ChartCards";
 import SidebarWithHeader from "../../components/Sidebar/sidebar";
 import { CustomTable } from "../../components/Table";
+import api from "../../services/api";
 
 const Plans = () => {
   const [data, setData] = useState([]);
@@ -18,47 +19,42 @@ const Plans = () => {
   const columns = React.useMemo(
     () => [
       {
-        Header: "Contas",
+        Header: "Planos",
         columns: [
           {
-            accessor: "accessor",
-            Header: "Header",
-            Cell: ({ row: { original } }) => <Checkbox bg="#EDF2F7"></Checkbox>,
+            Header: "Id",
+            accessor: "_id",
           },
           {
-            Header: "ID Conta",
-            accessor: "id",
+            Header: "Nome do plano",
+            accessor: "name",
           },
           {
-            Header: "Conta",
-            accessor: "firstName",
+            Header: "Pix",
+            accessor: "taxPix",
           },
           {
-            Header: "Vencimento",
-            accessor: "email",
+            Header: "Ted",
+            accessor: "taxTed",
           },
           {
-            Header: "Status",
-            accessor: "document",
+            Header: "Boleto",
+            accessor: "taxBillet",
           },
           {
-            Header: "Valor Mensal",
-            accessor: "money",
-          },
-          {
-            Header: "Data",
-            accessor: "date",
-          },
-          {
-            Header: "Sobre",
+            Header: "Visualizar",
             accessor: "open",
             Cell: (props) => (
-              <Link to={`/plan-detail`}>
-                {" "}
-                <Box ml="25%">
-                  <AiFillEye color={"gray"} fontSize="22px" />
-                </Box>
-              </Link>
+             
+                <Link to={`/plan-detail/${props.cell.row.cells[0].value}`}>
+                  {""}
+                  <Box ml="25%">
+                    <AiFillEye color={"gray"} fontSize="22px" />
+                  </Box>
+                </Link>
+              
+              
+            
             ),
           },
         ],
@@ -68,12 +64,18 @@ const Plans = () => {
   );
 
   const fetchData = async () => {
-    const response = await axios
-      .get("https://omssxfdlgh.execute-api.us-east-1.amazonaws.com/users")
+    const response = await api
+      .get("/plans",{
+        headers:{
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+          "Authorization": "Bearer " + localStorage.getItem("access_token"),
+        }
+      })
       .catch((err) => console.log(err));
 
     if (response) {
-      const data = response.data.users;
+      const data = response.data;
 
       console.log("Data: ", data);
       setData(data);
@@ -100,7 +102,6 @@ const Plans = () => {
           w="35%"
           color="black"
         >
-          <ChartCards name={"Cartões por status"} data={dataStatusCard} />
         </Box>
         <Flex justifyContent="flex-end">
           <Box
@@ -117,7 +118,7 @@ const Plans = () => {
             <Link to="/plan-detail">Criar Plano</Link>
           </Box>
         </Flex>
-        <CustomTable data={userData} columns={columns} />
+        <CustomTable data={data} columns={columns} />
       </SidebarWithHeader>
     </>
   );

@@ -100,7 +100,7 @@ const PlanDetail = () => {
     <>
       <SidebarWithHeader>
         <PlansDetailForm />
-        <CustomTable data={userData} columns={columns} />
+       
       </SidebarWithHeader>
     </>
   );
