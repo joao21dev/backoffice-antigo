@@ -48,16 +48,16 @@ interface LinkItemProps {
   routh: string;
 }
 const LinkItems: Array<LinkItemProps> = [
-  { name: "Home", icon: FiHome, routh: "home" },
-  { name: "Contas", icon: FiUser, routh: "accounts" },
-  { name: "Bankline", icon: FiUser, routh: "bankline" },
-  { name: "Planos", icon: FiClipboard, routh: "plans" },
-  { name: "Tarifas", icon: FiBriefcase, routh: "fares" },
-  { name: "Agências", icon: FiMessageCircle, routh: "agencias" },
-  { name: "Configurações", icon: FiMessageCircle, routh: "settings" },
-  { name: "Usuários", icon: FiMessageCircle, routh: "users" },
-  { name: "Termos", icon: FiMessageCircle, routh: "terms" },
-  { name: "Logout", icon: FiMessageCircle, routh: "login" },
+  { name: "Home", icon: FiHome, routh: "/home" },
+  { name: "Contas", icon: FiUser, routh: "/accounts" },
+  { name: "Bankline", icon: FiUser, routh: "/bankline" },
+  { name: "Planos", icon: FiClipboard, routh: "/plans" },
+  { name: "Tarifas", icon: FiBriefcase, routh: "/fares" },
+  { name: "Agências", icon: FiMessageCircle, routh: "/agencias" },
+  { name: "Configurações", icon: FiMessageCircle, routh: "/settings" },
+  { name: "Usuários", icon: FiMessageCircle, routh: "/users" },
+  { name: "Termos", icon: FiMessageCircle, routh: "/terms" },
+  { name: "Logout", icon: FiMessageCircle, routh: "/login" },
 ];
 
 export default function SidebarWithHeader({

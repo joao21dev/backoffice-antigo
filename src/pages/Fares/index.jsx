@@ -1,60 +1,55 @@
-import React, { useEffect, useMemo, useState } from "react";
-import axios from "axios";
+import React, { useEffect, useState } from "react";
 
-import { Box, Checkbox, Flex, Grid, GridItem, Text } from "@chakra-ui/react";
+import { Box, Flex, Grid, GridItem, Text } from "@chakra-ui/react";
 
 import { AiFillEye } from "react-icons/ai";
+import { Link } from "react-router-dom";
 import { dataAgencyCard, dataStatusCard } from "../../chartData";
 import ChartCards from "../../components/dashboard/ChartCards";
 import SidebarWithHeader from "../../components/Sidebar/sidebar";
 import { CustomTable } from "../../components/Table";
-import { Link } from "react-router-dom";
+import api from "../../services/api";
 
 const Fares = () => {
   const [data, setData] = useState([]);
 
-  const userData = useMemo(() => [...data], [data]);
+  
 
   const columns = React.useMemo(
     () => [
       {
-        Header: "Contas",
+        Header: "Tarifas",
         columns: [
           {
-            accessor: "accessor",
-            Header: "Selecionar",
-            Cell: ({ row: { original } }) => <Checkbox bg="#EDF2F7"></Checkbox>,
+            Header: "Id",
+            accessor: "_id",
           },
           {
-            Header: "Conta",
-            accessor: "firstName",
-          },
-          {
-            Header: "Descrição Extrato",
-            accessor: "lastName",
+            Header: "Nome",
+            accessor: "name",
           },
           {
             Header: "Vencimento",
-            accessor: "email",
+            accessor: "duoDate",
           },
           {
             Header: "Status",
             accessor: "document",
           },
           {
-            Header: "Valor Mensal",
-            accessor: "money",
+            Header: "Valor",
+            accessor: "value",
           },
           {
             Header: "Sobre",
             accessor: "open",
             Cell: (props) => (
-              <Link to={`/plan-detail`}>
-                {" "}
-                <Box ml="25%">
-                  <AiFillEye color={"gray"} fontSize="22px" />
-                </Box>
-              </Link>
+              <Link to={`/fares-create/${props.cell.row.cells[0].value}`}>
+                  {""}
+                  <Box ml="25%">
+                    <AiFillEye color={"gray"} fontSize="22px" />
+                  </Box>
+                </Link>
             ),
           },
         ],
@@ -64,8 +59,16 @@ const Fares = () => {
   );
 
   const fetchData = async () => {
-    const response = await axios
-      .get("/backoffice/users")
+    const response = await api
+      .get("/fares",{
+        headers:{ 
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+          "Authorization": "Bearer " + localStorage.getItem("access_token"),
+       }
+      }).then(data => {
+setData(data.data)
+      })
       .catch((err) => console.log(err));
 
     if (response) {
@@ -118,7 +121,7 @@ const Fares = () => {
             <Link to="/fares-create">Criar Tarifa</Link>
           </Box>
         </Flex>
-        <CustomTable data={userData} columns={columns} />
+        <CustomTable data={data} columns={columns} />
       </SidebarWithHeader>
     </>
   );

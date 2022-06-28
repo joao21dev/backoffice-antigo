@@ -1,188 +1,211 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 
 import {
-  Box,
-  Checkbox,
-  Flex,
+  Box, Button, Flex,
   FormControl,
-  FormLabel,
-  Input,
-  Text,
-  Stack,
+  FormErrorMessage,
+  FormLabel, Input,
+  Text
 } from "@chakra-ui/react";
-
-import { Link } from "react-router-dom";
+import { Field, Form, Formik } from "formik";
+import { useNavigate, useParams } from "react-router-dom";
 import SidebarWithHeader from "../../components/Sidebar/sidebar";
+import { config } from "../../core/config";
+import api from "../../services/api";
+
 const FaresCreate = () => {
-  const [plan, setPlan] = useState(true);
-  const handlePlan = () => {
-    setPlan(!plan);
+  const { id } = useParams();
+
+  const [datafare,setdatafare] = useState({
+    client_id: config.clientId,
+    name: "",
+    description: "",
+    duoDate:"",
+    value: 0,
+  });
+
+
+  useEffect(() => {
+    if(id){
+      getFare(id)
+
+    }
+  }, [])
+  
+ 
+  const navigate = useNavigate();
+
+  const getFare = async (id)=>{
+    await api
+    .get(`/fares/${id}`, {
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        Authorization: "Bearer " + localStorage.getItem("access_token"),
+      },
+    })
+    .then((data) => {
+      setdatafare(data.data)
+    })
+    .catch((error) => {
+      alert(JSON.stringify(error));
+    });
+ };
+
+  const createFare = async (fare) => {
+    await api
+      .post("/fares", fare, {
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+          Authorization: "Bearer " + localStorage.getItem("access_token"),
+        },
+      })
+      .then((x) => {
+        navigate("/fares");
+      })
+      .catch((error) => {
+        alert(JSON.stringify(error));
+      });
   };
-  if (plan) {
-    return (
-      <>
-        <SidebarWithHeader>
-          <Text mb="5%" w="90%" fontSize="25px" fontWeight="bold">
-            Tarifas
-          </Text>{" "}
-          <Box
-            fontWeight="medium"
-            p="6"
-            boxShadow="md"
-            borderRadius="15px"
-            mt="15px"
-            bg="white"
-            h="50%"
-            color="black"
-          >
-            <Text w="90%" fontSize="25px" fontWeight="semibold">
-              Criar Tarifa
-            </Text>
 
-            <FormControl mt="2%">
-              <Box display="flex">
-                <FormLabel w="140px" htmlFor="name">
-                  Conta
-                </FormLabel>
-                <Box>
-                  <Input id="name" type="text" />
-                </Box>
-              </Box>
-              <Box display="flex">
-                <FormLabel w="140px" htmlFor="description">
-                  Descrição
-                </FormLabel>
-                <Box>
-                  <Input id="description" type="text" />
-                </Box>
-              </Box>
-              <Box display="flex">
-                <FormLabel w="140px" htmlFor="value">
-                  Valor
-                </FormLabel>
-                <Box>
-                  <Input id="value" type="text" />
-                </Box>
-              </Box>
-              <Box display="flex">
-                <FormLabel w="140px" htmlFor="vencimento">
-                  Vencimento
-                </FormLabel>
-                <Box>
-                  <Input id="vencimento" type="text" />
-                </Box>
-              </Box>
-            </FormControl>
-          </Box>
-          <Flex justifyContent="flex-end">
-            <Box
-              fontWeight="semibold"
-              color="white"
-              borderRadius="15px"
-              p="4"
-              m="4"
-              bg="#5A32EA"
-              alignItems="center"
-              align="center"
-              w="200px"
-            >
-              <Link to="/plan-detail">Criar Tarifa</Link>
-            </Box>
-          </Flex>
-        </SidebarWithHeader>
-      </>
-    );
-  } else {
-    return (
-      <>
-        <Box
-          fontWeight="medium"
-          p="2"
-          boxShadow="md"
-          borderRadius="15px"
-          mt="15px"
-          bg="white"
-          h="50%"
-          color="black"
-        >
-          <Text w="90%" fontSize="25px" fontWeight="semibold">
-            Detalhes do Plano:
-          </Text>
+ 
 
-          <Text m="2">Nome do Plano:</Text>
-          <Flex>
-            <Text m="2">Plano Ativo:</Text>
-            <Checkbox value="1">Sim</Checkbox>
-          </Flex>
-
-          <Text m="2">Benefícios:</Text>
-          <Text m="2">Descrição:</Text>
-          <Box display="flex">
-            <Text m="2">Disponibilidade:</Text>
-
-            <Stack direction="row">
-              <Checkbox value="1">Pessoa Física</Checkbox>
-              <Checkbox value="2">Pessoa Jurídica</Checkbox>
-            </Stack>
-          </Box>
-        </Box>
-        <Box
-          fontWeight="medium"
-          p="2"
-          boxShadow="md"
-          borderRadius="15px"
-          mt="15px"
-          bg="white"
-          h="50%"
-          color="black"
-        >
-          <Text w="90%" fontSize="25px" fontWeight="semibold">
-            Tarifas:
-          </Text>
-
-          <Text m="2">Valor Mensal:</Text>
-          <Text m="2">PIXx:</Text>
-          <Text m="2">TED:</Text>
-          <Text m="2">Boleto:</Text>
-          <Text m="2">Saque:</Text>
-        </Box>
-        <Box
-          fontWeight="medium"
-          p="2"
-          boxShadow="md"
-          borderRadius="15px"
-          mt="15px"
-          bg="white"
-          h="50%"
-          color="black"
-        >
-          <Text w="90%" fontSize="25px" fontWeight="semibold">
-            Gratuidades:
-          </Text>
-          <Text m="2">PIX Gratuitos:</Text>
-          <Text m="2">TED Gratuitos:</Text>
-          <Text m="2">Boletos Gratuitos:</Text>{" "}
-        </Box>
-        <Box
-          fontWeight="medium"
-          p="2"
-          boxShadow="md"
-          borderRadius="15px"
-          mt="15px"
-          bg="white"
-          h="50%"
-          color="black"
-        >
-          <Text w="90%" fontSize="25px" fontWeight="semibold">
-            Configurações:
-          </Text>
-
-          <Text m="2">Período Grátis (dias):</Text>
-          <Text m="2">Tempo máximo de inadimplência (dias):</Text>
-        </Box>
-      </>
-    );
+  function validateName(value) {
+    let error;
+    if (!value) {
+      error = "Valor necessário";
+    }
+    return error;
   }
+
+  return (
+    <>
+    <SidebarWithHeader>
+      <Text mb="5%" w="90%" fontSize="25px" fontWeight="bold">
+        Criar Tarifa
+      </Text>{" "}
+      <Box
+        fontWeight="medium"
+        p="6"
+        boxShadow="md"
+        borderRadius="15px"
+        mt="15px"
+        bg="white"
+        h="60%"
+        w="100%"
+        color="black"
+      >
+        <Flex>
+          <Text w="90%" fontSize="25px" fontWeight="semibold">
+            Detalhes da Tarifa
+          </Text>
+        </Flex>
+        <Formik
+          initialValues={datafare}
+          onSubmit={(values, actions) => {
+            setTimeout(() => {
+              createFare(JSON.stringify(values, null, 2));
+              actions.setSubmitting(false);
+            }, 1000);
+          }}
+        >
+          {(props) => (
+            <Form>
+              <Field name="name" validate={validateName} >
+                {({ field, form }) => (
+                  <FormControl
+                    isInvalid={form.errors.name && form.touched.name}
+                  >
+                    <FormLabel htmlFor="name">Nome da tarifa</FormLabel>
+                    <Input {...field} id="name" placeholder="Nome" />
+                    <FormErrorMessage>{form.errors.name}</FormErrorMessage>
+                  </FormControl>
+                )}
+              </Field>
+              <Field name="description" validate={validateName}>
+                {({ field, form }) => (
+                  <FormControl
+                    isInvalid={
+                      form.errors.description && form.touched.description
+                    }
+                  >
+                    <FormLabel htmlFor="description">
+                      Descrição
+                    </FormLabel>
+                    <Input
+                      {...field}
+                      id="description"
+                      placeholder="Descreva a tarifa"
+                     
+                      />
+                    <FormErrorMessage>
+                      {form.errors.description}
+                    </FormErrorMessage>
+                  </FormControl>
+                )}
+              </Field>
+              <Field name="value" validate={validateName}>
+                {({ field, form }) => (
+                  <FormControl
+                    isInvalid={
+                      form.errors.value && form.touched.value
+                    }
+                  >
+                    <FormLabel htmlFor="value">
+                      Valor
+                    </FormLabel>
+                    <Input
+                      {...field}
+                      id="value"
+                      placeholder="0.00"
+                      type="number"
+                    />
+                    <FormErrorMessage>
+                      {form.errors.value}
+                    </FormErrorMessage>
+                  </FormControl>
+                )}
+              </Field>
+              <Field name="duoDate" validate={validateName}>
+                {({ field, form }) => (
+                  <FormControl
+                    isInvalid={
+                      form.errors.duoDate && form.touched.duoDate
+                    }
+                  >
+                    <FormLabel htmlFor="duoDate">
+                      Valor
+                    </FormLabel>
+                    <Input
+                      {...field}
+                      id="duoDate"
+                      placeholder="DD/MM/YYYY"
+                      type="date"
+                    />
+                    <FormErrorMessage>
+                      {form.errors.duoDate}
+                    </FormErrorMessage>
+                  </FormControl>
+                )}
+              </Field>
+            
+              <Button
+                mt={154}
+                colorScheme="blue"
+                isLoading={props.isSubmitting}
+                type="submit"
+              >
+                Salvar
+              </Button>
+            </Form>
+          )}
+        </Formik>
+      </Box>
+      </SidebarWithHeader>
+    </>
+  );
 };
+
 
 export default FaresCreate;

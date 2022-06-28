@@ -19,33 +19,16 @@ const AgenciaDetail = () => {
         Header: "Contas",
         columns: [
           {
-            accessor: "accessor",
-            Header: "Header",
-            Cell: ({ row: { original } }) => <Checkbox bg="#EDF2F7"></Checkbox>,
-          },
-          {
-            Header: "ID Conta",
-            accessor: "id",
+            Header: "Id",
+            accessor: "_id",
           },
           {
             Header: "Nome",
-            accessor: "firstName",
+            accessor: "name",
           },
           {
-            Header: "E-mail",
-            accessor: "email",
-          },
-          {
-            Header: "Documento",
-            accessor: "document",
-          },
-          {
-            Header: "Saldo",
-            accessor: "money",
-          },
-          {
-            Header: "Data",
-            accessor: "date",
+            Header: "Descrição",
+            accessor: "description",
           },
           {
             Header: "Status",
@@ -55,7 +38,7 @@ const AgenciaDetail = () => {
             Header: "Sobre",
             accessor: "open",
             Cell: (props) => (
-              <Link to={`/accounts/${props.cell.row.cells[1].value}`}>
+              <Link to={`/agency-details/${props.cell.row.cells[1].value}`}>
                 {" "}
                 <Box ml="25%">
                   <AiFillEye color={"gray"} fontSize="22px" />

@@ -7,47 +7,36 @@ import { AiFillEye } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import SidebarWithHeader from "../../components/Sidebar/sidebar";
 import { CustomTable } from "../../components/Table";
+import api from "../../services/api";
 
 const Agencias = () => {
   const [data, setData] = useState([]);
 
-  const userData = useMemo(() => [...data], [data]);
+
 
   const columns = React.useMemo(
     () => [
       {
         Header: "Agências",
         columns: [
+         
           {
-            accessor: "accessor",
-            Header: "Selecionar",
-            Cell: ({ row: { original } }) => <Checkbox bg="#EDF2F7"></Checkbox>,
+            Header: "Id",
+            accessor: "_id",
           },
           {
             Header: "Código da Agência",
-            accessor: "firstName",
-          },
-          {
-            Header: "Nome da Agência",
-            accessor: "lastName",
-          },
-          {
-            Header: "Total de Contas",
-            accessor: "email",
+            accessor: "number",
           },
           {
             Header: "Status",
-            accessor: "document",
-          },
-          {
-            Header: "Data de Criação",
-            accessor: "money",
+            accessor: "status",
           },
           {
             Header: "Sobre",
             accessor: "open",
             Cell: (props) => (
-              <Link to={`/agencia-detail`}>
+              <Link to={`/agencias-create/${props.cell.row.cells[0].value}`}>
                 {" "}
                 <Box ml="25%">
                   <AiFillEye color={"gray"} fontSize="22px" />
@@ -62,16 +51,19 @@ const Agencias = () => {
   );
 
   const fetchData = async () => {
-    const response = await axios
-      .get("https://omssxfdlgh.execute-api.us-east-1.amazonaws.com/users")
+    await api
+      .get("/agency",{
+        headers:{
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+          Authorization: "Bearer " + localStorage.getItem("access_token"),
+        }
+      }).then(data => {
+        setData(data.data);
+      })
       .catch((err) => console.log(err));
 
-    if (response) {
-      const data = response.data.users;
-
-      console.log("Data: ", data);
-      setData(data);
-    }
+  
   };
 
   useEffect(() => {
@@ -99,7 +91,7 @@ const Agencias = () => {
             <Link to="/agencias-create">Criar Agência</Link>
           </Box>
         </Flex>
-        <CustomTable data={userData} columns={columns} />
+        <CustomTable data={data} columns={columns} />
       </SidebarWithHeader>
     </>
   );

@@ -58,12 +58,14 @@ export const App = () => (
           <Route path="/settings" element={<Settings />} />
           <Route path="/users" element={<Users />} />
           <Route path="/fares-create" element={<FaresCreate />} />
+          <Route path="/fares-create/:id" element={<FaresCreate />} />
           <Route path="/users-create" element={<UsersCreate />} />
           <Route path="/permissions-create" element={<PermissionsCreate />} />
           <Route path="/plan-detail" element={<PlanDetail />} />
           <Route path="/plan-detail/:id" element={<PlanDetail />} />
           <Route path="/agencia-detail" element={<AgenciaDetail />} />
           <Route path="/agencias-create" element={<AgenciaDetailForm />} />
+          <Route path="/agencias-create/:id" element={<AgenciaDetailForm />} />
           <Route path="/Login" element={<Login />} />
          
         </Routes>
