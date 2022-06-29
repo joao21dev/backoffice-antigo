@@ -11,15 +11,13 @@ import api from "../../services/api";
 
 const Agencias = () => {
   const [data, setData] = useState([]);
-
-
+  console.log("data em agencias é: ", data);
 
   const columns = React.useMemo(
     () => [
       {
         Header: "Agências",
         columns: [
-         
           {
             Header: "Id",
             accessor: "_id",
@@ -29,8 +27,19 @@ const Agencias = () => {
             accessor: "number",
           },
           {
+            Header: "Descrição",
+            accessor: "description",
+          },
+          {
+            Header: "Número de Contas",
+            accessor: "",
+          },
+          {
             Header: "Status",
             accessor: "status",
+            Cell: (props) => (
+              <Text>{props.cell.value ? "Ativo" : "Inativo"}</Text>
+            ),
           },
           {
             Header: "Sobre",
@@ -52,18 +61,17 @@ const Agencias = () => {
 
   const fetchData = async () => {
     await api
-      .get("/agency",{
-        headers:{
+      .get("/agency", {
+        headers: {
           "Content-Type": "application/json",
           "Access-Control-Allow-Origin": "*",
           Authorization: "Bearer " + localStorage.getItem("access_token"),
-        }
-      }).then(data => {
+        },
+      })
+      .then((data) => {
         setData(data.data);
       })
       .catch((err) => console.log(err));
-
-  
   };
 
   useEffect(() => {
