@@ -85,20 +85,24 @@ const Agencias = () => {
           Agências
         </Text>
         <Flex justifyContent="flex-end">
-          <Box
-            fontWeight="semibold"
-            color="white"
-            borderRadius="15px"
-            p="4"
-            mx="4"
-            bg="#5A32EA"
-            alignItems="center"
-            align="center"
-            w="200px"
-          >
-            <Link to="/agencias-create">Criar Agência</Link>
-          </Box>
+          <Link to="/agencias-create">
+            {" "}
+            <Box
+              fontWeight="semibold"
+              color="white"
+              borderRadius="15px"
+              p="4"
+              mx="4"
+              bg="#5A32EA"
+              alignItems="center"
+              align="center"
+              w="200px"
+            >
+              Criar Agência
+            </Box>
+          </Link>
         </Flex>
+
         <CustomTable data={data} columns={columns} />
       </SidebarWithHeader>
     </>
